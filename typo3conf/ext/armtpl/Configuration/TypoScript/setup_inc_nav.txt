@@ -1,0 +1,170 @@
+lib.logo = IMAGE
+lib.logo {
+    file = {$logoFile}
+    file.width = 100
+    file.height = 100
+    stdWrap {
+        typolink.parameter = {$rootPID}
+        wrap = |
+    }
+}
+
+lib.mainMenu = HMENU
+lib.mainMenu {
+
+    wrap = <ul">|</ul>
+    
+    1 = TMENU
+    1 {
+        expAll = 1
+        noBlur=1
+
+        NO {
+            wrapItemAndSub = <li class="l0">|</li>
+            ATagTitle.field = description // title
+        }
+        
+        IFSUB = 1
+        IFSUB {
+            wrapItemAndSub = <li class="l0">|</li>
+            doNotLinkIt = 1      
+            stdWrap.wrap = <a href="javascript:void(0)">|</a>
+            ATagTitle.field = description // title
+        }
+    }
+    2 = TMENU
+    2 {
+        noBlur=1
+        expAll = 1
+        stdWrap.dataWrap = <ul class="childMenu">|</ul>
+        NO {
+            wrapItemAndSub = <li>|</li>
+            ATagTitle.field = description // title
+        }
+        IFSUB = 1
+        IFSUB {
+            wrapItemAndSub = <li>|</li>
+            doNotLinkIt = 1      
+            stdWrap.wrap = <a href="javascript:void(0)">|</a>
+            ATagTitle.field = description // title
+        }
+    }
+
+    3 = TMENU
+    3 {
+        wrap = <ul class="sub-childMenu">|</ul>
+        noBlur=1
+        NO {
+            wrapItemAndSub = <li>|</li>
+            ATagTitle.field = description // title
+            stdWrap.htmlSpecialChars = 1
+        }
+    }
+    4 < .3
+}
+
+ ## Main Menu - End
+
+
+# Breadcrumb Navigation
+lib.breadcrumb = HMENU
+lib.breadcrumb {
+    wrap = <ul class="breadcrumbs">|</ul>
+    special = rootline
+    special.range = 0|
+    1 = TMENU
+    1 {
+  
+        NO.allWrap = <li>|</li>
+        NO.ATagTitle.field = description // title
+    }
+}
+
+lib.footerMenu = HMENU
+lib.footerMenu {
+    wrap = <ul class="foot-nav">|</ul>
+    special = directory
+    special.value = {$footerMenu}
+    1 = TMENU
+    1 {
+  
+        NO.allWrap = <li>|</li>
+        NO.ATagTitle.field = description // title
+    }
+}
+
+lib.mobMenu = HMENU
+lib.mobMenu {
+ 	entryLevel = 0
+ 	wrap = <ul>|</ul>
+ 	
+ 	1 = TMENU
+	1 {
+		expAll = 1
+		noBlur=1
+		NO {
+ 			ATagTitle.field = description // title
+ 			stdWrap.htmlSpecialChars = 1
+   			wrapItemAndSub = <li>|</li>
+		}
+		ACT= 1
+		ACT {
+			stdWrap.innerWrap= |
+ 			ATagTitle.field = title // description
+ 			stdWrap.htmlSpecialChars = 1
+   			wrapItemAndSub = <li class="active">|</li>
+		}
+	}
+	
+	2 = TMENU
+	2 {
+		wrap = <ul>|</ul>
+		noBlur=1
+		expAll = 1
+		NO = 1
+		NO {
+  			wrapItemAndSub = <li>|</li>
+   			ATagTitle.field = description // title
+   			stdWrap.htmlSpecialChars = 1
+ 		}
+ 		ACT= 1
+		ACT.wrapItemAndSub = <li class="active">|</li>
+	}
+	
+	3 = TMENU
+	3 {
+		wrap = <ul>|</ul>
+		noBlur=1
+		NO = 1
+		NO {
+   			wrapItemAndSub = <li>|</li>
+   			ATagTitle.field = description // title
+   			stdWrap.htmlSpecialChars = 1
+ 		}
+ 
+		ACT= 1
+		ACT.wrapItemAndSub = <li class="active">|</li>
+	}
+	
+	4 < .3
+ }
+
+#all share links
+lib.navShare = COA
+lib.navShare {
+   5 = TEXT
+   5.value = <a target="_blank" href="{$facebook_url}" class="share fb"><!--  --></a>
+   5.if.isTrue = {$show_facebook}
+   
+   15 = TEXT
+   15.value = <a target="_blank" href="{$youtube_url}" class="share yt"><!--  --></a>
+   15.if.isTrue = {$show_youtube}
+   
+   20 = TEXT
+   20.value = <a target="_blank" href="{$pinterest_url}" class="share pinterest"><!--  --></a>
+   20.if.isTrue = {$show_pinterest}
+   
+   25 = TEXT
+   25.value = <a target="_blank" href="{$instagram_url}" class="share instagram"><!--  --></a>
+   25.if.isTrue = {$show_instagram}
+}

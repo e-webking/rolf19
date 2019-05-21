@@ -1,0 +1,85 @@
+lib.stdheader {
+    stdWrap {
+        dataWrap >
+        dataWrap = |
+    }
+}
+
+## Fluid content Element
+lib.contentElement = FLUIDTEMPLATE
+lib.contentElement {
+
+    templateName = Default
+    templateRootPaths {
+        10 = {$templatePath}Resources/Private/Templates/ContentElements/
+    }
+    partialRootPaths {
+        10 = {$templatePath}Resources/Private/Partials/ContentElements/
+    }
+    layoutRootPaths {
+        10 ={$templatePath}Resources/Private/Layouts/ContentElements/
+    }
+    settings {
+        header {
+            defaultHeaderType = 2
+        }
+        preload {
+            images = 0
+        }
+    }
+}
+
+lib.contentmain = COA
+lib.contentmain.20 = CONTENT
+lib.contentmain.20 {
+    table = tt_content
+    select.where = colPos = 0
+    select.orderBy = sorting
+}
+
+
+lib.banner = CONTENT
+lib.banner {
+    table = tt_content
+    select.where = colPos = 3
+    select.orderBy = sorting
+    wrap = |
+}
+
+lib.armsearch = COA
+lib.armsearch {
+    10 = TEXT
+    10.value = Suche
+    stdWrap.typolink.parameter = {$searchPid}
+    stdWrap.typolink.ATagParams = class="pint" title="Suche"
+    stdWrap.wrap = <div class="armsearch">|</div>
+}
+
+lib.footerCMS = RECORDS
+lib.footerCMS {
+    tables = tt_content
+    source = {$cmsFooterUid}
+    languageField = sys_language_uid
+}
+
+#################
+# Frames
+#################
+tt_content.stdWrap.innerWrap.cObject = CASE
+tt_content.stdWrap.innerWrap.cObject {
+
+  key.field = frame_class 
+
+  100 = TEXT
+  100.value = <div class="box">|</div>
+  101 = TEXT
+  101.value = <section class="banner gbl"><div class="container">|</div></section>
+  102 = TEXT
+  102.value = <section class="gbl"><div class="container"><div class="row"><div class="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2"><div class="introTxt text-center">|</div></div></div></div></section>
+  103 = TEXT
+  103.value = <div class="swiper-slide">|</div>
+  104 = TEXT
+  104.value = <div class="img-block">|</div>
+  105 = TEXT
+  105.value = <div class="module-content"><div class="module-content-tablecell">|</div></div>
+}

@@ -1,0 +1,28 @@
+TCEFORM {
+    tt_content {
+        frame_class {
+            removeItems = 1,5,6,10,11,12,20,21,66
+            addItems {
+                100 = Box wrapper [class="box"]
+                101 = Banner wrapper [class="banner gbl"]
+                102 = Fullwidth wrapper
+                103 = Slide wrap
+                104 = Image wrap [class="img-block"]
+                105 = Floating White block [over image]
+            }
+        }
+        header_layout {
+            addItems {
+                
+            }
+        }
+    }
+}
+
+RTE.default.preset = default
+RTE.default.buttons.image.options.magic.maxWidth = 1920
+RTE.default.buttons.image.options.magic.maxHeight = 1080
+RTE.tt_content.types.text.bodytext.preset = armtpl_preset
+RTE.tt_content.types.textmedia.bodytext.preset = armtpl_preset
+RTE.tt_content.types.textimage.bodytext.preset = armtpl_preset
+RTE.config.tt_content.bodytext.preset = armtpl_preset

@@ -1,0 +1,26 @@
+<header class="header">
+    <div class="container"></div>
+    <div class="siteHeader">
+        <div class="container">
+            <a href="#menu" class="toggle">                    
+                <div class="hamburger-menu">
+                    <div class="bar"></div>                            
+                </div>
+            </a>
+            <div class="logo"><f:cObject typoscriptObjectPath="lib.logo" /></div>
+            <form class="top-search">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="" placeholder="">
+                    <label for="product-search"><f:translate key="search" /></label>
+                    <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                </div>                        
+            </form> 
+            <div class="desktop-nav" id="mainNav">
+                <f:cObject typoscriptObjectPath="lib.mainMenu" /> 
+            </div>
+            <nav id="menu">
+                <f:cObject typoscriptObjectPath="lib.mobMenu" /> 
+            </nav>
+        </div>
+    </div>
+</header>

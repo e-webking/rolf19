@@ -1,0 +1,8 @@
+<f:if condition="{data.flexform_field_link}">
+    <f:then>
+        <f:link.typolink parameter="{data.flexform_field_link}"><span class="button link">{data.flexform_field_label}&nbsp; <i class="fa fa-long-arrow-right"></i></span></f:link.typolink>
+    </f:then>
+    <f:else>
+        <span class="button link">{data.flexform_field_label}</span>
+    </f:else>
+</f:if>
