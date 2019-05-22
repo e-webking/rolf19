@@ -7,19 +7,34 @@
                     <div class="bar"></div>                            
                 </div>
             </a>
+            
             <div class="logo"><f:cObject typoscriptObjectPath="lib.logo" /></div>
-            <form class="top-search">
+            <f:form pageUid="{searchPid}" action="search" controller="Search" extensionName="IndexedSearch" class="top-search">
+                <f:form.hidden name="tx_indexedsearch_pi2[search][submitButton]" value="Search" />
                 <div class="form-group">
-                    <input type="text" class="form-control" id="" placeholder="">
-                    <label for="product-search"><f:translate key="search" /></label>
-                    <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                    <input type="text" name="tx_indexedsearch_pi2[search][sword]" class="form-control" id="tx-indexedsearch-searchbox-sword" placeholder="">
+                    <label for="product-search" id="top-search-lbl"><f:translate key="search" extensionName="armtpl" /></label>
+                    <f:form.button type="submit"><i class="fa fa-search" aria-hidden="true"></i></f:form.button>
                 </div>                        
-            </form> 
+            </f:form> 
             <div class="desktop-nav" id="mainNav">
-                <f:cObject typoscriptObjectPath="lib.mainMenu" /> 
+                    <f:cObject typoscriptObjectPath="lib.mainMenu" />
             </div>
             <nav id="menu">
-                <f:cObject typoscriptObjectPath="lib.mobMenu" /> 
+                <ul>
+                    <f:cObject typoscriptObjectPath="lib.mobMenu" /> 
+                    <li>
+                        <f:form  pageUid="{searchPid}" action="search" controller="Search" extensionName="IndexedSearch" class="top-search mob-search">
+                            <f:form.hidden name="tx_indexedsearch_pi2[search][submitButton]" value="Search" />
+                            <div class="form-group">
+                                <input type="text" name="tx_indexedsearch_pi2[search][sword]" class="form-control" id="tx-indexedsearch-searchbox-sword-mob" placeholder="">
+                                <label for="product-search"><f:translate key="search" extensionName="armtpl" /></label>
+                                <f:form.button type="submit"><i class="fa fa-search" aria-hidden="true"></i></f:form.button>
+                                <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </div>                        
+                        </f:form> 
+                    </li>
+                </ul>
             </nav>
         </div>
     </div>

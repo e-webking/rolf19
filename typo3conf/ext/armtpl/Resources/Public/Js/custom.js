@@ -1,14 +1,3 @@
-$(document).ready(function() {
-    new Mmenu( document.querySelector( '#menu' ) );
-        document.addEventListener( 'click', ( evnt ) => {
-            let anchor = evnt.target.closest( 'a[href^="#/"]' );
-            if ( anchor ) {
-                alert('Thank you for clicking, but that\'s a demo link.');
-                evnt.preventDefault();
-            }
-        }); 
-});
-
 var swiper = new Swiper('.swiper-container', {
         slidesPerView: 1,
         spaceBetween: 30,
@@ -43,3 +32,34 @@ window.cookieconsent.initialise({
     "href": "https://www.rolf-benz.haus/"
   }
 })});
+
+/*
+$(document).ready(function() {
+    $("#menu").mmenu();
+   // new Mmenu( document.querySelector( '#menu' ) );
+        
+});
+*/
+document.addEventListener(
+      "DOMContentLoaded", () => {
+         new Mmenu( "#menu", {
+            // options
+         }, {
+            // configuration
+            classNames: {
+               fixedElements: {
+                  fixed: "fix",
+                  sticky: "stick"
+               }
+            }
+         });
+      }
+   );
+   
+   $(document).ready(function(){
+       $('#tx-indexedsearch-searchbox-sword').on('blur', function (){
+          if ($('#tx-indexedsearch-searchbox-sword').val()!='') {
+             $('#top-search-lbl').html(''); 
+          }
+       });
+   });

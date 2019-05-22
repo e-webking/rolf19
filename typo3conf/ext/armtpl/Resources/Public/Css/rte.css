@@ -10,3 +10,5 @@ and open the template in the editor.
 
 .button {border: 1px solid #ccc; padding: 5px;}
 .link {text-decoration: underline;}
+.cta {background-color: #000;border: 0px;text-align: center;color: #fff;}
+.mt60 {}

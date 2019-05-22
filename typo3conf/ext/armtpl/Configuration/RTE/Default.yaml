@@ -23,6 +23,7 @@ editor:
         - { name: "text-left", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'div', 'p', 'td', 'th'], attributes: { 'class': 'text-left' }}
         - { name: "text-center", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'div', 'p', 'td', 'th'], attributes: { 'class': 'text-center' }}
         - { name: "text-right", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'div', 'p', 'td', 'th'], attributes: { 'class': 'text-right' }}
+        - { name: "subtitle", element: "h2", attributes: { 'class': 'subtitle' }}
         - { name: "intro text", element: "div", attributes: { 'class': 'introTxt' }}
         - { name: "row", element: "div", attributes: { 'class': 'row' }}
         - { name: "col-12", element: "div", attributes: { 'class': 'col-12' }}
@@ -41,6 +42,8 @@ editor:
         - { name: "link", element: "span", attributes: { 'class': 'link' }}
         - { name: "fa", element: "i", attributes: { 'class': 'fa' }}
         - { name: "fa-long-arrow-right", element: "i", attributes: { 'class': 'fa-long-arrow-right' }}
+        - { name: "black button", element: "a", attributes: { 'class': 'cta' }}
+        - { name: "top margin 60px", element: "a", attributes: { 'class': 'mt60' }}
         
 
       toolbarGroups:

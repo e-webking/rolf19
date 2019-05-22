@@ -8,11 +8,10 @@
 	box-sizing: border-box; 
 }
 html, body {
-    font-family: 'Helvetica Neue Lt','Helvetica Neue',Helvetica,Arial,sans-serif;
-    font-size: 16px;
-    letter-spacing: 1px;
+    font-family: 'HelveticaNeueW01-45Ligh','HelveticaNeueW01-Thin','Helvetica Neue Lt','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 17px;
     color:#000; 
-    font-weight:normal; 
+    font-weight:400; 
     line-height: 1.43;
     padding:0;
     margin:0px; 
@@ -27,14 +26,23 @@ body {
 
 h1, h2, h3, h4, h5, h6, .h1, 
 .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family:'Helvetica Neue Bd', 'Helvetica Neue', Helvetica, Arial;
-    font-weight: 600; line-height: 1.2; color: #000;
+    font-family:'HelveticaNeueW01-85Heav','Helvetica Neue Bd', 'Helvetica Neue', Helvetica, Arial;
+    font-weight: 400; line-height: 1.2; color: #000;
     text-transform: uppercase; padding:0px; margin: 0px; 
     position: relative; 
+    
+}
+h1 {
+    font-size: 30px;
+    line-height: 36px;
 }
 h2 {
     font-size: 21px;
     line-height: 23px;
+}
+h2.subtitle{
+    font-weight: 300; padding-top: 10px; text-transform: inherit; font-size: 24px;
+    font-family: 'HelveticaNeueW01-45Ligh','Helvetica NeueW01-Thin',"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 h4 {
     font-size: 20px;
@@ -132,27 +140,50 @@ label {font-weight:normal;}
 
 /*--- All Padding And Margin ---*/
 .mt60 {margin-top: 60px;}
+.mb80 {margin-bottom: 60px;}
 
 .clearfix{clear: both;}
 
-  
+.frame-space-before-extra-small, .frame-space-after-extra-small {height: 10px;}
+.frame-space-before-small,.frame-space-after-small {height: 15px;}
+.frame-space-before-medium, .frame-space-after-medium {height: 20px;}
+.frame-space-before-large, .frame-space-after-large {height: 30px;}
+.frame-space-before-extra-large, .frame-space-after-extra-large {height: 40px;}
+
   @media (min-width: 600px) {
     
   }
   
   @media (min-width: 768px) {
-    body {font-size:17px;}
+    body {font-size:16px;}
     .footer p {font-size: 16px;}
+    
+    .frame-space-before-extra-small, .frame-space-after-extra-small {height: 15px;}
+    .frame-space-before-small,.frame-space-after-small {height: 25px;}
+    .frame-space-before-medium, .frame-space-after-medium {height: 30px;}
+    .frame-space-before-large, .frame-space-after-large {height: 40px;}
+    .frame-space-before-extra-large, .frame-space-after-extra-large {height: 50px;}
   }
   
   @media (min-width: 992px) {
     
+    .frame-space-before-extra-small, .frame-space-after-extra-small {height: 20px;}
+    .frame-space-before-small,.frame-space-after-small {height: 30px;}
+    .frame-space-before-medium, .frame-space-after-medium {height: 40px;}
+    .frame-space-before-large, .frame-space-after-large {height: 60px;}
+    .frame-space-before-extra-large, .frame-space-after-extra-large {height: 80px;}
   }
   
   @media (min-width: 1280px) {
    .container {
         max-width:1200px; 
     }
+    
+    .frame-space-before-extra-small, .frame-space-after-extra-small {height: 20px;}
+    .frame-space-before-small,.frame-space-after-small {height: 40px;}
+    .frame-space-before-medium, .frame-space-after-medium {height: 60px;}
+    .frame-space-before-large, .frame-space-after-large {height: 80px;}
+    .frame-space-before-extra-large, .frame-space-after-extra-large {height: 120px;}
   }
   
    @media (min-width: 1440px) {

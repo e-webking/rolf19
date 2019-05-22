@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="de" datatype="plaintext" original="messages" date="2019-05-06T23:46:34Z" product-name="armtpl">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-05-06T23:46:34Z" product-name="armtpl">
 		<header/>
 		<body>
 			<trans-unit id="search">
 				<source>SUCHE</source>
+			</trans-unit>
+                         <trans-unit id="language">
+				<source>Language</source>
+			</trans-unit>
+                        <trans-unit id="follow">
+				<source>Follow us</source>
+			</trans-unit>
+                        <trans-unit id="links">
+				<source>Links</source>
+			</trans-unit>
+                        <trans-unit id="element.Form.renderingOptions.submitButtonLabel">
+				<source>Submit EN</source>
+			</trans-unit>
+                        <trans-unit id="finisher.EmailToReceiver.subject">
+				<source>Contact form enquiry</source>
+			</trans-unit>
+                        <trans-unit id="finisher.EmailToSender.subject">
+				<source>Contact form enquiry</source>
 			</trans-unit>
 		</body>
 	</file>

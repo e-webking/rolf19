@@ -10,7 +10,7 @@ config {
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if IE 9]>         <html class="no-js ie9"> <![endif]-->
   )
-  baseURL = {$baseUrl}
+  # baseURL = {$baseUrl}
   absRefPrefix = {$baseUrl}
   xhtml_cleaning = all
   xmlprologue = none
@@ -112,7 +112,6 @@ page.includeJSFooter {
     file01 = {$templatePath}Resources/Public/Js/lib/jquery.min.js
     file01.forceOnTop = 1
     file02 = {$templatePath}Resources/Public/Js/lib/RAD_lib.js
-
     file03 = {$templatePath}Resources/Public/Js/bootstrap.min.js
     file04 = {$templatePath}Resources/Public/Js/bootstrap.bundle.min.js
     file05 = {$templatePath}Resources/Public/Js/jquery.mmenu.all.min.js
@@ -150,6 +149,12 @@ page.10 {
 
         facebookUrl = TEXT
         facebookUrl.value = {$facebookUrl}
+
+        searchPid = TEXT
+        searchPid.value = {$searchPid}
+
+        kontaktPid = TEXT
+        kontaktPid.value = {$kontaktPid}
     }
 }
 

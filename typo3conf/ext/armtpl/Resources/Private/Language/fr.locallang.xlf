@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="de" target-language="fr" datatype="plaintext" original="messages" date="2019-05-06T23:46:34Z" product-name="armtpl">
+	<file source-language="en" target-language="fr" datatype="plaintext" original="messages" date="2019-05-06T23:46:34Z" product-name="armtpl">
 		<header/>
 		<body>
 			<trans-unit id="search">
-				<source>SUCHE</source>
-				<target state="translated">SUCHE [fr]</target>
+                            <target>SUCHE</target>
+			</trans-unit>
+                        <trans-unit id="language">
+				<target>Sprache</target>
+			</trans-unit>
+                        <trans-unit id="follow">
+				<target>Follow us</target>
+			</trans-unit>
+                         <trans-unit id="links">
+				<target>Unternehmen</target>
 			</trans-unit>
 		</body>
 	</file>

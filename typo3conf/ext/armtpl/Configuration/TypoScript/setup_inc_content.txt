@@ -82,4 +82,12 @@ tt_content.stdWrap.innerWrap.cObject {
   104.value = <div class="img-block">|</div>
   105 = TEXT
   105.value = <div class="module-content"><div class="module-content-tablecell">|</div></div>
+  106 = TEXT
+  106.value = <div class="text-center gbl">|</div>
+  107 = TEXT
+  107.value = <div class="text-center mb80">|</div>
+  108 = TEXT
+  108.value = <div class="row"><div class="col-12">|</div></div>
+  109 = TEXT
+  109.value = <div class="text-center">|</div>
 }

@@ -9,6 +9,10 @@ TCEFORM {
                 103 = Slide wrap
                 104 = Image wrap [class="img-block"]
                 105 = Floating White block [over image]
+                106 = Text center [top block]
+                107 = Text center [bottom 80px]
+                108 = Row wrap
+                109 = Align Center [class="text-center"]
             }
         }
         header_layout {

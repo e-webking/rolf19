@@ -4,8 +4,29 @@
 		<header/>
 		<body>
 			<trans-unit id="search">
-				<source>SUCHE</source>
+				<target>SUCHE</target>
 			</trans-unit>
+                        <trans-unit id="language">
+				<target>Sprache</target>
+			</trans-unit>
+                        <trans-unit id="follow">
+				<target>Follow us</target>
+			</trans-unit>
+                        <trans-unit id="links">
+				<target>Unternehmen</target>
+			</trans-unit>
+                        <trans-unit id="element.Form.renderingOptions.submitButtonLabel">
+                            <target>Senden</target>
+			</trans-unit>
+                        <trans-unit id="finisher.EmailToReceiver.subject">
+                            <target>Kontactform enquiry</target>
+			</trans-unit>
+                         <trans-unit id="finisher.EmailToSender.subject">
+				<target>Kontactform enquiry</target>
+			</trans-unit>
+                        <trans-unit id="element.name.properties.label">
+                            <target>Name</target>
+                        </trans-unit>
 		</body>
 	</file>
 </xliff>

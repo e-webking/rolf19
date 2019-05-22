@@ -1,0 +1,84 @@
+renderingOptions:
+  submitButtonLabel: 'Senden'
+identifier: contact-form
+label: 'Contact Fom'
+prototypeName: standard
+type: Form
+
+finishers:
+  -
+    identifier: EmailToReceiver
+    options:
+      subject: 'Contact form filled'
+      recipientAddress: 'info@rolf-benz.haus'
+      recipientName: 'Rolf-Benz'
+      senderAddress: 'nobody@rolf-benz.haus'
+      senderName: '{vorname} {name}'
+      replyToAddress: '{email}'
+      carbonCopyAddress: '{email}'
+      format: html
+      attachUploads: false
+      translation:
+        language: 'de'
+
+renderables:
+  -
+    identifier: page-1
+    label: 
+    type: Page
+
+    renderables:
+      -
+        identifier: vorname
+        label: 'Vorname'
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Vorname'
+        defaultValue: ''
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        identifier: name
+        label: 'Name'
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Name'
+        defaultValue: ''
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        identifier: postcode
+        label: 'Postleitzahl'
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Postleitzahl'
+        defaultValue: ''
+      -
+        identifier: email
+        label: 'Email'
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Email'
+        defaultValue: ''
+        validators:
+          -
+            identifier: NotEmpty
+          -
+            identifier: EmailAddress
+      -
+        identifier: message
+        label: 'Nachricht'
+        type: Textarea
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Nachricht'
+        defaultValue: ''
+        validators:
+          -
+            identifier: NotEmpty

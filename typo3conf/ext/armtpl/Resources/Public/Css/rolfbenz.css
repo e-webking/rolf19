@@ -72,6 +72,15 @@
 .swiper-button-next:before {content: "\f178";}
 .swiper-button-prev:before {content: "\f177";}
 
+.service .service-txt{margin-bottom: 80px; text-align: center;}
+.service .service-txt h2{padding-bottom: 70px;}
+
+.contact .contact-form .form-group {margin-bottom: 80px;}
+.contact .contact-form .col-form-label{font-weight: 700;}
+.contact .contact-form .form-control{border-radius: 0px; height: 50px;}
+.contact .contact-form textarea.form-control{height: auto;}
+.contact .contact-form .form-control:focus {box-shadow: transparent; border-color: rgb(206, 212, 218);}
+
 .footer{
     position: relative; padding: 10px 0;
     border-top: 1px solid #000; 
@@ -86,10 +95,11 @@
 
 .footer .news-list{padding: 0px; margin: 0px; list-style: none;}
 .footer .news-list li{padding: 5px 0 20px; overflow: hidden; font-family: 'HelveticaNeueW01-45Ligh','HelveticaNeueW01-Thin',"Helvetica Neue Lt","Helvetica Neue",Helvetica,Arial,sans-serif;}
+.footer .news-list li p{ font-size: 14px; line-height: 18px; margin-bottom: 5px;}
 
 .sub-footer{position: relative; padding: 0 0 50px;}
 .sub-footer .foot-nav{padding: 0px; margin: 0px; list-style: none;}
-.sub-footer .foot-nav li{padding: 6px 12px; float: left;}
+.sub-footer .foot-nav li{padding: 6px 12px 6px 0px; float: left;}
 
 .sub-footer .search-form{width: 100%; position: relative;}
 .sub-footer .search-form .form-group{margin-bottom: 0px;}
@@ -103,7 +113,10 @@
       
 }
 
+.language-menu {padding: 0px; margin: 0px; list-style: none;}
+.language-menu li {padding: 6px 12px 6px 0px; float: left;}
 
+.social-wrap {margin-top: 5px;}
 .share {background-image: url(../Images/sprite.png);background-repeat: no-repeat;width: 160px;height: 103px;float: left;overflow: hidden;cursor: pointer;display: inline-block;position: relative;}
 .share.fb {background-position: 0 0;width: 51px;height: 51px;float: none;overflow: hidden;display: inline-block;margin-right: 15px;}
 .share.fb:hover{background-position: -160px 0;}
