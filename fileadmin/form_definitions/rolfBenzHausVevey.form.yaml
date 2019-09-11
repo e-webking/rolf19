@@ -1,0 +1,165 @@
+
+renderingOptions:
+  submitButtonLabel: Senden
+identifier: rolfBenzHausVevey
+label: 'Rolf Benz Haus Vevey'
+prototypeName: standard
+type: Form
+finishers:
+  -
+    options:
+      subject: 'Contact form filled'
+      recipientAddress: vevey@rolf-benz.haus
+      recipientName: 'Rolf Benz Haus Vevey '
+      senderAddress: nobody@rolf-benz.haus
+      senderName: '{vorname} {name}'
+      replyToAddress: '{email}'
+      carbonCopyAddress: '{email}'
+      format: html
+      attachUploads: false
+      translation:
+        language: de
+    identifier: EmailToReceiver
+  -
+    options:
+      pageUid: '77'
+      additionalParameters: ''
+    identifier: Redirect
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    identifier: page-1
+    label: null
+    type: Page
+    renderables:
+      -
+        defaultValue: ''
+        identifier: vorname
+        label: Vorname
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Vorname
+            required: required
+          validationErrorMessages:
+            -
+              code: 1221560910
+              message: 'Bitte füllen Sie das Vornamefeld aus'
+            -
+              code: 1221560718
+              message: 'Bitte füllen Sie das Vornamefeld aus'
+            -
+              code: 1347992400
+              message: 'Bitte füllen Sie das Vornamefeld aus'
+            -
+              code: 1347992453
+              message: 'Bitte füllen Sie das Vornamefeld aus'
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        identifier: name
+        label: Name
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Name
+            required: required
+          validationErrorMessages:
+            -
+              code: 1221560910
+              message: 'Bitte füllen Sie das Nachnamefeld aus'
+            -
+              code: 1221560718
+              message: 'Bitte füllen Sie das Nachnamefeld aus'
+            -
+              code: 1347992400
+              message: 'Bitte füllen Sie das Nachnamefeld aus'
+            -
+              code: 1347992453
+              message: 'Bitte füllen Sie das Nachnamefeld aus'
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        identifier: postcode
+        label: Postleitzahl
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Postleitzahl
+            required: required
+          validationErrorMessages:
+            -
+              code: 1221560910
+              message: 'Bitte füllen Sie das Postleitzahlfeld aus'
+            -
+              code: 1221560718
+              message: 'Bitte füllen Sie das Postleitzahlfeld aus'
+            -
+              code: 1347992400
+              message: 'Bitte füllen Sie das Postleitzahlfeld aus'
+            -
+              code: 1347992453
+              message: 'Bitte füllen Sie das Postleitzahlfeld aus'
+        validators:
+          -
+            identifier: NotEmpty
+          -
+            identifier: Integer
+      -
+        defaultValue: ''
+        identifier: email
+        label: Email
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Email
+            required: required
+          validationErrorMessages:
+            -
+              code: 1221560910
+              message: 'Bitte füllen Sie das E-Mailfeld aus'
+            -
+              code: 1221560718
+              message: 'Bitte füllen Sie das E-Mailfeld aus'
+            -
+              code: 1347992400
+              message: 'Bitte füllen Sie das E-Mailfeld aus'
+            -
+              code: 1347992453
+              message: 'Bitte füllen Sie das E-Mailfeld aus'
+        validators:
+          -
+            identifier: NotEmpty
+          -
+            identifier: EmailAddress
+      -
+        defaultValue: ''
+        identifier: message
+        label: Nachricht
+        type: Textarea
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Nachricht
+            required: required
+          validationErrorMessages:
+            -
+              code: 1221560910
+              message: 'Bitte füllen Sie das Nachricht aus'
+            -
+              code: 1221560718
+              message: 'Bitte füllen Sie das Nachricht aus'
+            -
+              code: 1347992400
+              message: 'Bitte füllen Sie das Nachricht aus'
+            -
+              code: 1347992453
+              message: 'Bitte füllen Sie das Nachricht aus'
+        validators:
+          -
+            identifier: NotEmpty
