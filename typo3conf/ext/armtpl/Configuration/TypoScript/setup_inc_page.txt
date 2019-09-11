@@ -10,8 +10,8 @@ config {
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if IE 9]>         <html class="no-js ie9"> <![endif]-->
   )
-  # baseURL = {$baseUrl}
-  absRefPrefix = {$baseUrl}
+  baseURL = {$baseUrl}
+  absRefPrefix = /
   xhtml_cleaning = all
   xmlprologue = none
   metaCharset = utf-8
@@ -55,8 +55,8 @@ page.meta {
   keywords.field = keywords
   og:title.field = title
   og:description.field = description
-  og:url = http://www.rolf-benz.haus/
-  og:site_name = MarktMacher
+  og:url = http://new.rolf-benz.haus/
+  og:site_name = Rolf-Benz
   og:type = website
 }
 page.headerData.5 = TEXT
@@ -90,7 +90,7 @@ page.headerData.15.value (
 <![endif]-->
 
 )
-
+page.shortcutIcon = /favicon.ico
 page.includeCSS {
     file01 = {$templatePath}Resources/Public/Css/vendor/bootstrap.min.css
     file02 = {$templatePath}Resources/Public/Css/vendor/bootstrap-grid.min.css
@@ -142,6 +142,10 @@ page.10 {
         # Main Template
         1 = TEXT
         1.value = {$templatePath}Resources/Private/Templates/fullwidth.html
+
+         # 2 col
+        2 = TEXT
+        2.value = {$templatePath}Resources/Private/Templates/twocol.html
 
     }
 

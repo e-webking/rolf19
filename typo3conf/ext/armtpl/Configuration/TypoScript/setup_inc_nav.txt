@@ -198,3 +198,36 @@ lib.language {
     }
     wrap = <ul id="language_menu" class="language-menu">|</ul>
 }
+
+lib.toplang = COA
+lib.toplang {
+    20 = HMENU
+    20 {
+        special = language
+        special.value = 0,1
+        special.normalWhenNoLanguage = 0
+        wrap =
+        1 = TMENU
+        1 {
+            noBlur = 1
+            NO = 1
+            NO {
+                doNotLinkIt = 1
+                linkWrap = |
+                stdWrap.override = DE || FR
+                stdWrap {
+                    typolink {
+                        parameter.data = page:uid
+                        additionalParams = &L=0 || &L=1
+                        ATagParams = hreflang="de-DE" || hreflang="fr-FR"
+                        addQueryString = 1
+                        addQueryString.exclude = L,id,no_cache
+                        addQueryString.method = GET
+                        no_cache = 0
+                    }
+                }
+            }
+        }
+    }
+    wrap = |
+}

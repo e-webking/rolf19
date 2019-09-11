@@ -37,6 +37,9 @@ lib.contentmain.20 {
     select.orderBy = sorting
 }
 
+lib.contentright = COA
+lib.contentright < lib.contentmain
+lib.contentright.20.select.where = colPos = 2
 
 lib.banner = CONTENT
 lib.banner {
@@ -75,7 +78,7 @@ tt_content.stdWrap.innerWrap.cObject {
   101 = TEXT
   101.value = <section class="banner gbl"><div class="container">|</div></section>
   102 = TEXT
-  102.value = <section class="gbl"><div class="container"><div class="row"><div class="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2"><div class="introTxt text-center">|</div></div></div></div></section>
+  102.value = <section class="gbl"><div class="container"><div class="row"><div class="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2"><div class="introTxt">|</div></div></div></div></section>
   103 = TEXT
   103.value = <div class="swiper-slide">|</div>
   104 = TEXT
@@ -90,4 +93,6 @@ tt_content.stdWrap.innerWrap.cObject {
   108.value = <div class="row"><div class="col-12">|</div></div>
   109 = TEXT
   109.value = <div class="text-center">|</div>
+  110 = TEXT
+  110.value = <div class="padleft">|</div>
 }

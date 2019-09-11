@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2019-03-01T12:16:44Z" product-name="armdealers">
+		<header/>
+		<body>
+			<trans-unit id="tx_armdealers_domain_model_tpl.vorname">
+				<source>Vorname</source>
+			</trans-unit>
+			<trans-unit id="tx_armdealers_domain_model_tpl.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_armdealers_domain_model_tpl.zip">
+				<source>Postleitzahl</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_tpl.country">
+				<source>Land</source>
+			</trans-unit>
+			<trans-unit id="tx_armdealers_domain_model_tpl.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_armdealers_domain_model_tpl.message">
+				<source>Nachricht</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_tpl.send">
+				<source>Senden</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_tpl.contactfrm">
+				<source>Kontakt Formular</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_tpl.personaldetails">
+				<source>Personal Details</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_tpl.thankyou">
+				<source>Thank you</source>
+			</trans-unit>
+                        
+                        <trans-unit id="tx_armdealers_domain_model_err.vorname">
+				<source>Bitte füllen Sie das Vornamefeld aus</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_err.name">
+				<source>Bitte füllen Sie das Nachnamefeld aus</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_err.zip">
+				<source>Bitte füllen Sie das Postleitzahlfeld aus</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_err.email">
+				<source>Bitte füllen Sie das E-Mailfeld aus</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_err.message">
+				<source>Bitte füllen Sie das Nachricht aus</source>
+			</trans-unit>
+                        
+                        <trans-unit id="tx_armdealers_map.contactpre">
+				<source>ein ROLF BENZ Experte zu Ihren Diensten</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_map.contact">
+				<source>Kontakt</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

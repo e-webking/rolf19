@@ -13,6 +13,7 @@ TCEFORM {
                 107 = Text center [bottom 80px]
                 108 = Row wrap
                 109 = Align Center [class="text-center"]
+                110 = Left Padding [class="padleft"]
             }
         }
         header_layout {

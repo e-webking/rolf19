@@ -1,7 +1,7 @@
 renderingOptions:
   submitButtonLabel: 'Senden'
 identifier: contact-form
-label: 'Contact Fom'
+label: 'Contact Form'
 prototypeName: standard
 type: Form
 
@@ -58,6 +58,9 @@ renderables:
           fluidAdditionalAttributes:
             placeholder: 'Postleitzahl'
         defaultValue: ''
+        validators:
+          -
+            identifier: NotEmpty
       -
         identifier: email
         label: 'Email'

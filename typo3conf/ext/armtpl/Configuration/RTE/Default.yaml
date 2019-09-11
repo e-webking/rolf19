@@ -16,13 +16,10 @@ editor:
       
       stylesSet:
         # block level styles
-        - { name: "align-left", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'div', 'p', 'td', 'th'], attributes: { 'class': 'align-left' }}
-        - { name: "align-center", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'div', 'p', 'td', 'th'], attributes: { 'class': 'align-center' }}
-        - { name: "align-right", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'div', 'p', 'td', 'th'], attributes: { 'class': 'align-right' }}
-        - { name: "align-justify", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'div', 'p', 'td', 'th'], attributes: { 'class': 'align-justify' }}
         - { name: "text-left", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'div', 'p', 'td', 'th'], attributes: { 'class': 'text-left' }}
         - { name: "text-center", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'div', 'p', 'td', 'th'], attributes: { 'class': 'text-center' }}
         - { name: "text-right", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'div', 'p', 'td', 'th'], attributes: { 'class': 'text-right' }}
+        - { name: "align-justify", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'div', 'p', 'td', 'th'], attributes: { 'class': 'align-justify' }}
         - { name: "subtitle", element: "h2", attributes: { 'class': 'subtitle' }}
         - { name: "intro text", element: "div", attributes: { 'class': 'introTxt' }}
         - { name: "row", element: "div", attributes: { 'class': 'row' }}
@@ -42,8 +39,12 @@ editor:
         - { name: "link", element: "span", attributes: { 'class': 'link' }}
         - { name: "fa", element: "i", attributes: { 'class': 'fa' }}
         - { name: "fa-long-arrow-right", element: "i", attributes: { 'class': 'fa-long-arrow-right' }}
-        - { name: "black button", element: "a", attributes: { 'class': 'cta' }}
-        - { name: "top margin 60px", element: "a", attributes: { 'class': 'mt60' }}
+        - { name: "Black button", element: "a", attributes: { 'class': 'cta' }}
+        - { name: "CTA button", element: "a", attributes: { 'class': 'ctawhite' }}
+        - { name: "top-margin", element: "a", attributes: { 'class': 'mt60' }}
+        - { name: "align-left", element: 'p', attributes: { 'class': 'align-left' }}
+        - { name: "align-center", element: 'p', attributes: { 'class': 'align-center' }}
+        - { name: "align-right", element: 'p', attributes: { 'class': 'align-right' }}     
         
 
       toolbarGroups:
@@ -77,7 +78,7 @@ editor:
       - align-right
       - align-justify
       
-      removeFormatAttributes:
+      removeFormatAttributes: "class,style,lang,width,height,align,vspace,hspace"
       
       removePlugins:
 

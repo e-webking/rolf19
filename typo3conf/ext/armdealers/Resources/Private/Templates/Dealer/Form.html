@@ -1,0 +1,44 @@
+<f:flashMessages />
+<f:form class="contact-form" action="thankyou" method="post">
+    <div class="form-group row">
+        <label for="txtVorname" class="col-sm-3 col-form-label">{f:translate(key:'tx_armdealers_domain_model_tpl.vorname')} *</label>
+        <div class="col-sm-9">
+        <f:form.textfield name="vorname" class="form-control" value='{vorname}' placeholder="{f:translate(key:'tx_armdealers_domain_model_tpl.vorname')}" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="txtName" class="col-sm-3 col-form-label">{f:translate(key:'tx_armdealers_domain_model_tpl.name')} *</label>
+        <div class="col-sm-9">
+        <f:form.textfield name="name" class="form-control" value='{name}' placeholder="{f:translate(key:'tx_armdealers_domain_model_tpl.name')}" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="txtPostleitzahl" class="col-sm-3 col-form-label">{f:translate(key:'tx_armdealers_domain_model_tpl.zip')} *</label>
+        <div class="col-sm-9">
+        <f:form.textfield name="zip" class="form-control" value='{zip}' id="txtPostleitzahl" placeholder="{f:translate(key:'tx_armdealers_domain_model_tpl.zip')}" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="txtLand" class="col-sm-3 col-form-label">{f:translate(key:'tx_armdealers_domain_model_tpl.country')} *</label>
+        <div class="col-sm-9">
+        <f:form.select name="country" class="form-control" options="{CHE:'Schweiz','AUT':'Österreich'}" value="{country}" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="txtEmail" class="col-sm-3 col-form-label">{f:translate(key:'tx_armdealers_domain_model_tpl.email')} *</label>
+        <div class="col-sm-9">
+        <f:form.textfield name="email" class="form-control" value='{email}' id="txtEmail" placeholder="{f:translate(key:'tx_armdealers_domain_model_tpl.email')}" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="txtNachricht" class="col-sm-3 col-form-label">{f:translate(key:'tx_armdealers_domain_model_tpl.message')} *</label>
+        <div class="col-sm-9">
+        <f:form.textarea name="message" class="form-control" id="txtNachricht" value='{message}' placeholder="{f:translate(key:'tx_armdealers_domain_model_tpl.message')}" />
+        </div>
+    </div>                            
+    <div class="form-group row">
+        <div class="col-sm-9 offset-sm-3">
+            <f:form.submit name="btn" class="cta" value="{f:translate(key:'tx_armdealers_domain_model_tpl.send')}" /> &nbsp;&nbsp;&nbsp;&nbsp;* = Pflichtfeld
+        </div>
+    </div>
+</f:form>   

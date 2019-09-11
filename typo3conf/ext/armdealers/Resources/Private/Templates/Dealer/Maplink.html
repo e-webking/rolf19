@@ -1,0 +1,38 @@
+<div id="rolfmap"></div>
+<script type="text/javascript">
+
+    <f:format.raw>{jsDealers}</f:format.raw>
+    var map;
+    var clat = {settings.lat};
+    var clng = {settings.lng};
+    var czoom = {settings.zoom};
+    var image = "{f:uri.resource(path:'Icons/maplogo2.png')}";
+    var MPCENTER = {lat:clat, lng: clng};
+
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('rolfmap'), {
+          center: MPCENTER,
+          zoom: czoom,
+        });
+        
+
+        for (var i = 0; i < dealers.length; i++) {
+            var data = dealers[i];            
+            var markers = new google.maps.Marker({
+                position: {lat: data.lat, lng: data.lng},
+                map: map,
+                icon: image
+             });
+             
+             (function (markers, data) {
+                google.maps.event.addListener(markers, "click", function (e) {
+                    location.href = data.url;
+                });
+            })(markers, data);
+        }
+    }
+    
+</script>
+<f:variable name="apiKey" value="{settings.googleApiKey}" />
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={apiKey}&callback=initMap"></script>

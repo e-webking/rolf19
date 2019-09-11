@@ -1,0 +1,19 @@
+<div class="mapcontact" id="del{dealer.uid}">
+    <p><span class="mtitle">{dealer.title}</span>
+    <f:if condition="{dealer.street}">
+        <br />{dealer.street}
+    </f:if><br />
+    {dealer.zip} {dealer.city}<br />
+    {dealer.country}</p>
+    <p><f:if condition="{dealer.phone}">
+        {dealer.phone}<br />
+    </f:if>
+    {dealer.email}</p>
+    <f:if condition="{dealer.dealerpg}">
+        <p><f:link.page pageUid="{dealer.dealerpg}">{dealer.pgurl}</f:link.page></p>
+    </f:if>
+    <p>{f:translate(key:'tx_armdealers_map.contactpre')}</p>
+    <f:if condition="{dealer.contactpid}">
+    <p><f:link.page pageUid="{dealer.contactpid}" class="cta">{f:translate(key:'tx_armdealers_map.contact')}</f:link.page></p>
+    </f:if>
+</div>

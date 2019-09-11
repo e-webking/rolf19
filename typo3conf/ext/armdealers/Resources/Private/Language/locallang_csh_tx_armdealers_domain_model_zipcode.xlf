@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-06-04T12:16:44Z" product-name="armdealers">
+		<header/>
+		<body>
+			<trans-unit id="dealer.description">
+				<source>dealer</source>
+			</trans-unit>
+			<trans-unit id="address.description">
+				<source>address</source>
+			</trans-unit>
+			<trans-unit id="city.description">
+				<source>city</source>
+			</trans-unit>
+			<trans-unit id="zipcode.description">
+				<source>zipcode</source>
+			</trans-unit>
+			<trans-unit id="canton.description">
+				<source>kanton</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

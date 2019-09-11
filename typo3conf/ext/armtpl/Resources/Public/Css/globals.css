@@ -35,6 +35,7 @@ h1, h2, h3, h4, h5, h6, .h1,
 h1 {
     font-size: 30px;
     line-height: 36px;
+    margin-bottom: 20px;
 }
 h2 {
     font-size: 21px;
@@ -44,9 +45,13 @@ h2.subtitle{
     font-weight: 300; padding-top: 10px; text-transform: inherit; font-size: 24px;
     font-family: 'HelveticaNeueW01-45Ligh','Helvetica NeueW01-Thin',"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+h3 {
+    font-size: 18px;
+    line-height: 22px;
+}
 h4 {
-    font-size: 20px;
-    line-height: 23px;
+    font-size: 16px;
+    line-height: 20px;
 }
 
 
@@ -68,6 +73,8 @@ img{
     height: auto;
     width: 100%;
 }
+.slide-image img {max-width: 100%;width: inherit;}
+
 
 p {margin: 0 0 20px; line-height:28px; font-family: 'HelveticaNeueW01-45Ligh','HelveticaNeueW01-Thin',"Helvetica Neue Lt","Helvetica Neue",Helvetica,Arial,sans-serif;}
 
@@ -87,7 +94,7 @@ a:hover {
     }
 
 label {font-weight:normal;}
-
+.image-embed-item {width: inherit!important; max-width: 100%!important;}
 .bootstrap-tagsinput {margin-bottom:0px;}
 
 .label-info {background-color: #b32017;}
@@ -107,7 +114,7 @@ label {font-weight:normal;}
 .wrapper{   
     padding:0px 0 0; margin:0px auto; position: relative;
     width:100%; height:100%; z-index: 3;
-    max-width: 1600px;
+    max-width: 1920px;
     }
 .container {
     max-width:1000px; 
@@ -121,15 +128,18 @@ label {font-weight:normal;}
     display: table; 
     clear: both; content: "";
 }
+.fullbanner {display: block; clear: both; margin-bottom: 20px}
+.f2cols {display: block; margin: 20px}
 
-.gbl{margin-bottom: 120px;}
+.leftcol {width: 100%; margin-bottom: 20px;}
+.rightcol {width: 100%}
 
-.cta{
-    background-color: #000;
-    display: inline-block; min-width: 200px;
-    text-align: center; color: #fff;
-    padding: 10px 20px; font-size: 18px; letter-spacing: 0.1em;
-}
+.gbl{margin-bottom: 60px;}
+
+.cta{background-color: #000; border: 0; display: inline-block; min-width: 200px;text-align: center; color: #fff;padding: 10px 20px; font-size: 18px; letter-spacing: 0.1em;}
+.ctawhite {display: table; min-width: 350px; height: 70px; margin: 0 auto; padding: 0 10px; line-height: 64px; vertical-align: middle; text-align: center; background: #fff; border: 2px solid #000; color: #000 !important; font-size: 16pt; font-weight: bold}
+.ctawhite:hover {background: #000; color: #fff !important; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+
 .txt-link{font-weight: 700; color: #999;}
 .txt-link:hover{color: #000;}
 
@@ -141,57 +151,108 @@ label {font-weight:normal;}
 /*--- All Padding And Margin ---*/
 .mt60 {margin-top: 60px;}
 .mb80 {margin-bottom: 60px;}
-
+.mb20 {margin-bottom: 20px;}
+.mb40 {margin-bottom: 40px;}
+.mb60 {margin-bottom: 40px;}
 .clearfix{clear: both;}
 
-.frame-space-before-extra-small, .frame-space-after-extra-small {height: 10px;}
-.frame-space-before-small,.frame-space-after-small {height: 15px;}
-.frame-space-before-medium, .frame-space-after-medium {height: 20px;}
-.frame-space-before-large, .frame-space-after-large {height: 30px;}
-.frame-space-before-extra-large, .frame-space-after-extra-large {height: 40px;}
+.frame-space-before-extra-small, .frame-space-after-extra-small {height: 8px;}
+.frame-space-before-small,.frame-space-after-small {height: 12px;}
+.frame-space-before-medium, .frame-space-after-medium {height: 15px;}
+.frame-space-before-large, .frame-space-after-large {height: 22px;}
+.frame-space-before-extra-large, .frame-space-after-extra-large {height: 30px;}
 
+.ce-uploads {margin: 0 0 17px; padding: 0 0 19px; list-style: none; text-align: center}
+.ce-uploads li { padding: 7px 0 6px !important; text-align: left; font-size: 16px;}
+.ce-uploads li::after {content:"\f019"; font-family: "FontAwesome"; font-size: 20px; margin-top: -25px; right: 10px; position: absolute;}
+
+.video-embed {height: 338px; width: 100%;}
+.video-embed .video-embed-item{max-width: 100%; max-height: 100%;}
+
+.padleft {padding-left: 20px}
+.google-maps {
+    position: relative;
+    padding-bottom: 75%; // This is the aspect ratio
+    height: 0;
+    overflow: hidden;
+}
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
   @media (min-width: 600px) {
-    
+    .gbl{margin-bottom: 80px;}
+    .video-embed {height: 432px;}
   }
   
   @media (min-width: 768px) {
-    body {font-size:16px;}
-    .footer p {font-size: 16px;}
+    body {font-size:15px;}
+    .video-embed {height: 558px;}
+    .footer p {font-size: 15px;}
+    .fullbanner {margin-bottom: 40px}
+    .f2cols {margin: 40px}
+    .padleft {padding-left: 25px}
     
-    .frame-space-before-extra-small, .frame-space-after-extra-small {height: 15px;}
-    .frame-space-before-small,.frame-space-after-small {height: 25px;}
-    .frame-space-before-medium, .frame-space-after-medium {height: 30px;}
-    .frame-space-before-large, .frame-space-after-large {height: 40px;}
-    .frame-space-before-extra-large, .frame-space-after-extra-large {height: 50px;}
+    .frame-space-before-extra-small, .frame-space-after-extra-small {height: 12px;}
+    .frame-space-before-small,.frame-space-after-small {height: 18px;}
+    .frame-space-before-medium, .frame-space-after-medium {height: 22px;}
+    .frame-space-before-large, .frame-space-after-large {height: 30px;}
+    .frame-space-before-extra-large, .frame-space-after-extra-large {height: 38px;}
   }
   
   @media (min-width: 992px) {
-    
-    .frame-space-before-extra-small, .frame-space-after-extra-small {height: 20px;}
-    .frame-space-before-small,.frame-space-after-small {height: 30px;}
-    .frame-space-before-medium, .frame-space-after-medium {height: 40px;}
-    .frame-space-before-large, .frame-space-after-large {height: 60px;}
-    .frame-space-before-extra-large, .frame-space-after-extra-large {height: 80px;}
+    body {font-size:16px;}
+    .footer p {font-size: 16px;}
+    .video-embed {height: 576px;}
+    .mb60 {margin-bottom: 60px;}
+    .gbl{margin-bottom: 100px;}
+    .ce-uploads li { text-align: center; font-size: 17px;}
+    .padleft {padding-left: 30px}
+    .frame-space-before-extra-small, .frame-space-after-extra-small {height: 15px;}
+    .frame-space-before-small,.frame-space-after-small {height: 22px;}
+    .frame-space-before-medium, .frame-space-after-medium {height: 30px;}
+    .frame-space-before-large, .frame-space-after-large {height: 45px;}
+    .frame-space-before-extra-large, .frame-space-after-extra-large {height: 60px;}
   }
   
   @media (min-width: 1280px) {
    .container {
         max-width:1200px; 
     }
+    .video-embed {height: 810px;}
+    .gbl{margin-bottom: 120px;}
+    .frame-space-before-extra-small, .frame-space-after-extra-small {height: 15px;}
+    .frame-space-before-small,.frame-space-after-small {height: 30px;}
+    .frame-space-before-medium, .frame-space-after-medium {height: 45px;}
+    .frame-space-before-large, .frame-space-after-large {height: 60px;}
+    .frame-space-before-extra-large, .frame-space-after-extra-large {height: 90px;}
     
-    .frame-space-before-extra-small, .frame-space-after-extra-small {height: 20px;}
-    .frame-space-before-small,.frame-space-after-small {height: 40px;}
-    .frame-space-before-medium, .frame-space-after-medium {height: 60px;}
-    .frame-space-before-large, .frame-space-after-large {height: 80px;}
-    .frame-space-before-extra-large, .frame-space-after-extra-large {height: 120px;}
+    .fullbanner {margin-bottom: 60px}
+    .f2cols {display: table; margin: 60px 20px}
+    .padleft {padding-left: 40px}
+    .leftcol {float:left; padding-left: 60px; padding-right: 60px; margin-bottom: 0px; width: calc(100% - 770px);}
+    .rightcol {float:right; width: 770px;}
   }
   
    @media (min-width: 1440px) {
    .container {
         max-width:1400px; 
     }
+    .video-embed {height: 900px;}
+    .padleft {padding-left: 60px}
   }
-  
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     /* IE10+ CSS styles go here */
+     .header .siteHeader .container {overflow-y: hidden;}
+}
+@supports (-ms-accelerator:true) {
+  /* IE Edge 12+ CSS styles go here */ 
+  .header .siteHeader .container {overflow-y: hidden;}
+}
+
  @media (min-width: 1600px) {
    .container {
         max-width:1600px; 

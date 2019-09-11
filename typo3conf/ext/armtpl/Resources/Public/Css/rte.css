@@ -12,3 +12,9 @@ and open the template in the editor.
 .link {text-decoration: underline;}
 .cta {background-color: #000;border: 0px;text-align: center;color: #fff;}
 .mt60 {}
+.align-center {text-align: center}
+.align-left {text-align: left}
+.align-right {text-align: right}
+.text-center {text-align: center}
+.text-left {text-align: left}
+.text-right {text-align: right}

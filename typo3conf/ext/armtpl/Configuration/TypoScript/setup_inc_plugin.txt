@@ -1,12 +1,3 @@
-plugin.tx_powermail.settings.setup {
-    styles {
-        numberOfColumns = 1
-        framework {
-            rowClasses = row
-            fieldAndLabelWrappingClasses = form-group col-sm-10
-        }
-    }
-}
 
 plugin.tx_form {
     settings {
@@ -15,3 +6,31 @@ plugin.tx_form {
         }
     }
 }
+
+plugin.tx_indexedsearch{
+
+    view {
+        templateRootPaths {
+            0 = EXT:indexed_search/Resources/Private/Templates/
+            10 = {$plugin.tx_indexedsearch.view.templateRootPath}
+            20 = EXT:armtpl/Resources/Private/Templates/
+        }
+
+        partialRootPaths {
+            0 = EXT:indexed_search/Resources/Private/Partials/
+            10 = {$plugin.tx_indexedsearch.view.partialRootPath}
+            20 = EXT:armtpl/Resources/Private/Partials/Search/
+        }
+    }
+    settings {
+        displayAdvancedSearchLink = 0
+    }
+    _LOCAL_LANG {
+        default {
+            result.noResult = Keine Ergebnisse gefunden.
+            searchFor = Suchen nach
+            displayResults = Zeige Ergebnis <strong>%1$s bis %2$s</strong> von <strong>%3$s</strong>
+        }
+    }
+}
+
