@@ -39,7 +39,7 @@
 .introTxt p:last-child{margin-bottom: 0px !important;}
 
 .image-module{position: relative;}
-.image-module h2{margin-top: 80px; text-align: center;}
+.image-module h2{margin-top: 80px; margin-bottom: 30px; text-align: center;}
 .image-module .image-modulebox{margin-bottom: 80px;}
 .image-module .img-block{position: relative; display: block;}
 .image-module .img-block .img-box-link{position: relative; display: block;}
@@ -151,6 +151,33 @@ a.share:hover {
     }
     
 .gbl .gbl {margin-bottom: 0px!important;}
+.eightimgcontainer {width: 100%; display: flex; flex-wrap: wrap; margin-left: -5px;}
+.eightimgcontainer img {max-width: 100%; height: auto;}
+.eightimgcontainer .caption {font-weight: 600; text-align: center; line-height: 2.0;}
+/*
+.eightimgcontainer .twoimages {width: 50%; padding-right: 5px;}
+.eightimgcontainer .twoimages:last-child {padding-right: 0px; padding-left: 5px;}
+.eightimgcontainer .threeimages {width: 50%; padding-right: 5px;}
+.eightimgcontainer .threeimages:nth-child(even) {padding-right: 0px; padding-left: 5px;}
+.eightimgcontainer .fourimages {width: 50%; padding-right: 5px;}
+.eightimgcontainer .fourimages:nth-child(even) {padding-right: 0px; padding-left: 5px;}
+.eightimgcontainer .fiveimages {width: 50%; padding-right: 5px;}
+.eightimgcontainer .fiveimages:nth-child(even) {padding-right: 0px; padding-left: 5px;}
+.eightimgcontainer .siximages {width: 50%; padding-right: 5px;}
+.eightimgcontainer .siximages:nth-child(even) {padding-right: 0px; padding-left: 5px;}
+.eightimgcontainer .sevenimages {width: 50%; padding-right: 5px;}
+.eightimgcontainer .sevenimages:nth-child(even) {padding-right: 0px; padding-left: 5px;}
+.eightimgcontainer .eightimages {width: 50%; padding-right: 5px;}
+.eightimgcontainer .eightimages:nth-child(even) padding-right: 0px; padding-left: 5px;}
+*/
+
+.eightimgcontainer .twoimages {width: 50%; padding-left: 5px;}
+.eightimgcontainer .threeimages {width: 50%; padding-left: 5px;}
+.eightimgcontainer .fourimages {width: 50%; padding-left: 5px;}
+.eightimgcontainer .fiveimages {width: 50%; padding-left: 5px;}
+.eightimgcontainer .siximages {width: 50%; padding-left: 5px;}
+.eightimgcontainer .sevenimages {width: 50%; padding-left: 5px;}
+.eightimgcontainer .eightimages {width: 50%; padding-left: 5px;}
 
 @media screen and (max-width: 1100px) {
     .image-module h2{margin-top: 30px;}
@@ -172,6 +199,37 @@ a.share:hover {
     }
 }
 @media (min-width: 992px){
+    /*
+    .eightimgcontainer .twoimages {padding-right: 10px}
+    .eightimgcontainer .twoimages:last-child {padding-left: 10px}
+    .eightimgcontainer .threeimages {width: 33.3%; padding-right: 10px}
+    .eightimgcontainer .threeimages:nth-child(even) {padding-left: 0px; padding-right: 10px}
+    .eightimgcontainer .threeimages:last-child {padding-left: 10px;}
+    .eightimgcontainer .fourimages {width: 25%; padding-right: 10px}
+    .eightimgcontainer .fourimages:nth-child(even) {padding-left: 0px; padding-right: 10px}
+    .eightimgcontainer .fourimages:last-child {padding-left: 10px;}
+    .eightimgcontainer .fiveimages {width: 20%; padding-right: 10px}
+    .eightimgcontainer .fiveimages:nth-child(even) {padding-left: 0px; padding-right: 10px}
+    .eightimgcontainer .fiveimages:last-child {padding-left: 10px;}
+    .eightimgcontainer .siximages {width: 16.66%; padding-right: 8px}
+    .eightimgcontainer .siximages:nth-child(even) {padding-left: 0px; padding-right: 8px}
+    .eightimgcontainer .siximages:last-child {padding-left: 8px;}
+    .eightimgcontainer .sevenimages {width: 14.2%; padding-right: 7px}
+    .eightimgcontainer .sevenimages:nth-child(even) {padding-left: 0px; padding-right: 7px}
+    .eightimgcontainer .sevenimages:last-child {padding-left: 7px;}
+    .eightimgcontainer .eightimages {width: 25%; padding-right: 10px}
+    .eightimgcontainer .eightimages:nth-child(even) {padding-left: 0px; padding-right: 10px}
+    .eightimgcontainer .eightimages:nth-child(4n+4) {padding-left: 10px; padding-right: 0px}
+    */
+    .eightimgcontainer {margin-left: -10px;}
+    .eightimgcontainer .twoimages {padding-left: 10px;}
+    .eightimgcontainer .threeimages {width: 33.3%; padding-left: 10px;}
+    .eightimgcontainer .fourimages {width: 25%; padding-left: 10px;}
+    .eightimgcontainer .fiveimages {width: 20%; padding-left: 10px;}
+    .eightimgcontainer .siximages {width: 16.66%; padding-left: 10px;}
+    .eightimgcontainer .sevenimages {width: 14.2%; padding-left: 10px;}
+    .eightimgcontainer .eightimages {width: 25%; padding-left: 10px;}
+
     .swiper-button-next, .swiper-button-prev{
   	-webkit-transform: translateY(-50%);
   	-ms-transform: translateY(-50%);
@@ -219,4 +277,71 @@ a.share:hover {
 
 @media (min-width: 1280px) {
     .toplang a:first-child {margin-right: 10px;}
+    /*
+    .eightimgcontainer .eightimages {width: 12.5%; padding-right: 5px}
+    .eightimgcontainer .eightimages:nth-child(even) {padding-left: 0px; padding-right: 5px}
+    .eightimgcontainer .eightimages:nth-child(4n+4) {padding-left: 0px; padding-right: 5px}
+    .eightimgcontainer .eightimages:last-child {padding-left: 5px; padding-right: 0px}
+    */
+    .eightimgcontainer .eightimages {width: 12.5%;}
+}
+@media (min-width: 1352px) {
+    .eightimgcontainer {width: 101%;}
+}
+@media (min-width: 1440px) {
+    /*
+    .eightimgcontainer .twoimages {padding-right: 15px}
+    .eightimgcontainer .twoimages:last-child {padding-left: 15px}
+    .eightimgcontainer .threeimages {padding-right: 15px}
+    .eightimgcontainer .threeimages:nth-child(even) {padding-right: 15px}
+    .eightimgcontainer .threeimages:last-child {padding-left: 15px;}
+    .eightimgcontainer .fourimages {padding-right: 15px}
+    .eightimgcontainer .fourimages:nth-child(even) {padding-right: 15px}
+    .eightimgcontainer .fourimages:last-child {padding-left: 15px;}
+    .eightimgcontainer .fiveimages {padding-right: 15px}
+    .eightimgcontainer .fiveimages:nth-child(even) {padding-right: 15px}
+    .eightimgcontainer .fiveimages:last-child {padding-left: 15px;}
+    .eightimgcontainer .siximages {padding-right: 12px}
+    .eightimgcontainer .siximages:nth-child(even) {padding-right: 12px}
+    .eightimgcontainer .siximages:last-child {padding-left: 12px;}
+    .eightimgcontainer .sevenimages {padding-right: 10px}
+    .eightimgcontainer .sevenimages:nth-child(even) {padding-right: 10px}
+    .eightimgcontainer .sevenimages:last-child {padding-left: 10px;}
+    */
+    .eightimgcontainer {margin-left: -15px;}
+    .eightimgcontainer .twoimages {padding-left: 15px;}
+    .eightimgcontainer .threeimages {padding-left: 15px;}
+    .eightimgcontainer .fourimages {padding-left: 15px;}
+    .eightimgcontainer .fiveimages {padding-left: 15px;}
+    .eightimgcontainer .siximages {padding-left: 15px;}
+    .eightimgcontainer .sevenimages {padding-left: 15px;}
+    .eightimgcontainer .eightimages {padding-left: 15px;}
+}
+
+@media (min-width: 1600px) {
+    /*
+    .eightimgcontainer .twoimages {padding-right: 20px}
+    .eightimgcontainer .twoimages:last-child {padding-left: 20px}
+    .eightimgcontainer .threeimages {padding-right: 20px}
+    .eightimgcontainer .threeimages:nth-child(even) {padding-right: 20px}
+    .eightimgcontainer .threeimages:last-child {padding-left: 20px;}
+    .eightimgcontainer .fourimages {padding-right: 20px}
+    .eightimgcontainer .fourimages:nth-child(even) {padding-right: 20px}
+    .eightimgcontainer .fourimages:last-child {padding-left: 20px;}
+    .eightimgcontainer .siximages {padding-right: 15px}
+    .eightimgcontainer .siximages:nth-child(even) {padding-right: 15px}
+    .eightimgcontainer .siximages:last-child {padding-left: 15px;}
+    .eightimgcontainer .eightimages {padding-right: 10px}
+    .eightimgcontainer .eightimages:nth-child(even) {padding-left: 0px; padding-right: 10px}
+    .eightimgcontainer .eightimages:nth-child(4n+4) {padding-left: 0px; padding-right: 10px}
+    .eightimgcontainer .eightimages:last-child {padding-left: 10px; padding-right: 0px}
+    */
+    .eightimgcontainer {margin-left: -20px;}
+    .eightimgcontainer .twoimages {padding-left: 20px;}
+    .eightimgcontainer .threeimages {padding-left: 20px;}
+    .eightimgcontainer .fourimages {padding-left: 20px;}
+    .eightimgcontainer .fiveimages {padding-left: 20px;}
+    .eightimgcontainer .siximages {padding-left: 20px;}
+    .eightimgcontainer .sevenimages {padding-left: 20px;}
+    .eightimgcontainer .eightimages {padding-left: 20px;}
 }

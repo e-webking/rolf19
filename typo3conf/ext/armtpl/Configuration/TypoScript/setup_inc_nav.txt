@@ -169,7 +169,8 @@ lib.language {
     20 = HMENU
     20 {
         special = language
-        special.value = 0,1
+        #special.value = 0,1
+        special.value = 0 
         special.normalWhenNoLanguage = 0
         wrap =
         1 = TMENU
@@ -204,7 +205,8 @@ lib.toplang {
     20 = HMENU
     20 {
         special = language
-        special.value = 0,1
+        #special.value = 0,1
+        special.value = 0
         special.normalWhenNoLanguage = 0
         wrap =
         1 = TMENU

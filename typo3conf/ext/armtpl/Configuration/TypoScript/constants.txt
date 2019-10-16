@@ -19,5 +19,5 @@ show_pinterest=1
 show_instagram=1
 
 [globalString = ENV:HTTPS=on]
-baseUrl = https://new.rolf-benz.haus/
+baseUrl = https://www.rolf-benz.haus/
 [end]

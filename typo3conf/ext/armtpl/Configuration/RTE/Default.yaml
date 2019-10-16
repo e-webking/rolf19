@@ -42,6 +42,7 @@ editor:
         - { name: "Black button", element: "a", attributes: { 'class': 'cta' }}
         - { name: "CTA button", element: "a", attributes: { 'class': 'ctawhite' }}
         - { name: "top-margin", element: "a", attributes: { 'class': 'mt60' }}
+        - { name: "Gray link", element: "a", attributes: { 'class': 'graylink' }}
         - { name: "align-left", element: 'p', attributes: { 'class': 'align-left' }}
         - { name: "align-center", element: 'p', attributes: { 'class': 'align-center' }}
         - { name: "align-right", element: 'p', attributes: { 'class': 'align-right' }}     

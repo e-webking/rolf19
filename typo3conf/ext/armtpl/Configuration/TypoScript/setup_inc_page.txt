@@ -55,7 +55,7 @@ page.meta {
   keywords.field = keywords
   og:title.field = title
   og:description.field = description
-  og:url = http://new.rolf-benz.haus/
+  og:url = https://www.rolf-benz.haus/
   og:site_name = Rolf-Benz
   og:type = website
 }
@@ -90,7 +90,7 @@ page.headerData.15.value (
 <![endif]-->
 
 )
-page.shortcutIcon = /favicon.ico
+page.shortcutIcon = favicon.ico
 page.includeCSS {
     file01 = {$templatePath}Resources/Public/Css/vendor/bootstrap.min.css
     file02 = {$templatePath}Resources/Public/Css/vendor/bootstrap-grid.min.css
