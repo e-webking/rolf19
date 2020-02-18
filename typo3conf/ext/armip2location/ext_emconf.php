@@ -1,8 +1,8 @@
 <?php
 /***************************************************************
- * Extension Manager/Repository config file for ext "armtpl".
+ * Extension Manager/Repository config file for ext "armdealers".
  *
- * Auto generated 25-07-2014 06:18
+ * Auto generated 04-06-2019 06:18
  *
  * Manual updates:
  * Only the data in the array - everything else is removed by next
@@ -10,9 +10,9 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array (
-	'title' => 'Rolf-Benz Bootstrap Template',
-	'description' => 'TYPO3 9.5.x bootstrap template extension',
-	'category' => 'templates',
+	'title' => 'Rolf-Benz Dealer',
+	'description' => 'Search dealers with zipcode',
+	'category' => 'plugins',
 	'author' => 'Anisur R. Mullick',
 	'author_email' => 'anisur@armtechnologies.com',
 	'author_company' => 'ARM Technologies',
@@ -26,7 +26,7 @@ $EM_CONF[$_EXTKEY] = array (
 	'modify_tables' => '',
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
-	'version' => '8.4.0',
+	'version' => '8.4.2',
 	'constraints' =>
 	array (
 		'depends' =>

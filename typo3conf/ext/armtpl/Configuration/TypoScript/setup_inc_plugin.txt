@@ -30,6 +30,9 @@ plugin.tx_indexedsearch{
             form.legend = Suche
             form.searchFor = Suchen nach
             form.submit = Suche
+            displayResults.previous = < bisherige
+            displayResults.page = Seite
+            displayResults.next = nächste >
             result.noResult = Keine Ergebnisse gefunden.
             searchFor = Suchen nach
             displayResults = Zeige Ergebnis <strong>%1$s bis %2$s</strong> von <strong>%3$s</strong>
@@ -41,6 +44,11 @@ UND, ODER und NICHT sind Füllwörter, die nicht berücksichtigt werden<br />
 +/|/- entsprechen UND, ODER und NICHT<br />
 Alle Suchbegriffe werden in Kleinbuchstaben konvertiert.
             )
+        }
+        fr {
+            displayResults.previous = < précédent
+            displayResults.page = Page
+            displayResults.next = suivant >
         }
     }
 }

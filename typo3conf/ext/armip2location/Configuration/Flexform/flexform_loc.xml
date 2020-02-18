@@ -1,0 +1,30 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Thank you Page</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+         			<settings.thanku>
+                                            <TCEforms>
+                                                    <label>LLL:EXT:armkurslist/Resources/Private/Language/locallang_flexform.xlf:kurzzeitgymnasiumferien.title</label>
+                                                    <config>
+                                                        <type>group</type>
+                                                        <internal_type>db</internal_type>
+                                                        <allowed>pages</allowed>
+                                                        <size>1</size>
+                                                        <maxitems>1</maxitems>
+                                                        <minitems>0</minitems>
+                                                    </config>
+                                            </TCEforms>
+         			</settings.thanku>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

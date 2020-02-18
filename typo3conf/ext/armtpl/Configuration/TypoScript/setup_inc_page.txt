@@ -88,8 +88,18 @@ page.headerData.15.value (
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
 )
+page.headerData.20 = TEXT
+page.headerData.20.value (
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N32NXNR');</script>
+<!-- End Google Tag Manager -->
+)
+
 page.shortcutIcon = favicon.ico
 page.includeCSS {
     file01 = {$templatePath}Resources/Public/Css/vendor/bootstrap.min.css
@@ -147,6 +157,10 @@ page.10 {
         2 = TEXT
         2.value = {$templatePath}Resources/Private/Templates/twocol.html
 
+         # 3 landing page - feb2020
+        3 = TEXT
+        3.value = {$templatePath}Resources/Private/Templates/landing.html
+
     }
 
     variables {
@@ -164,8 +178,20 @@ page.10 {
 
 ## Languages
 [siteLanguage("languageId") == "1"]
+config.sys_language_uid = 1
 config.language = fr
 config.locale_all = fr_FR.UTF-8
-config.htmlTag_langKey = fr-FR
-config.sys_language_uid = 1
+config.htmlTag_setParams = lang="fr" dir="ltr" class="no-js"
+page.headerData.20 = TEXT
+page.headerData.20.value (
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150525882-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-150525882-1');
+</script>
+)
 [global]

@@ -12,6 +12,7 @@ lib.logo {
 lib.mainMenu = HMENU
 lib.mainMenu {
 
+    excludeUidList = 84,85,128
     wrap = <ul>|</ul>
     
     1 = TMENU
@@ -21,13 +22,11 @@ lib.mainMenu {
 
         NO {
             wrapItemAndSub = <li class="l0">|</li>
-            ATagTitle.field = description // title
         }
         
         IFSUB = 1
         IFSUB {
             wrapItemAndSub = <li class="l0">|</li>
-            ATagTitle.field = description // title
         }
     }
     2 = TMENU
@@ -37,22 +36,20 @@ lib.mainMenu {
         stdWrap.dataWrap = <ul class="childMenu">|</ul>
         NO {
             wrapItemAndSub = <li>|</li>
-            ATagTitle.field = description // title
         }
         IFSUB = 1
         IFSUB {
             wrapItemAndSub = <li>|</li>
-            ATagTitle.field = description // title
         }
     }
 
     3 = TMENU
     3 {
+        
         wrap = <ul class="sub-childMenu">|</ul>
         noBlur=1
         NO {
             wrapItemAndSub = <li>|</li>
-            ATagTitle.field = description // title
             stdWrap.htmlSpecialChars = 1
         }
     }
@@ -72,7 +69,6 @@ lib.breadcrumb {
     1 {
   
         NO.allWrap = <li>|</li>
-        NO.ATagTitle.field = description // title
     }
 }
 
@@ -85,27 +81,25 @@ lib.footerMenu {
     1 {
   
         NO.allWrap = <li>|</li>
-        NO.ATagTitle.field = description // title
     }
 }
 
 lib.mobMenu = HMENU
 lib.mobMenu {
  	entryLevel = 0
+        excludeUidList = 84,85,128
  	wrap = | 	
  	1 = TMENU
 	1 {
 		expAll = 1
 		noBlur=1
 		NO {
- 			ATagTitle.field = description // title
  			stdWrap.htmlSpecialChars = 1
    			wrapItemAndSub = <li>|</li>
 		}
 		ACT= 1
 		ACT {
 			stdWrap.innerWrap= |
- 			ATagTitle.field = title // description
  			stdWrap.htmlSpecialChars = 1
    			wrapItemAndSub = <li class="active">|</li>
 		}
@@ -119,7 +113,6 @@ lib.mobMenu {
 		NO = 1
 		NO {
   			wrapItemAndSub = <li>|</li>
-   			ATagTitle.field = description // title
    			stdWrap.htmlSpecialChars = 1
  		}
  		ACT= 1
@@ -133,7 +126,6 @@ lib.mobMenu {
 		NO = 1
 		NO {
    			wrapItemAndSub = <li>|</li>
-   			ATagTitle.field = description // title
    			stdWrap.htmlSpecialChars = 1
  		}
  
@@ -169,8 +161,8 @@ lib.language {
     20 = HMENU
     20 {
         special = language
-        #special.value = 0,1
-        special.value = 0 
+        special.value = 0,1
+        #special.value = 0 
         special.normalWhenNoLanguage = 0
         wrap =
         1 = TMENU
@@ -180,7 +172,7 @@ lib.language {
             NO {
                 doNotLinkIt = 1
                 linkWrap = <li>|</li>
-                stdWrap.override = Deutschland || Française
+                stdWrap.override = Deutsch || Français
                 stdWrap {
                     typolink {
                         parameter.data = page:uid
@@ -205,8 +197,7 @@ lib.toplang {
     20 = HMENU
     20 {
         special = language
-        #special.value = 0,1
-        special.value = 0
+        special.value = 0,1
         special.normalWhenNoLanguage = 0
         wrap =
         1 = TMENU
@@ -233,3 +224,8 @@ lib.toplang {
     }
     wrap = |
 }
+
+[ARM\Armip2location\TypoScript\CountryCondition AT]
+lib.mainMenu.excludeUidList = 8,83,40,41,42
+lib.mobMenu.excludeUidList = 8,83,40,41,42
+[global]

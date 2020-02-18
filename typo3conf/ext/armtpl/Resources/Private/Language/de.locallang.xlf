@@ -1,21 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <xliff version="1.0">
 	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2019-05-06T23:46:34Z" product-name="armtpl">
 		<header/>
 		<body>
-			<trans-unit id="search">
-				<target>SUCHE</target>
+			<trans-unit id="search" resname="search">
+                            <source>Search</source>
+                            <target>SUCHE</target>
 			</trans-unit>
-                        <trans-unit id="language">
-				<target>Sprache</target>
+                        <trans-unit id="language" resname="language">
+                            <source>Language</source>
+                            <target>Sprache</target>
 			</trans-unit>
                         <trans-unit id="follow">
 				<target>Follow us</target>
 			</trans-unit>
-                        <trans-unit id="links">
-				<target>Unternehmen</target>
+                        <trans-unit id="links" resname="links">
+                            <source>Links</source>
+                            <target>Unternehmen</target>
 			</trans-unit>
-                        <trans-unit id="element.Form.renderingOptions.submitButtonLabel">
+                        <trans-unit id="element.Form.renderingOptions.submitButtonLabel" resname="element.Form.renderingOptions.submitButtonLabel">
+                            <source>Submit</source>
                             <target>Senden</target>
 			</trans-unit>
                         <trans-unit id="finisher.EmailToReceiver.subject">

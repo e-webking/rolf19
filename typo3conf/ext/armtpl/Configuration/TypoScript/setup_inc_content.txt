@@ -65,6 +65,15 @@ lib.footerCMS {
     languageField = sys_language_uid
 }
 
+lib.contentFifteen = COA
+lib.contentFifteen < lib.contentmain
+lib.contentFifteen.20.select.where = colPos = 15
+
+lib.contentTwentyFive = COA
+lib.contentTwentyFive < lib.contentmain
+lib.contentTwentyFive.20.select.where = colPos = 25
+
+
 #################
 # Frames
 #################
@@ -95,4 +104,6 @@ tt_content.stdWrap.innerWrap.cObject {
   109.value = <div class="text-center">|</div>
   110 = TEXT
   110.value = <div class="padleft">|</div>
+  115 = TEXT
+  115.value = <div class="negate-above-gbl">|</div>
 }

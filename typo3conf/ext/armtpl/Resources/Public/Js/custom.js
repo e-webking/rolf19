@@ -12,8 +12,8 @@ var swiper = new Swiper('.swiper-container', {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-        });
-        
+});
+
 window.addEventListener("load", function(){
 window.cookieconsent.initialise({
   "palette": {
@@ -41,25 +41,23 @@ $(document).ready(function() {
 });
 */
 document.addEventListener(
-      "DOMContentLoaded", () => {
-         new Mmenu( "#menu", {
-            // options
-         }, {
-            // configuration
-            classNames: {
-               fixedElements: {
-                  fixed: "fix",
-                  sticky: "stick"
-               }
-            }
-         });
-      }
-   );
-   
-   $(document).ready(function(){
-       $('#tx-indexedsearch-searchbox-sword').on('blur', function (){
-          if ($('#tx-indexedsearch-searchbox-sword').val()!='') {
-             $('#top-search-lbl').html(''); 
+    "DOMContentLoaded", function() {
+    new Mmenu("#menu", {
+       // options
+    }, {
+       // configuration
+       classNames: {
+          fixedElements: {
+             fixed: "fix",
+             sticky: "stick"
           }
-       });
-   });
+       }
+    })});
+   
+$(document).ready(function(){
+    $('#tx-indexedsearch-searchbox-sword').on('blur', function (){
+       if ($('#tx-indexedsearch-searchbox-sword').val()!='') {
+          $('#top-search-lbl').html(''); 
+       }
+    });
+});

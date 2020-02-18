@@ -53,7 +53,10 @@ h4 {
     font-size: 16px;
     line-height: 20px;
 }
-
+.ld2020 h1{font-size: 20px;line-height: 24px;margin-bottom: 10px;}
+.ld2020 h2{font-size: 18px;line-height: 20px;margin-bottom: 10px;}
+.ld2020 h3{font-size: 16px;line-height: 20px;margin-bottom: 10px;}
+.ld2020 p{font-size: 12px;}
 
 ::-webkit-input-placeholder {color:#000; opacity: 1;}
 ::-moz-placeholder {color:#000; opacity: 1;}
@@ -97,21 +100,15 @@ a:hover {
 label {font-weight:normal;}
 .image-embed-item {width: inherit!important; max-width: 100%!important;}
 .bootstrap-tagsinput {margin-bottom:0px;}
-
 .label-info {background-color: #b32017;}
-
 .label {font-size:18px; font-weight:normal;}
-
 .bootstrap-tagsinput .tag {margin:2px; display:inline-block;}
 
 .btn:focus, .btn:active:focus, .btn.active:focus {
     outline: none; outline-offset:0px;  
     outline: 0px auto -webkit-focus-ring-color;
 }
-
-
 .form-control:focus{box-shadow: inherit;}
-
 .wrapper{   
     padding:0px 0 0; margin:0px auto; position: relative;
     width:100%; height:100%; z-index: 3;
@@ -136,10 +133,14 @@ label {font-weight:normal;}
 .rightcol {width: 100%}
 
 .gbl{margin-bottom: 60px;}
+.negate-above-gbl {margin-top: -60px;}
 
 .cta{background-color: #000; border: 0; display: inline-block; min-width: 200px;text-align: center; color: #fff;padding: 10px 20px; font-size: 18px; letter-spacing: 0.1em;}
 .ctawhite {display: table; min-width: 350px; height: 70px; margin: 0 auto; padding: 0 10px; line-height: 64px; vertical-align: middle; text-align: center; background: #fff; border: 2px solid #000; color: #000 !important; font-size: 16pt; font-weight: bold}
 .ctawhite:hover {background: #000; color: #fff !important; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+.ld2020 .cta {background-color: #b0e2e3; color: #000; font-weight: 600; min-width: 260px; height: 42px; line-height: 40px; padding: 0;}
+.ld2020 .cta:hover {color: #fff; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+.ld2020 .width50 .ctawhite {min-width: 260px; height: 42px; line-height: 40px; font-size: 14px; background-color: #b0e2e3; border: 0px; }
 
 .txt-link{font-weight: 700; color: #999;}
 .txt-link:hover{color: #000;}
@@ -197,6 +198,7 @@ label {font-weight:normal;}
 }
   @media (min-width: 600px) {
     .gbl{margin-bottom: 80px;}
+    .negate-above-gbl {margin-top: -80px;}
     .video-embed {height: 432px;}
   }
   
@@ -225,10 +227,15 @@ label {font-weight:normal;}
     h2 {
         margin-bottom: 10px;
     }
+    .ld2020 h1{font-size: 24px;line-height: 28px;margin-bottom: 20px;}
+    .ld2020 h2{font-size: 20px;line-height: 24px;margin-bottom: 15px;}
+    .ld2020 h3{font-size: 18px;line-height: 20px;margin-bottom: 15px;}
+    .ld2020 p{font-size: 14px;}
     .footer p {font-size: 16px;}
     .video-embed {height: 576px;}
     .mb60 {margin-bottom: 60px;}
     .gbl{margin-bottom: 100px;}
+    .negate-above-gbl {margin-top: -100px;}
     .ce-uploads li { text-align: center; font-size: 17px;}
     .padleft {padding-left: 30px}
     /*
@@ -248,6 +255,7 @@ label {font-weight:normal;}
     .frame-space-after-large{margin-bottom: 40px;}
     .frame-space-before-extra-large{margin-top: 60px;}
     .frame-space-after-extra-large {margin-bottom: 60px;}
+    .ld2020 .width50 .ctawhite {position: absolute; bottom: 16px; font-size: 16px}
   }
   
   @media (min-width: 1280px) {
@@ -255,8 +263,10 @@ label {font-weight:normal;}
         max-width:1200px; 
     }
     .video-embed {height: 810px;}
-    .gbl{margin-bottom: 100px;}
-    
+    .ld2020 h1{font-size: 30px;line-height: 36px;margin-bottom: 30px;}
+    .ld2020 h2{font-size: 26px;line-height: 28px;margin-bottom: 20px;}
+    .ld2020 h3{font-size: 22px;line-height: 26px;margin-bottom: 20px;}
+    .ld2020 p{font-size: 16px;}
     /*
     .frame-space-before-extra-small, .frame-space-after-extra-small {height: 15px;}
     .frame-space-before-small,.frame-space-after-small {height: 30px;}
@@ -269,6 +279,7 @@ label {font-weight:normal;}
     .padleft {padding-left: 40px}
     .leftcol {float:left; padding-left: 60px; padding-right: 60px; margin-bottom: 0px; width: calc(100% - 770px);}
     .rightcol {float:right; width: 770px;}
+    .ld2020 .width50 .ctawhite {font-size: 18px}
   }
   
    @media (min-width: 1440px) {
@@ -281,7 +292,7 @@ label {font-weight:normal;}
     .video-embed {height: 900px;}
     .padleft {padding-left: 60px}
     .gbl{margin-bottom: 120px;}
-    
+    .negate-above-gbl {margin-top: -120px;}
     .frame-space-before-extra-small{margin-top: 20px;}
     .frame-space-after-extra-small {margin-bottom: 20px;}
     .frame-space-before-small{margin-top: 40px;}
@@ -292,6 +303,7 @@ label {font-weight:normal;}
     .frame-space-after-large{margin-bottom: 80px;}
     .frame-space-before-extra-large{margin-top: 100px;}
     .frame-space-after-extra-large {margin-bottom: 100px;}
+    .ld2020 .width50 .ctawhite {bottom: 18px}
   }
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
      /* IE10+ CSS styles go here */

@@ -132,5 +132,25 @@ tt_content.gridelements_pi1.variables.content.10.setup.10 {
     }
 }
 
+tt_content.gridelements_pi1.variables.content.10.setup.11 < lib.gridelements.defaultGridSetup
+tt_content.gridelements_pi1.variables.content.10.setup.11 {
+    cObject {
+        templateName = TestSlider_11
+        templateRootPaths {
+            20 = EXT:armtpl/Resources/Private/Templates/GridElements/
+        }
+    }
+}
+
+tt_content.gridelements_pi1.variables.content.10.setup.12 < lib.gridelements.defaultGridSetup
+tt_content.gridelements_pi1.variables.content.10.setup.12 {
+    cObject {
+        templateName = SlideImagetext_12
+        templateRootPaths {
+            20 = EXT:armtpl/Resources/Private/Templates/GridElements/
+        }
+    }
+}
+
 #tt_content.gridelements_pi1.stdWrap.wrap = <div class="content-frame gridWrap frame-{field:frame_class} frame-layout-{field:layout} frame-space-before-{field:space_before_class} frame-space-after-{field:space_after_class}" id="c{field:uid}">|</div>
 #tt_content.gridelements_pi1.stdWrap.wrap.insertData = 1

@@ -1,0 +1,37 @@
+<!--TYPO3SEARCH_begin-->
+<div class="wrapper ld2020">
+    <header class="landing-header">
+        <div class="container">
+            <div class="logo"><f:cObject typoscriptObjectPath="lib.logo" /></div>
+        </div>
+         <div class="container">
+            <div class="flexwrap">
+                <div class="width50">
+                    <f:cObject typoscriptObjectPath="lib.contentFifteen" />
+                </div>
+                <div class="width50 indentleft">
+                    <f:cObject typoscriptObjectPath="lib.contentTwentyFive" />
+                </div>
+            </div>
+         </div>
+    </header>
+    <f:cObject typoscriptObjectPath="lib.contentmain" />
+</div>
+<!--TYPO3SEARCH_end-->
+
+<script type="text/javascript">
+   document.addEventListener(
+    "DOMContentLoaded", function() {
+        var swiperTes = new Swiper('.swiper-testimonial', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            keyboard: {
+                enabled: true,
+            },
+            pagination: {
+                el: '.pagination-testimonial',
+                clickable: true,
+            }
+        });
+    });
+</script>
