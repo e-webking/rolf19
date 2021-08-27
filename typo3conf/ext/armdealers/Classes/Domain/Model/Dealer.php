@@ -38,6 +38,13 @@ class Dealer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @var string
      */
+    protected $iso2cn = '';
+
+
+    /**
+     *
+     * @var string
+     */
     protected $country = '';
 
 
@@ -59,7 +66,7 @@ class Dealer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @var int
      */
-    protected $dealerpg;
+    protected $dealerpg = 0;
     
     /**
      *
@@ -86,6 +93,12 @@ class Dealer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var double
      */
     protected $lng = 0.000000;
+    
+    /**
+     *
+     * @var string
+     */
+    protected $dispmsg = '';
 
     /**
      * zipcodes
@@ -223,6 +236,27 @@ class Dealer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
     
     /**
+     * Returns the iso2cn
+     *
+     * @return string $iso2cn
+     */
+    public function getIso2cn()
+    {
+        return $this->iso2cn;
+    }
+
+    /**
+     * Sets the iso2cn
+     *
+     * @param string $iso2cn
+     * @return void
+     */
+    public function setIso2cn($iso2cn)
+    {
+        $this->iso2cn = $iso2cn;
+    }
+    
+    /**
      * Returns the country
      *
      * @return string $country
@@ -242,7 +276,6 @@ class Dealer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->country = $country;
     }
-    
     
     /**
      * Returns the phone
@@ -304,7 +337,7 @@ class Dealer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     public function setDealerpg($dealerpg)
     {
-        $this->dealerpg = $dealerpg;
+        $this->dealerpg = (int)$dealerpg;
     }
     
     /**
@@ -389,6 +422,25 @@ class Dealer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setLng($lng)
     {
         $this->lng = $lng;
+    }
+    
+    /**
+     * 
+     * @param string $dispmsg
+     * @return void
+     */
+    public function setDispmsg($dispmsg)
+    {
+        $this->dispmsg = $dispmsg;
+    }
+    
+    /**
+     * 
+     * @return string 
+     */
+    public function getDispmsg()
+    {
+        return $this->dispmsg;
     }
 
     /**

@@ -1,0 +1,19 @@
+plugin.tx_armip2location {
+    view {
+        # cat=plugin.tx_armip2location/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:armip2location/Resources/Private/Templates/
+        # cat=plugin.tx_armip2location/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:armip2location/Resources/Private/Partials/
+        # cat=plugin.tx_armip2location/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:armip2location/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_armip2location//a; type=string; label=Default storage PID
+        storagePid = 
+    }
+    settings {
+        apiKey = FUCTT7BAP7
+        mode = WS1
+        useLocal = 1
+    }
+}

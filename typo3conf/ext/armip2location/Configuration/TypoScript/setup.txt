@@ -1,0 +1,18 @@
+plugin.tx_armip2location {
+    view {
+        templateRootPaths.0 = EXT:armip2location/Resources/Private/Templates/
+        templateRootPaths.10 = {$plugin.tx_armip2location.view.templateRootPath}
+        partialRootPaths.0 = EXT:armip2location/Resources/Private/Partials/
+        partialRootPaths.10 = {$plugin.tx_armip2location.view.partialRootPath}
+        layoutRootPaths.0 = EXT:armip2location/Resources/Private/Layouts/
+        layoutRootPaths.10 = {$plugin.tx_armip2location.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_armip2location.persistence.storagePid}
+    }
+    settings {
+        apiKey = {$plugin.tx_armip2location.settings.apiKey}
+        mode = {$plugin.tx_armip2location.settings.mode}
+        useLocal = {$plugin.tx_armip2location.settings.useLocal}
+    }
+}

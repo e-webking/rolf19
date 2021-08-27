@@ -1,0 +1,2 @@
+freisPID = 229
+logoFreisFile = typo3conf/ext/freistiltpl/Resources/Public/Images/freistil_logo.svg

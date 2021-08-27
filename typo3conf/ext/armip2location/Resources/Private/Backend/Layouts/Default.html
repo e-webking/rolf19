@@ -1,0 +1,39 @@
+<f:be.container loadExtJs="true" >
+	<div class="typo3-fullDoc">
+		<div id="typo3-docheader">
+			<div class="typo3-docheader-functions">
+				<div class="left">
+					<f:if condition="{settings.access}">
+					<f:be.menus.actionMenu>
+						<f:be.menus.actionMenuItem label="Migrate CSV data" controller="Ipdata" action="dblist" />
+					</f:be.menus.actionMenu>
+					</f:if>
+				</div>
+				<div class="right">
+					<f:be.pagePath />
+					<f:be.pageInfo />
+				</div>
+			</div>
+			<div class="typo3-docheader-buttons">
+				<div class="left">
+					<f:be.buttons.csh />
+				</div>
+				<div class="right">
+					<f:be.buttons.shortcut />
+				</div>
+			</div>
+		</div>
+		<div id="typo3-docbody">
+			<div id="typo3-inner-docbody">
+                                <f:flashMessages as="flashMessages">
+                                    <div class="messages">
+                                    <f:for each="{flashMessages}" as="msg">
+                                        <div class="message-ok">{msg.message}</div>
+                                    </f:for>
+                                    </div>
+                                </f:flashMessages> 
+				<f:render section="content" />
+			</div>
+		</div>
+	</div>
+</f:be.container>

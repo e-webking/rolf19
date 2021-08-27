@@ -1,0 +1,15 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+    
+    ARM\Armip2location\:
+        resource: '../Classes/*'
+        exclude: '../Classes/Domain/Model/*'
+    
+    ARM\Armip2location\Command\ImportCommand:
+        tags:
+        - name: 'console.command'
+          command: 'armip2location:import'
+          description: 'Import the IP database from the CSV file (v10)'

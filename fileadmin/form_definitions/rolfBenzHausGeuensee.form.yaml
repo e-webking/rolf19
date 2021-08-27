@@ -1,25 +1,40 @@
 
 renderingOptions:
   submitButtonLabel: Senden
-identifier: rolfBenzHausLuzern
-label: 'Rolf Benz Haus Luzern'
+identifier: rolfBenzHausGeuensee
+label: 'Rolf Benz Haus Geuensee'
 prototypeName: standard
 type: Form
 finishers:
   -
     options:
-      subject: 'Contact form filled'
-      recipientAddress: luzern@rolf-benz.haus
-      recipientName: 'Rolf Benz Haus Luzern'
-      senderAddress: nobody@rolf-benz.haus
+      subject: 'Ihre Nachricht an das Rolf Benz Haus'
+      recipientAddress: geuensee@rolf-benz.haus
+      recipientName: 'Rolf Benz Haus Geuensee'
+      senderAddress: rolfbenzhaus@rolfbenz.haus
       senderName: '{vorname} {name}'
       replyToAddress: '{email}'
-      carbonCopyAddress: '{email}'
       format: html
       attachUploads: false
       translation:
         language: de
     identifier: EmailToReceiver
+  - 
+    options:
+      subject: 'Thank you for your mail'
+      recipientAddress: '{email}'
+      recipientName: '{vorname} {name}'
+      senderAddress: geuensee@rolf-benz.haus
+      senderName: 'Rolf Benz Haus Geuensee'
+      replyToAddress: ''
+      carbonCopyAddress: ''
+      blindCarbonCopyAddress: ''
+      format: html
+      attachUploads: 'false'
+      templateName: '{@format}.html'
+      templateRootPaths:
+          20: 'EXT:armtpl/Resources/Private/Forms/Emails/Sender/'
+    identifier: EmailToSender
   -
     options:
       pageUid: '75'

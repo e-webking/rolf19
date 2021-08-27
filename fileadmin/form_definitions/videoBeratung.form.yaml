@@ -1,0 +1,86 @@
+
+renderingOptions:
+  submitButtonLabel: Senden
+type: Form
+identifier: videoBeratung
+label: 'Live Video Beratung'
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: 'Live Video Beratung'
+      recipientAddress: rapperswil@rolf-benz.haus
+      recipientName: rapperswil@rolf-benz.haus
+      senderAddress: rapperswil@rolf-benz.haus
+      senderName: rapperswil@rolf-benz.haus
+      replyToAddress: ''
+      carbonCopyAddress: ''
+      blindCarbonCopyAddress: ''
+      format: html
+      attachUploads: false
+      translation:
+        language: ''
+    identifier: EmailToReceiver
+  -
+    options:
+      message: 'Herzlichen Dank für Ihre Anmeldung für eine Live Video Beratung. Wir rufen Sie zur gewünschten Zeit an.'
+      contentElementUid: ''
+    identifier: Confirmation
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-1
+    label: ''
+    renderables:
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-1
+        label: 'Vorname und Name'
+        properties:
+          elementDescription: ''
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Telephone
+        identifier: telephone-1
+        label: 'Mobil Phone Nummer'
+        properties:
+          containerClassAttribute: col-sm-9 col-md-8
+          elementDescription: ''
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-2
+        label: 'Datum / Tag'
+        properties:
+          elementDescription: ''
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-3
+        label: 'Zeitfenster von - bis'
+        properties:
+          elementDescription: ''
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty

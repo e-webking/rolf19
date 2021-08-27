@@ -24,6 +24,9 @@
                         <trans-unit id="tx_armdealers_domain_model_tpl.send">
 				<source>Senden</source>
 			</trans-unit>
+                         <trans-unit id="tx_armdealers_domain_model_tpl.mandatory">
+				<source>Pflichtfeld</source>
+			</trans-unit>
                         <trans-unit id="tx_armdealers_domain_model_tpl.contactfrm">
 				<source>Kontakt Formular</source>
 			</trans-unit>
@@ -31,9 +34,11 @@
 				<source>Personal Details</source>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_domain_model_tpl.thankyou">
-				<source>Thank you</source>
+				<source>Vielen Dank für Ihre Nachricht. Gerne behandeln wir Ihr Anliegen und melden uns in Kürze bei Ihnen.</source>
 			</trans-unit>
-                        
+                        <trans-unit id="tx_armdealers_domain_model_tpl.dispmsg">
+                            <source>Ihre Nachticht an das ROLF BENZ HAUS in Ihrer Nähe</source>
+                        </trans-unit>
                         <trans-unit id="tx_armdealers_domain_model_err.vorname">
 				<source>Bitte füllen Sie das Vornamefeld aus</source>
 			</trans-unit>
@@ -51,7 +56,7 @@
 			</trans-unit>
                         
                         <trans-unit id="tx_armdealers_map.contactpre">
-				<source>ein ROLF BENZ Experte zu Ihren Diensten</source>
+				<source>Ein Rolf Benz Experte zu Ihren Diensten.</source>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_map.contact">
 				<source>Kontakt</source>

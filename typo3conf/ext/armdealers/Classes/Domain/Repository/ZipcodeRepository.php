@@ -43,4 +43,23 @@ class ZipcodeRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         return $query->execute();
     }
     
+    /**
+     * 
+     * @param string $country
+     * @param string $zip
+     * @return int
+     */
+    public function checkZip($country,$zip) {
+        
+        $query = $this->createQuery();
+        $constraints = array();
+        $constraints[] = $query->equals('deleted',0);
+        $constraints[] = $query->equals('zipcode', $zip);
+        $constraints[] = $query->equals('country', $country);
+        $query->matching(
+                $query->logicalAnd($constraints)
+        );
+
+        return $query->execute()->count();
+    }
 }

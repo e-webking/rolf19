@@ -19,9 +19,9 @@ TYPO3:
                     20: 'EXT:armtpl/Resources/Private/Language/locallang.xlf'
             Text:
               properties:
-                containerClassAttribute: 'col-sm-9'
+                containerClassAttribute: 'col-sm-9 col-md-8'
                 elementClassAttribute: 'form-control'
             Textarea:
               properties:
-                containerClassAttribute: 'col-sm-9'
+                containerClassAttribute: 'col-sm-9 col-md-8'
                 elementClassAttribute: 'form-control'

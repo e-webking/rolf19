@@ -23,6 +23,9 @@
 .logo{float: right; padding-bottom: 10px;}
 .logo img {width:100px;}
 .image-caption {font-weight: 600; margin-top: 10px}
+.image-modulebox .image-caption, .slide-image .image-caption {position: absolute; left: 15%; z-index: -1; top: 20%;}
+.roundimg .image-caption {color: #fff; position: absolute; z-index: -1; top: 20%}
+.image-modulebox .showcaption .image-caption, .showcaption .image-caption {color: #000; position: inherit; top: initial; z-index: initial}
 .landing-header {margin-top: 10px}
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -160,7 +163,8 @@ a.share:hover {
 .gbl .gbl {margin-bottom: 0px!important;}
 .eightimgcontainer {width: 100%; display: flex; flex-wrap: wrap; margin-left: -5px;}
 .eightimgcontainer img {max-width: 100%; height: auto;}
-.eightimgcontainer .caption {font-weight: 600; text-align: center; line-height: 2.0;}
+.eightimgcontainer .image-caption {text-align: center}
+.eightimgcontainer .caption{font-weight: 600; text-align: center; line-height: 2.0;}
 .ld2020 .eightimgcontainer .caption {font-weight: 400; text-align: left; line-height: 1.4;}
 
 /*
@@ -194,9 +198,9 @@ ul.tx-indexedsearch-browsebox li {padding: 5px 10px 5px 0px; float: left;}
 
 .flexwrap {width: 100%; display: flex; flex-direction: column;}
 .width50 {width: 100%; flex:0 0 auto; padding: 10px};
-.width50 h1, .width50 h2, .width50 h3 {margin-top: 10px}
+.width50 h1, .width50 h2, .width50 h3 {margin-top: 15px}
 .width50 img {max-width: 100%; height: auto}
-.width50 .ctawhite {margin-top: 15px;}
+.width50 .ctawhite,.ctablue {margin-top: 15px;}
 .roundimg {width: 150px;height: 150px;position: relative;margin: 10px auto;}
 .roundimg img {width: 100%;height: 100%;border-radius: 75px;}
 .testimonial .text {margin-bottom: 40px;}
@@ -220,12 +224,12 @@ ul.tx-indexedsearch-browsebox li {padding: 5px 10px 5px 0px; float: left;}
   	transform: translateY(-70%);
     }
     
-    .width50 .ctawhite {margin-top: 20px;}
+    .width50 .ctawhite, .ctablue {margin-top: 20px;}
 }
 @media (min-width: 992px){
     .flexwrap {flex-direction: row; }
     .width50 {max-width: 50%; padding: 0px; flex: 0 0 50%;}
-    .width50 h1, .width50 h2, .width50 h3 {margin-top: 20px}
+    .width50 h1, .width50 h2, .width50 h3 {margin-top: 70px}
     .indentleft {padding-left: 20px;}
     .image-caption{margin-top: 15px}
     /*
@@ -314,7 +318,7 @@ ul.tx-indexedsearch-browsebox li {padding: 5px 10px 5px 0px; float: left;}
     */
     .eightimgcontainer .eightimages {width: 12.5%;}
     .tx-indexedsearch-res {margin-top: 40px}
-    .width50 .ctawhite {margin-top: 30px;}
+    .width50 .ctawhite, .ctablue {margin-top: 30px;}
     .roundimg {margin: 20px auto;}
     .testimonial .text {margin-bottom: 40px;}
     .indentleft {padding-left: 40px;}
@@ -351,6 +355,8 @@ ul.tx-indexedsearch-browsebox li {padding: 5px 10px 5px 0px; float: left;}
     .eightimgcontainer .siximages {padding-left: 15px;}
     .eightimgcontainer .sevenimages {padding-left: 15px;}
     .eightimgcontainer .eightimages {padding-left: 15px;}
+    
+    .width50 h1, .width50 h2, .width50 h3 {margin-top: 120px}
 }
 
 @media (min-width: 1600px) {
@@ -379,8 +385,12 @@ ul.tx-indexedsearch-browsebox li {padding: 5px 10px 5px 0px; float: left;}
     .eightimgcontainer .siximages {padding-left: 20px;}
     .eightimgcontainer .sevenimages {padding-left: 20px;}
     .eightimgcontainer .eightimages {padding-left: 20px;}
-    .width50 h1, .width50 h2, .width50 h3 {margin-top: 40px}
-    .width50 .ctawhite {margin-top: 40px;}
+    .width50 h1, .width50 h2, .width50 h3 {margin-top: 200px}
+    .width50 .ctawhite, .ctablue{margin-top: 40px;}
     .indentleft {padding-left: 80px;}
     .image-caption{margin-top: 40px}
+}
+
+@media (min-width: 1920px) {
+    .width50 h1, .width50 h2, .width50 h3 {margin-top: 240px}
 }

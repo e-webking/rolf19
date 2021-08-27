@@ -40,7 +40,8 @@ editor:
         - { name: "fa", element: "i", attributes: { 'class': 'fa' }}
         - { name: "fa-long-arrow-right", element: "i", attributes: { 'class': 'fa-long-arrow-right' }}
         - { name: "Black button", element: "a", attributes: { 'class': 'cta' }}
-        - { name: "CTA button", element: "a", attributes: { 'class': 'ctawhite' }}
+        - { name: "CTA Black/White", element: "a", attributes: { 'class': 'ctawhite' }}
+        - { name: "CTA Blue/Green", element: "a", attributes: { 'class': 'ctablue' }}
         - { name: "top-margin", element: "a", attributes: { 'class': 'mt60' }}
         - { name: "Gray link", element: "a", attributes: { 'class': 'graylink' }}
         - { name: "align-left", element: 'p', attributes: { 'class': 'align-left' }}

@@ -1,7 +1,7 @@
 lib.logo = IMAGE
 lib.logo {
     file = {$logoFile}
-    file.width = 100
+    file.width = 99
     file.height = 100
     stdWrap {
         typolink.parameter = {$rootPID}
@@ -12,7 +12,7 @@ lib.logo {
 lib.mainMenu = HMENU
 lib.mainMenu {
 
-    excludeUidList = 84,85,128
+    excludeUidList = 128,273
     wrap = <ul>|</ul>
     
     1 = TMENU
@@ -86,54 +86,54 @@ lib.footerMenu {
 
 lib.mobMenu = HMENU
 lib.mobMenu {
- 	entryLevel = 0
-        excludeUidList = 84,85,128
- 	wrap = | 	
- 	1 = TMENU
-	1 {
-		expAll = 1
-		noBlur=1
-		NO {
- 			stdWrap.htmlSpecialChars = 1
-   			wrapItemAndSub = <li>|</li>
-		}
-		ACT= 1
-		ACT {
-			stdWrap.innerWrap= |
- 			stdWrap.htmlSpecialChars = 1
-   			wrapItemAndSub = <li class="active">|</li>
-		}
-	}
-	
-	2 = TMENU
-	2 {
-		wrap = <ul>|</ul>
-		noBlur=1
-		expAll = 1
-		NO = 1
-		NO {
-  			wrapItemAndSub = <li>|</li>
-   			stdWrap.htmlSpecialChars = 1
- 		}
- 		ACT= 1
-		ACT.wrapItemAndSub = <li class="active">|</li>
-	}
-	
-	3 = TMENU
-	3 {
-		wrap = <ul>|</ul>
-		noBlur=1
-		NO = 1
-		NO {
-   			wrapItemAndSub = <li>|</li>
-   			stdWrap.htmlSpecialChars = 1
- 		}
- 
-		ACT= 1
-		ACT.wrapItemAndSub = <li class="active">|</li>
-	}
-	
-	4 < .3
+    entryLevel = 0
+    excludeUidList = 128,273
+    wrap = | 	
+    1 = TMENU
+    1 {
+            expAll = 1
+            noBlur=1
+            NO {
+                    stdWrap.htmlSpecialChars = 1
+                    wrapItemAndSub = <li>|</li>
+            }
+            ACT= 1
+            ACT {
+                    stdWrap.innerWrap= |
+                    stdWrap.htmlSpecialChars = 1
+                    wrapItemAndSub = <li class="active">|</li>
+            }
+    }
+
+    2 = TMENU
+    2 {
+            wrap = <ul>|</ul>
+            noBlur=1
+            expAll = 1
+            NO = 1
+            NO {
+                    wrapItemAndSub = <li>|</li>
+                    stdWrap.htmlSpecialChars = 1
+            }
+            ACT= 1
+            ACT.wrapItemAndSub = <li class="active">|</li>
+    }
+
+    3 = TMENU
+    3 {
+            wrap = <ul>|</ul>
+            noBlur=1
+            NO = 1
+            NO {
+                    wrapItemAndSub = <li>|</li>
+                    stdWrap.htmlSpecialChars = 1
+            }
+
+            ACT= 1
+            ACT.wrapItemAndSub = <li class="active">|</li>
+    }
+
+    4 < .3
  }
 
 #all share links
@@ -225,7 +225,8 @@ lib.toplang {
     wrap = |
 }
 
-[ARM\Armip2location\TypoScript\CountryCondition AT]
-lib.mainMenu.excludeUidList = 8,83,40,41,42
-lib.mobMenu.excludeUidList = 8,83,40,41,42
+[ARM\Armip2location\TypoScript\CountryCondition AT,1]
+# lib.logo.stdWrap.typolink.parameter = 261
+lib.mainMenu.excludeUidList = 7,8
+lib.mobMenu.excludeUidList = 7,8
 [global]

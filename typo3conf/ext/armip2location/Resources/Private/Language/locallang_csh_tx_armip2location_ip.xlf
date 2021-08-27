@@ -1,34 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2019-06-04T12:16:44Z" product-name="armdealers">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-10-23T12:16:44Z" product-name="armip2location">
 		<header/>
 		<body>
-			<trans-unit id="title.description">
-				<source>title</source>
+			<trans-unit id="ipstart.description">
+				<source>IP range (start)</source>
 			</trans-unit>
-			<trans-unit id="address.description">
-				<source>address</source>
+			<trans-unit id="ipend.description">
+				<source>IP range (end)</source>
 			</trans-unit>
-			<trans-unit id="city.description">
-				<source>city</source>
+			<trans-unit id="cn2iso.description">
+				<source>iso code</source>
 			</trans-unit>
-			<trans-unit id="zip.description">
-				<source>zipcode</source>
-			</trans-unit>
-			<trans-unit id="phone.description">
-				<source>phone</source>
-			</trans-unit>
-                        <trans-unit id="email.description">
-				<source>email</source>
-			</trans-unit>
-			<trans-unit id="lat.description">
-				<source>latitude</source>
-			</trans-unit>
-			<trans-unit id="lng.description">
-				<source>longitude</source>
-			</trans-unit>
-                        <trans-unit id="zipcodes.description">
-				<source>zipcodes</source>
+			<trans-unit id="country.description">
+				<source>Country</source>
 			</trans-unit>
 		</body>
 	</file>

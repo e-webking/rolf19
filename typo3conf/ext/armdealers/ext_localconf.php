@@ -42,3 +42,5 @@ call_user_func(function () {
     
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals']['ARM\\Armdelaers\\Evaluation\\FloatEvaluation'] = '';
 });
+
+$GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['armdealer'] = \ARM\Armdealers\Controller\DealerController::class . '::dlrmsgAction';

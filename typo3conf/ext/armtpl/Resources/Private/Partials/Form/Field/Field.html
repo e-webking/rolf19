@@ -2,7 +2,7 @@
 <f:form.validationResults for="{element.rootForm.identifier}.{element.identifier}">
     <div class="form-group row{f:if(condition: '{validationResults.errors.0}', then: ' has-error')}">
         <f:if condition="{doNotShowLabel} != 1">
-            <label class="col-sm-3 col-form-label" for="{element.uniqueIdentifier}">{formvh:translateElementProperty(element: element, property: 'label')}<f:if condition="{element.required}"><f:render partial="Field/Required" /></f:if></label>
+            <label class="col-sm-3 col-md-4 col-form-label" for="{element.uniqueIdentifier}">{formvh:translateElementProperty(element: element, property: 'label')}<f:if condition="{element.required}"><f:render partial="Field/Required" /></f:if></label>
         </f:if>
         <div class="{element.properties.containerClassAttribute}">
             <f:format.raw>

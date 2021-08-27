@@ -2,9 +2,9 @@ baseUrl = http://typo3.local/rolfbenz19/
 rootPID = 1
 searchPid = 15
 templatePath = typo3conf/ext/armtpl/
-logoFile = typo3conf/ext/armtpl/Resources/Public/Images/logo.svg
+logoFile = typo3conf/ext/armtpl/Resources/Public/Images/logo.png
+logoFreisFile = typo3conf/ext/armtpl/Resources/Public/Images/freislogo.jpg
 kontaktPid = 2
-
 footerMenu = 9
 cmsFooterUid = 1
 
@@ -18,6 +18,6 @@ show_youtube=1
 show_pinterest=1
 show_instagram=1
 
-[globalString = ENV:HTTPS=on]
+[request.getNormalizedParams().isHttps()]
 baseUrl = https://www.rolf-benz.haus/
 [end]

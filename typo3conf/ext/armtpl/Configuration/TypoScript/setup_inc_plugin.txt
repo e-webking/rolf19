@@ -53,3 +53,34 @@ Alle Suchbegriffe werden in Kleinbuchstaben konvertiert.
     }
 }
 
+plugin.tx_seo {
+  config {
+    xmlSitemap {
+      sitemaps {
+        pages {
+          config {
+            excludedDoktypes = 137, 138
+            additionalWhere = AND (no_index = 0 OR no_follow = 0)
+          }
+        }
+      }
+    }
+  }
+}
+
+lib.visit = USER_INT
+lib.visit {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    pluginName = loc
+    extensionName = Armip2location
+    controller = Location
+    vendorName = ARM
+    switchableControllerActions {
+        Location {
+            1 = visitCom
+        }
+    }
+    view =< plugin.tx_armip2location.view
+    settings =< plugin.tx_armip2location.settings
+}
+
