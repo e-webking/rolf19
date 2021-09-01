@@ -1,28 +1,43 @@
 
 renderingOptions:
   submitButtonLabel: Senden
-identifier: rolfBenzHausWien
-label: 'Rolf Benz Haus Wein'
+identifier: rolfBenzHausGraz
+label: 'Rolf Benz Haus Graz'
 prototypeName: standard
 type: Form
 finishers:
   -
     options:
       subject: 'Contact form filled'
-      recipientAddress: wien@rolf-benz.haus
-      recipientName: 'Rolf Benz Haus Wien '
-      senderAddress: nobody@rolf-benz.haus
+      recipientAddress: graz@rolf-benz.haus
+      recipientName: 'Rolf Benz Haus Graz'
+      senderAddress: rolfbenzhaus@rolfbenz.haus
       senderName: '{vorname} {name}'
       replyToAddress: '{email}'
-      carbonCopyAddress: '{email}'
       format: html
       attachUploads: false
       translation:
         language: de
     identifier: EmailToReceiver
+  - 
+    options:
+      subject: 'Thank you for your mail'
+      recipientAddress: '{email}'
+      recipientName: '{vorname} {name}'
+      senderAddress: graz@rolf-benz.haus
+      senderName: 'Rolf Benz Haus Graz'
+      replyToAddress: ''
+      carbonCopyAddress: ''
+      blindCarbonCopyAddress: ''
+      format: html
+      attachUploads: 'false'
+      templateName: '{@format}.html'
+      templateRootPaths:
+          20: 'EXT:armtpl/Resources/Private/Forms/Emails/Sender/'
+    identifier: EmailToSender
   -
     options:
-      pageUid: '77'
+      pageUid: '214'
       additionalParameters: ''
     identifier: Redirect
 renderables:

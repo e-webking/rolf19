@@ -26,8 +26,9 @@ config {
   locale_all = de_DE.UTF-8
   htmlTag_langKey = de-DE
   sys_language_uid = 0
-  sys_language_overlay = 1
-  sys_language_mode = ignore
+  sys_language_mode = strict
+  sys_language_overlay = 0
+  
   spamProtectEmailAddresses = 1
   index_enable = 1
   index_externals = 1
@@ -53,15 +54,15 @@ page.meta {
   abstract.field = abstract
   description.field = description
   keywords.field = keywords
-  og:title.field = title
+  og:title.field = seo_title // title
   og:description.field = description
   og:url = https://www.rolf-benz.haus/
   og:site_name = Rolf-Benz
   og:type = website
 }
 page.headerData.5 = TEXT
-page.headerData.5.field = nav_title // title
-page.headerData.5.noTrimWrap = |<title>|: Rolf-Benz</title>|
+page.headerData.5.field = seo_title // title 
+page.headerData.5.noTrimWrap = |<title>|</title>|
 
 page.headerData.15 = TEXT
 page.headerData.15.value (
@@ -161,6 +162,12 @@ page.10 {
         3 = TEXT
         3.value = {$templatePath}Resources/Private/Templates/landing.html
 
+        4 = TEXT
+        4.value = {$templatePath}Resources/Private/Templates/home.html
+
+        5 = TEXT
+        5.value = {$templatePath}Resources/Private/Templates/freistil.html
+
     }
 
     variables {
@@ -179,6 +186,7 @@ page.10 {
 ## Languages
 [siteLanguage("languageId") == "1"]
 config.sys_language_uid = 1
+config.sys_language_content = 1
 config.language = fr
 config.locale_all = fr_FR.UTF-8
 config.htmlTag_setParams = lang="fr" dir="ltr" class="no-js"

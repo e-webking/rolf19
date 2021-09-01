@@ -10,16 +10,31 @@ finishers:
     options:
       subject: 'Contact form filled'
       recipientAddress: vevey@rolf-benz.haus
-      recipientName: 'Rolf Benz Haus Vevey '
-      senderAddress: nobody@rolf-benz.haus
-      senderName: '{vorname} {name}'
+      recipientName: 'Rolf Benz Haus Vevey'
+      senderAddress: rolfbenzhaus@rolfbenz.haus
+      senderName: '{vorname} {name} {vorname} {name}'
       replyToAddress: '{email}'
-      carbonCopyAddress: '{email}'
       format: html
       attachUploads: false
       translation:
         language: de
     identifier: EmailToReceiver
+  - 
+    options:
+      subject: 'Thank you for your mail'
+      recipientAddress: '{email}'
+      recipientName: '{vorname} {name}'
+      senderAddress: vevey@rolf-benz.haus
+      senderName: 'Rolf Benz Haus Vevey'
+      replyToAddress: ''
+      carbonCopyAddress: ''
+      blindCarbonCopyAddress: ''
+      format: html
+      attachUploads: 'false'
+      templateName: '{@format}.html'
+      templateRootPaths:
+          20: 'EXT:armtpl/Resources/Private/Forms/Emails/Sender/'
+    identifier: EmailToSender
   -
     options:
       pageUid: '77'
@@ -37,11 +52,11 @@ renderables:
       -
         defaultValue: ''
         identifier: vorname
-        label: Vorname
+        label: Prénom
         type: Text
         properties:
           fluidAdditionalAttributes:
-            placeholder: Vorname
+            placeholder: Prénom
             required: required
           validationErrorMessages:
             -
@@ -62,11 +77,11 @@ renderables:
       -
         defaultValue: ''
         identifier: name
-        label: Name
+        label: 'Nom de famille'
         type: Text
         properties:
           fluidAdditionalAttributes:
-            placeholder: Name
+            placeholder: 'Nom de famille'
             required: required
           validationErrorMessages:
             -
@@ -87,11 +102,11 @@ renderables:
       -
         defaultValue: ''
         identifier: postcode
-        label: Postleitzahl
+        label: 'Code postal'
         type: Text
         properties:
           fluidAdditionalAttributes:
-            placeholder: Postleitzahl
+            placeholder: 'Code postal'
             required: required
           validationErrorMessages:
             -
@@ -114,11 +129,11 @@ renderables:
       -
         defaultValue: ''
         identifier: email
-        label: Email
+        label: E-mail
         type: Text
         properties:
           fluidAdditionalAttributes:
-            placeholder: Email
+            placeholder: E-mail
             required: required
           validationErrorMessages:
             -
@@ -141,11 +156,11 @@ renderables:
       -
         defaultValue: ''
         identifier: message
-        label: Nachricht
+        label: 'Votre message'
         type: Textarea
         properties:
           fluidAdditionalAttributes:
-            placeholder: Nachricht
+            placeholder: 'Votre message'
             required: required
           validationErrorMessages:
             -
