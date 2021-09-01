@@ -1,0 +1,55 @@
+html, body {font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;font-size: 18px;}
+h1 {font-size: 104px; line-height: 1.1; font-weight: bold}
+h2 {font-size: 56px; line-height: 1.2; font-weight: bold}
+h3 {font-size: 20px; font-weight: bold}
+.desktop-nav {margin-top: 0px}
+.desktop-nav ul li a {padding: 10px 15px;}
+.ce-intext.ce-textpic .ce-gallery {text-align: center;}
+.ce-center .ce-gallery .image {text-align: center}
+.align-left {text-align: left}
+.align-center {text-align: center}
+.align-right {text-align: right}
+.overlap-title {position: relative; max-width: 100%; overflow: hidden}
+.overlap-title h1, .overlap-title h2, .overlap-title h3 {position: absolute; z-index: 2; top: 20px; left: 15px}
+.overlap-title .text-center {left:50%; transform: translateX(-50%);}
+.overlap-title .text-right {left: inherit; right: 15px;}
+.overlap-title .image-caption {position: absolute; top: 40px; left: 0px; z-index: 1; font-weight: bold; font-size: 24px; line-height: 1.0}
+.overlap-title picture {padding-left: 0px; max-width: 100%; height: auto}
+.black {color:#000;}
+.white {color: #fff;}
+@media (min-width: 768px) {
+    .ce-textpic.ce-intext.ce-right .ce-gallery {margin-right: 10px}
+    .frame-type-image .ce-image .ce-row {display: flex;}
+    .frame-type-image .ce-image .ce-row .ce-column {margin: 5px 10px 5px 0}
+    .ce-gallery[data-ce-images="2"],.ce-gallery[data-ce-images="3"],.ce-gallery[data-ce-images="4"] {display: flex;}
+    .ce-gallery[data-ce-images="2"] .ce-column,.ce-gallery[data-ce-images="3"] .ce-column,.ce-gallery .ce-column[data-ce-images="4"] { margin-right: 10px}
+    .overlap-title .image-caption {font-size: 32px}
+    .overlap-title h1, .overlap-title h2, .overlap-title h3 {top: 30px; left: 20px}
+    .overlap-title .text-right {right: 20px}
+}
+@media (min-width: 992px) {
+    .ce-gallery[data-ce-images="2"] .ce-column,.ce-gallery[data-ce-images="3"] .ce-column,.ce-gallery .ce-column[data-ce-images="4"] { margin-right: 15px}
+    .overlap-title .image-caption {font-size: 40px}
+     .overlap-title h1, .overlap-title h2, .overlap-title h3 {top: 40px; left: 30px}
+     .overlap-title .text-right {right: 30px}
+}
+@media (min-width: 1200px) {
+    .ce-textpic.ce-left.ce-intext.ce-nowrap {display: flex;}
+    .ce-textpic.ce-right.ce-intext.ce-nowrap {display: table;}
+    .ce-textpic.ce-left.ce-intext,.ce-textpic.ce-right.ce-intext {display: table;}
+    .ce-textpic.ce-left.ce-intext .ce-gallery {display: block; float: left; margin-right: 10px;}
+    .ce-textpic.ce-right.ce-intext .ce-gallery {display: block; float: right; width: 48%}
+    .ce-textpic.ce-left.ce-intext .ce-bodytext {padding-top: 15px}
+    .ce-textpic.ce-right.ce-intext .ce-bodytext {padding-top: 15px; width: 48%; float: left;}
+    .ce-intext.ce-textpic.ce-left .ce-gallery {-webkit-box-flex: 1;-moz-box-flex: 1;box-flex: 1;}
+    .ce-intext.ce-textpic.ce-left .ce-bodytext {margin-left: 15px;-webkit-box-flex: 1;-moz-box-flex: 1;box-flex: 1}
+    .ce-intext.ce-textpic.ce-left.ce-nowrap .ce-bodytext {display: table; padding-top: 0px}
+    .ce-intext.ce-textpic .ce-gallery {text-align: initial}
+    .overlap-title .image-caption {font-size: 48px}
+}
+@media (min-width: 1300px) {
+     .overlap-title h1, .overlap-title h2, .overlap-title h3 {top: 60px; left: 40px}
+     .overlap-title .text-right {right: 40px}
+    .overlap-title .image-caption {font-size: 56px}
+    .ce-gallery[data-ce-images="2"] .ce-column,.ce-gallery[data-ce-images="3"] .ce-column,.ce-gallery .ce-column[data-ce-images="4"] { margin-right: 20px}
+}

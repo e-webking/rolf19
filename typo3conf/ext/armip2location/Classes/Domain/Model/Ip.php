@@ -1,10 +1,10 @@
 <?php
-namespace ARM\Armdealers\Domain\Model;
+namespace ARM\Armip2location\Domain\Model;
 
 /**
- * Zipcode
+ * IP
  */
-class Zipcode extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Ip extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
     /**
      * country
@@ -14,32 +14,25 @@ class Zipcode extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $country = '';
     
     /**
-     * city
+     * cn2iso
      *
      * @var string
      */
-    protected $city = '';
+    protected $cn2iso = '';
    
     /**
-     * canton
-     *
-     * @var string
-     */
-    protected $canton = '';
-
-    /**
-     * zipcode
+     * ipend
      *
      * @var int
      */
-    protected $zipcode = 0;
+    protected $ipend = 0;
 
     /**
-     * dealer
+     * ipstart
      *
-     * @var \ARM\Armdealers\Domain\Model\Dealer
+     * @var int
      */
-    protected $dealer = null;
+    protected $ipstart = 0;
     
     /**
      * Returns the country
@@ -63,87 +56,66 @@ class Zipcode extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the city
+     * Returns the cn2iso
      *
-     * @return string $city
+     * @return string $cn2iso
      */
-    public function getCity()
+    public function getCn2iso()
     {
-        return $this->city;
+        return $this->cn2iso;
     }
 
     /**
-     * Sets the city
+     * Sets the cn2iso
      *
-     * @param string $city
+     * @param string $cn2iso
      * @return void
      */
-    public function setCity($city)
+    public function setCn2iso($cn2iso)
     {
-        $this->city = $city;
+        $this->cn2iso = $cn2iso;
     }
 
     /**
-     * Returns the canton
+     * Returns the ipend
      *
-     * @return string $canton
+     * @return int $ipend
      */
-    public function getCanton()
+    public function getIpend()
     {
-        return $this->canton;
+        return $this->ipend;
     }
 
     /**
-     * Sets the canton
+     * Sets the ipend
      *
-     * @param string $canton
+     * @param int $ipend
      * @return void
      */
-    public function setCanton($canton)
+    public function setIpend($ipend)
     {
-        $this->canton = $canton;
+        $this->ipend = $ipend;
     }
 
     /**
-     * Returns the zipcode
+     * Returns the ipstart
      *
-     * @return int $zipcode
+     * @return int $ipstart
      */
-    public function getZipcode()
+    public function getIpstart()
     {
-        return $this->zipcode;
+        return $this->ipstart;
     }
 
     /**
-     * Sets the zipcode
+     * Sets the ipstart
      *
-     * @param int $zipcode
+     * @param int $ipstart
      * @return void
      */
-    public function setZipcode($zipcode)
+    public function setIpstart($ipstart)
     {
-        $this->zipcode = $zipcode;
-    }
-
-    /**
-     * Returns the dealer
-     *
-     * @return \ARM\Armdealers\Domain\Model\Dealer $dealer
-     */
-    public function getDealer()
-    {
-        return $this->dealer;
-    }
-
-    /**
-     * Sets the dealer
-     *
-     * @param \ARM\Armdealers\Domain\Model\Dealer $dealer
-     * @return void
-     */
-    public function setDealer(\ARM\Armdealers\Domain\Model\Dealer $dealer)
-    {
-        $this->dealer = $dealer;
+        $this->ipstart = $ipstart;
     }
 
 }

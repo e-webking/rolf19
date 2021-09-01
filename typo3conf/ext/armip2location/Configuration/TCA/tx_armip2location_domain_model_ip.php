@@ -1,26 +1,24 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer',
-        'label' => 'title',
+        'title' => 'IP Data',
+        'label' => 'ipstart',
+        'label_alt' => 'ipend,cn2iso',
+        'label_alt_force' => true,
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
-        'delete' => 'deleted',
-        'default_sortby' => 'uid DESC',
         'enablecolumns' => [
             'disabled' => 'hidden',
-            'starttime' => 'starttime',
-            'endtime' => 'endtime',
         ],
-        'searchFields' => 'title,street,zip,city,phone,email,lat,lng,zipcodes,dealerpg,pgurl,contactpid,',
-        'iconfile' => 'EXT:armdealers/Resources/Public/Icons/tx_armdealers_domain_model_dealer.gif'
+        'searchFields' => 'ipstart,ipend,cn2iso,country,',
+        'iconfile' => 'EXT:armip2location/Resources/Public/Icons/tx_armip2location.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'hidden, title, street, zip, city, country, phone, email, lat, lng, dealerpg, pgurl, contactpid, zipcodes',
+        'showRecordFieldList' => 'hidden, ipstart, ipend, cn2iso,country',
     ],
     'types' => [
-        '1' => ['showitem' => 'hidden, title, street, zip, city, country, phone, email, lat, lng, dealerpg, pgurl, contactpid, zipcodes, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'hidden, ipstart, ipend, cn2iso, country'],
     ],
     'columns' => [
         'hidden' => [
@@ -35,166 +33,41 @@ return [
                 ],
             ],
         ],
-        'starttime' => [
+        'ipstart' => [
             'exclude' => true,
-            'behaviour' => [
-                'allowLanguageSynchronization' => true
-            ],
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
-            'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'size' => 13,
-                'eval' => 'datetime',
-                'default' => 0,
-            ],
-        ],
-        'endtime' => [
-            'exclude' => true,
-            'behaviour' => [
-                'allowLanguageSynchronization' => true
-            ],
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
-            'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'size' => 13,
-                'eval' => 'datetime',
-                'default' => 0,
-                'range' => [
-                    'upper' => mktime(0, 0, 0, 1, 1, 2038)
-                ],
-            ],
-        ],
-
-        'title' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.title',
-            'config' => [
-                'type' => 'input',
-                'size' => 20,
-                'eval' => 'trim'
-            ],
-        ],
-        'city' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.city',
+            'label' => 'IP range start',
             'config' => [
                 'type' => 'input',
                 'size' => 15,
+                'eval' => 'int'
+            ],
+        ],
+        'ipend' => [
+            'exclude' => true,
+            'label' => 'IP range end',
+            'config' => [
+                'type' => 'input',
+                'size' => 15,
+                'eval' => 'int'
+            ],
+        ],
+        'cn2iso' => [
+            'exclude' => true,
+            'label' => 'ISO Country',
+            'config' => [
+                'type' => 'input',
+                'size' => 5,
                 'eval' => 'trim'
             ],
         ],
-        'street' => [
+        'country' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.street',
+            'label' => 'Country',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 20,
                 'eval' => 'trim'
             ]
-        ],
-        'zip' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.zip',
-            'config' => [
-                'type' => 'input',
-                'size' => 10,
-                'eval' => 'trim'
-            ],
-        ],
-        'country'=> [
-            'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.country',
-            'config' => [
-                'type' => 'input',
-                'size' => 10,
-                'eval' => 'trim'
-            ],
-        ],
-        'phone' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.phone',
-            'config' => [
-               'type' => 'input',
-                'size' => 10,
-                'eval' => 'trim'
-             ]
-        ],
-        'email' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.email',
-            'config' => [
-                'type' => 'input',
-                'size' => 20,
-                'eval' => 'trim'
-            ],
-        ],
-        'lat' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.lat',
-            'config' => [
-                'type' => 'input',
-                'size' => 10,
-                'eval' => 'ARM\\Armdealers\\Evaluation\\FloatEvaluation'
-            ],
-        ],
-        'lng' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.lng',
-            'config' => [
-                'type' => 'input',
-                'size' => 10,
-                'eval' => 'ARM\\Armdealers\\Evaluation\\FloatEvaluation'
-            ],
-        ],
-        'dealerpg'=> [
-            'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.dealerpg',
-            'config' => [
-                'type' => 'group',
-                'internal_type' => 'db',
-                'allowed' => 'pages',
-                'size' => 1
-            ],
-        ],
-        'pgurl' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.pgurl',
-            'config' => [
-                'type' => 'input',
-                'size' => 20,
-                'eval' => 'trim'
-            ],
-        ],
-        'contactpid'=> [
-            'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.contactpid',
-            'config' => [
-                'type' => 'group',
-                'internal_type' => 'db',
-                'allowed' => 'pages',
-                'size' => 1
-            ],
-        ],
-        'zipcodes' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.zipcodes',
-            'config' => [
-                'type' => 'inline',
-                'foreign_table' => 'tx_armdealers_domain_model_zipcode',
-                'foreign_field' => 'dealer',
-                'maxitems' => 9999,
-                'appearance' => [
-                    'collapseAll' => 1,
-                    'levelLinksPosition' => 'top',
-                    'showSynchronizationLink' => 1,
-                    'showPossibleLocalizationRecords' => 1,
-                    'showAllLocalizationLink' => 1
-                ],
-            ],
-
-        ],
-    
+        ],    
     ],
 ];

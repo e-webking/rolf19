@@ -1,8 +1,8 @@
 <?php
 /***************************************************************
- * Extension Manager/Repository config file for ext "armtpl".
+ * Extension Manager/Repository config file for ext "freistiltpl".
  *
- * Auto generated 25-07-2014 06:18
+ * Auto generated 23-10-2020 06:18
  *
  * Manual updates:
  * Only the data in the array - everything else is removed by next
@@ -10,7 +10,7 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array (
-	'title' => 'Rolf-Benz Bootstrap Template',
+	'title' => 'Rolf-Benz Freistil Template',
 	'description' => 'TYPO3 9.5.x bootstrap template extension',
 	'category' => 'templates',
 	'author' => 'Anisur R. Mullick',
@@ -26,7 +26,7 @@ $EM_CONF[$_EXTKEY] = array (
 	'modify_tables' => '',
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
-	'version' => '8.4.0',
+	'version' => '0.0.1',
 	'constraints' =>
 	array (
 		'depends' =>

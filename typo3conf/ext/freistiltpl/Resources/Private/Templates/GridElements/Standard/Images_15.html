@@ -1,6 +1,10 @@
+<div class="overlap-title">
 <f:if condition="{data.header_link}">
     <f:then>
         <f:link.typolink parameter="{data.header_link}">
+            <f:if condition="{data.flexform_field_caption}">
+                <{data.flexform_field_tag} class="{data.flexform_field_color}">{data.flexform_field_caption}</{data.flexform_field_tag}>
+            </f:if>
             <picture class="slide-image">
             <source media="(min-width: 1440px)" srcset="uploads/tx_armtpl/{data.flexform_field_imagelarge}">
             <f:if condition="{data.flexform_field_imagedesk}">
@@ -17,6 +21,9 @@
         </f:link.typolink>
     </f:then>
     <f:else>
+        <f:if condition="{data.flexform_field_caption}">
+            <{data.flexform_field_tag} class="{data.flexform_field_color}">{data.flexform_field_caption}</{data.flexform_field_tag}>
+        </f:if>
         <picture class="slide-image">
             <source media="(min-width: 1440px)" srcset="uploads/tx_armtpl/{data.flexform_field_imagelarge}">
             <f:if condition="{data.flexform_field_imagedesk}">
@@ -32,3 +39,4 @@
           </picture>
     </f:else>
 </f:if>
+</div>

@@ -1,12 +1,14 @@
-@import "EXT:armtpl/Configuration/TypoScript/setup_inc_page.txt"
-@import "EXT:armtpl/Configuration/TypoScript/setup_inc_nav.txt"
-@import "EXT:armtpl/Configuration/TypoScript/setup_inc_plugin.txt"
-@import "EXT:armtpl/Configuration/TypoScript/setup_inc_content.txt"
-@import "EXT:armtpl/Configuration/TypoScript/setup_inc_content_gridelement.txt"
+lib.logoFreis = IMAGE
+lib.logoFreis {
+    file = {$logoFreisFile}
+    file.width = 317
+    file.height = 72
+    stdWrap {
+        typolink.parameter = {$freisPID}
+        wrap = |
+    }
+}
 
-tt_content.textpic.dataProcessing.20.maxGalleryWidth = 1920
-tt_content.textpic.dataProcessing.20.maxGalleryWidthInText = 1920
-tt_content.image.dataProcessing.20.maxGalleryWidth = 1920
-tt_content.image.dataProcessing.20.maxGalleryWidthInText = 1920
-tt_content.textmedia.dataProcessing.20.maxGalleryWidth = 1920
-tt_content.textmedia.dataProcessing.20.maxGalleryWidthInText = 1920
+page.includeCSS {
+  file13 = EXT:freistiltpl/Resources/Public/Css/freistil.css
+}
