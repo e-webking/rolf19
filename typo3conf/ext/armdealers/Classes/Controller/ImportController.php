@@ -8,22 +8,24 @@ namespace ARM\Armdealers\Controller;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- *  (c) 2019
+ *  (c) 2021
  *
  ***/
 use \TYPO3\CMS\Core\Utility\GeneralUtility;
 use \TYPO3\CMS\Extbase\Utility\LocalizationUtility;
+use \TYPO3\CMS\Core\Database\ConnectionPool;
+use \TYPO3\CMS\Core\Core\Environment;
 
 /**
- * DealerController
+ * 
  */
-class DealerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class ImportController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     /**
      * dealerRepository
      *
      * @var \ARM\Armdealers\Domain\Repository\DealerRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $dealerRepository = null;
     
@@ -31,248 +33,221 @@ class DealerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      * zipcodeRepository
      *
      * @var \ARM\Armdealers\Domain\Repository\ZipcodeRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $zipcodeRepository = null;
     
-
+    
     /**
-     * action list
-     *
-     * @return void
+     * Default action
      */
-    public function listAction()
+    public function rawAction()
     {
-        if ($this->settings['single'] && isset($this->settings['dealer'])) {
-            $dealer = $this->dealerRepository->findByUid($this->settings['dealer']);
-            $jsDealers = 'var dealers=[';
-            $jsDealers .= "{uid:".$dealer->getUid().",lat:".$dealer->getLat().",lng:".$dealer->getLng().",dvinfo:'del".$dealer->getUid()."'}";
-            $jsDealers .= "];";
-            $this->view->assign('dealer', $dealer);
+        
+    }
+
+    public function importAction() {
+        
+        if ($this->request->hasArgument('filepath')) {
+            
+            $filepath = $this->request->getArgument('filepath');
+            $separator = $this->request->getArgument('separator');
+            
+            if ($filepath == "") {
+                
+                $this->addFlashMessage("No file information!",'ERROR',\TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+                
+            } else {
+                
+                $completePath = Environment::getPublicPath().'/'.$filepath;
+                
+                if (is_file($completePath)) {
+                    
+                    $fileContent = @file_get_contents($completePath);
+                    $lineArr = GeneralUtility::trimExplode("\n", $fileContent);
+                    
+                    if (count($lineArr) > 0) {
+                        
+                        $lineOne = $lineArr[0];
+                        if ($this->checkColumnCount($lineOne, $separator)) {
+                            
+                            $table = 'tx_armdealers_domain_model_rawdata';
+                            $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
+            
+                            foreach($lineArr as $line) {
+                                
+                                $data = $this->getColumnData($line, $separator);
+                                if (!is_null($data[0]) && !is_null($data[1]) && !is_null($data[2]) ) {
+                                    $affectedRows = $queryBuilder->insert($table)
+                                                ->values([
+                                                   'pid' => $this->settings["storagePid"],
+                                                   'dealertitel' => $data[0],
+                                                   'adresse' => $data[1],
+                                                   'postleitzahl' => $data[2],
+                                                   'ort' => $data[3],
+                                                   'iso2cn' => $data[4],
+                                                   'land' => $data[5],
+                                                   'telefon' => $data[6],
+                                                   'email' => $data[7],
+                                                   'lat' => $data[8],
+                                                   'lng' => $data[9],
+                                                   'formmsg' => $data[10],
+                                                   'land2' => $data[12],
+                                                   'plz' => $data[13],
+                                                   'ville' => $data[14],
+                                                   'kanton' => "",
+                                                ])
+                                                ->execute();
+                                }
+                            }
+                            $this->addFlashMessage("Data imported successfully",'INFO',\TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
+                        } else {
+                            $this->addFlashMessage("Incorrect column count!",'ERROR',\TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+                        }
+                        
+                    } else {
+                        
+                        $this->addFlashMessage("Not enough data in file!",'ERROR',\TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+                    }
+                    
+                } else {
+                    $this->addFlashMessage("Valid file not found!",'ERROR',\TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+                }
+            }
             
         } else {
-            $dealers = $this->dealerRepository->findAll();
-
-            $jsDealers = 'var dealers=[';
-            foreach ($dealers as $dealer) {
-                $jsDealers .= "{uid:".$dealer->getUid().",lat:".$dealer->getLat().",lng:".$dealer->getLng().",dvinfo:'del".$dealer->getUid()."'},";
-            }
-            $jsDealers = substr($jsDealers, 0, -1);
-            $jsDealers .= "];";
-            $this->view->assign('dealers', $dealers);
+            $this->addFlashMessage("No file information!",'ERROR',\TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
         }
-        $this->view->assign('jsDealers', $jsDealers);        
+        
+        $this->redirect("raw");
     }
     
     /**
-     * action list
-     *
-     * @return void
+     * 
+     * @param string $line
+     * @param string $separator
+     * @return bool
      */
-    public function maplinkAction()
-    {
-        if ($this->settings['single'] && isset($this->settings['dealer'])) {
-            $dealer = $this->dealerRepository->findByUid($this->settings['dealer']);
-            $jsDealers = 'var dealers=[';
-            $jsDealers .= "{uid:".$dealer->getUid().",lat:".$dealer->getLat().",lng:".$dealer->getLng().",url:'".$dealer->getPgurl()."'}";
-            $jsDealers .= "];";
-            $this->view->assign('dealer', $dealer);
+    protected function checkColumnCount($line, $separator) {
+        if ($separator == '\t') {
+            $colArr = GeneralUtility::trimExplode("\t", $line);
+        } else {
+            $colArr = GeneralUtility::trimExplode($separator, $line);
+        }
+        return (count($colArr) == 15) ? true : false;
+    }
+
+    /**
+     * 
+     * @param string $line
+     * @param string $separator
+     * @return array 
+     */
+    protected function getColumnData($line, $separator) {
+        
+        if ($separator == '\t') {
+            $colArr = GeneralUtility::trimExplode("\t", $line);
+        } else {
+            $colArr = GeneralUtility::trimExplode($separator, $line);
+        }
+        
+        return $colArr;
+    }
+    
+    /**
+     * 
+     */
+    public function migrateAction() {
+        //get all the records 
+        $table = 'tx_armdealers_domain_model_rawdata';
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
+        $queryBuilder->getRestrictions()->removeAll();
+        $expr = $queryBuilder->expr();
+        $andCond = $expr->andx();
+        $andCond->add($expr->eq('deleted', 0));
+        $andCond->add($expr->eq('processed',  0));
+        //$andCond->add($expr->neq('dealertitel', "''"));
+        $qbRes = $queryBuilder->select('*')
+                            ->from($table)
+                            ->andWhere($andCond)
+                            ->andWhere('dealertitel != :empty')->setParameter('empty', serialize([]));
+        $rows = $qbRes->execute()->fetchAll();
+        
+        if (count($rows) > 0) {
+            foreach ($rows as $row) {
+                $this->processRow($row);
+            }
+        }
+    }
+    
+    protected function processRow($row) {
+        
+        $lnd2 = ($row['land2'] == 'Österreich')?'AUT':'CHE';
+        $dealerObj = $this->dealerRepository->getByTitle($row['dealertitel']);
+        if ($dealerObj instanceof \ARM\Armdealers\Domain\Model\Dealer) {
+            $this->addFlashMessage("Dealer record found-".$row['dealertitel'],'INFO',\TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
+            // the dealer already present check and insert the zip
+            $zipCheck = $this->zipcodeRepository->checkZip($lnd2,$row['plz']);
+            if ($zipCheck == 0) {
+                $zipObj = GeneralUtility::makeInstance("ARM\\Armdealers\\Domain\\Model\\Zipcode");
+                $zipObj->setPid($this->settings['storagePid']);
+
+                $zipObj->setDealer($dealerObj);
+                $zipObj->setCountry($lnd2);
+                $zipObj->setCity($row['ville']);
+                $zipObj->setZipcode($row['plz']);
+                $zipObj->setCanton($row['kanton']);
+                $this->zipcodeRepository->add($zipObj);
+                $persistenceManager = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\PersistenceManager');
+                $persistenceManager->persistAll();
+                $this->addFlashMessage($row['plz']." - PLZ record added.",'INFO',\TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
+            } else {
+                $this->addFlashMessage($row['plz']." - PLZ record already present!",'INFO',\TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
+            }
+        } else {
+            //add the dealer
+            $zero = "0";
+            $dealerObj = GeneralUtility::makeInstance("ARM\\Armdealers\\Domain\\Model\\Dealer");
+            $dealerObj->setPid($this->settings['storagePid']);
+            $dealerObj->setTitle($row['dealertitel']);
+            $dealerObj->setStreet($row['adresse']);
+            $dealerObj->setZip($row['postleitzahl']);
+            $dealerObj->setCity($row['ort']);
+            $dealerObj->setPhone($row['telefon']);
+            $dealerObj->setEmail($row['email']);
+            $dealerObj->setLat($row['lat']);
+            $dealerObj->setLng($row['lng']);
+            $dealerObj->setCountry($row['land']);
+            $dealerObj->setIso2cn($row['iso2cn']);
+            $dealerObj->setDispmsg($row['formmsg']);
+            //$dealerObj->setPgurl('');
+            //$dealerObj->setDealerpg($zero);
             
-        } else {
-            $dealers = $this->dealerRepository->findAll();
-
-            $jsDealers = 'var dealers=[';
-            foreach ($dealers as $dealer) {
-                $jsDealers .= "{uid:".$dealer->getUid().",lat:".$dealer->getLat().",lng:".$dealer->getLng().",url:'".$dealer->getPgurl()."'},";
-            }
-            $jsDealers = substr($jsDealers, 0, -1);
-            $jsDealers .= "];";
-            $this->view->assign('dealers', $dealers);
-        }
-        $this->view->assign('jsDealers', $jsDealers);        
-    }
-
-    /**
-     * action form
-     *
-     * @return void
-     */
-    public function formAction()
-    {
-        if ($this->request->hasArgument('vorname')) {
-            $vorname = $this->request->getArgument('vorname');
-            $this->view->assign('vorname', $vorname);
-        }
-        if ($this->request->hasArgument('name')) {
-            $name = $this->request->getArgument('name');
-            $this->view->assign('name', $name);
-        }
-        if ($this->request->hasArgument('zip')) {
-            $zip = $this->request->getArgument('zip');
-            $this->view->assign('zip', $zip);
-        }
-        if ($this->request->hasArgument('country')) {
-            $country = $this->request->getArgument('country');
-            $this->view->assign('country', $country);
-        }
-        if ($this->request->hasArgument('email')) {
-            $email = $this->request->getArgument('email');
-            $this->view->assign('email', $email);
-        }
-        if ($this->request->hasArgument('message')) {
-            $message = $this->request->getArgument('message');
-            $this->view->assign('message', $message);
-        }
-    }
-    
-    
-    public function thankyouAction() {
-        
-        if ($this->request->hasArgument('vorname')) {
-            $vorname = $this->request->getArgument('vorname');
-            $data['vorname'] = $vorname;
-        }
-        if ($this->request->hasArgument('name')) {
-            $name = $this->request->getArgument('name');
-            $data['name'] = $name;
-        }
-        if ($this->request->hasArgument('zip')) {
-            $zip = $this->request->getArgument('zip');
-            $data['zip'] = $zip;
-        }
-        if ($this->request->hasArgument('country')) {
-            $country = $this->request->getArgument('country');
-            $data['country'] = $country;
-        }
-        if ($this->request->hasArgument('email')) {
-            $email = $this->request->getArgument('email');
-            $data['email'] = $email;
-        }
-        if ($this->request->hasArgument('message')) {
-            $message = $this->request->getArgument('message');
-            $data['message'] = $message;
-        }
-        
-        $sendEmail = true;
-        
-        if ($vorname == '') {
-            $sendEmail = FALSE;
-            $this->addFlashMessage(LocalizationUtility::translate("tx_armdealers_domain_model_err.vorname", "armdealers"),'ERROR',\TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-        }
-        if ($name == '') {
-             $sendEmail = FALSE;
-            $this->addFlashMessage(LocalizationUtility::translate("tx_armdealers_domain_model_err.name", "armdealers"),'ERROR',\TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-        }
-        if ($zip == '') {
-            $sendEmail = FALSE;
-            $this->addFlashMessage(LocalizationUtility::translate("tx_armdealers_domain_model_err.zip", "armdealers"),'ERROR',\TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-        }
-        if ($email == '') {
-            $sendEmail = FALSE;
-            $this->addFlashMessage(LocalizationUtility::translate("tx_armdealers_domain_model_err.email", "armdealers"),'ERROR',\TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-        }
-        if ($message == '') {
-            $sendEmail = FALSE;
-            $this->addFlashMessage(LocalizationUtility::translate("tx_armdealers_domain_model_err.message", "armdealers"),'ERROR',\TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-        }
-        
-        if (!$sendEmail) {
-            $this->forward('form');
-        } else {
-            //get the dealer
-            $zips = $this->zipcodeRepository->getByZipCountry($zip,$country);
-            $dealer = $zips[0]->getDealer();
+            $this->dealerRepository->add($dealerObj);
+            $this->addFlashMessage($row['dealertitel']." - Dealer record added.",'INFO',\TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
+            $zipObj = GeneralUtility::makeInstance("ARM\\Armdealers\\Domain\\Model\\Zipcode");
+            $zipObj->setPid($this->settings['storagePid']);
             
-            if ($dealer instanceof \ARM\Armdealers\Domain\Model\Dealer) {
-                $this->sendEmail($dealer->getTitle(), $dealer->getEmail(), $data);
-            }
-            if (isset($this->settings['thanku'])) {
-                $link = $this->uriBuilder->setTargetPageUid($this->settings['thanku'])->build();
-		$this->redirectToUri($link);
-            }   
+            $zipObj->setDealer($dealerObj);
+            $zipObj->setCountry($lnd2);
+            $zipObj->setCity($row['ville']);
+            $zipObj->setZipcode($row['plz']);
+            $zipObj->setCanton($row['kanton']);
+            $this->zipcodeRepository->add($zipObj);
+            
+            $this->addFlashMessage($row['plz']." - PLZ record added.",'INFO',\TYPO3\CMS\Core\Messaging\AbstractMessage::INFO);
+            $persistenceManager = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\PersistenceManager');
+            $persistenceManager->persistAll();
         }
+        
+        $table = 'tx_armdealers_domain_model_rawdata';
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
+        $queryBuilder->update($table)
+                     ->where(
+                        $queryBuilder->expr()->eq('uid', $row['uid'])
+                    )
+                    ->set('processed', 1)
+                    ->execute();
     }
     
-    /**
-     * @param array $data
-     */
-    protected function sendEmail($name, $email, $data) {
-        
-        // $email = 'anisur.mullick@gmail.com'; //overriding dealer email
-        $subject =  $this->settings['formSubject'];
-        $template = 'Kontakt';
-        $cc['email']= $data['email'];
-        $cc['name'] = $data['vorname'].' '.$data['name'];
-        
-        
-        $mailtpl = $this->objectManager->get('TYPO3\\CMS\\Fluid\\View\\StandaloneView');
-        $mailtpl->setFormat('html');
-
-        //$extbaseFrameworkConfiguration = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK);
-        //$templateRootPath = GeneralUtility::getFileAbsFileName($extbaseFrameworkConfiguration['view']['templateRootPaths'][0]);
-        $templateRootPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('armdealers') . 'Resources/Private/Templates/';
-        $templatePathAndFilename = $templateRootPath. "Email/{$template}.html";
-        $mailtpl->setTemplatePathAndFilename($templatePathAndFilename);
-        $mailtpl->assign('data', $data);
-        $mailbody = $mailtpl->render();
-
-        try {
-            $objMail = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Mail\\MailMessage');
-
-            // mail to User
-            $senderMail = $this->settings['sysEmail'];
-            $senderName = $this->settings['sysName'];
-
-            if (GeneralUtility::validEmail($email)) {
-
-                $objMail->setFrom(array($senderMail => $senderName))
-                ->setTo(array($email => $name))
-                ->setSubject($subject)
-                ->setBody($mailbody, 'text/html');
-
-                $objMail->setCc(array($cc['email'] => $cc['name']));
-                $objMail->send();
-
-            } 
-        } catch (Exception $e){}
-        
-    }
-
-    /**
-     * action minilist
-     *
-     * @return void
-     */
-    public function minilistAction()
-    {
-        $limit = $this->settings['limit'];
-        $hideimg = $this->settings['hideimg'];
-        if (is_null($limit)) {
-            $limit = 3;
-        } else {
-            $limit = intval($limit);
-        }
-        $dealers = $this->dealerRepository->findRecent($limit);
-        $this->view->assign('hideimg', $hideimg);
-        $this->view->assign('dealers', $dealers);
-    }
-
-    /**
-     * action recent
-     *
-     * @return void
-     */
-    public function recentAction()
-    {
-        $dealers = $this->dealerRepository->findRecent();
-        $this->view->assign('dealers', $dealers);
-    }
-    
-    /**
-     * List tags
-     */
-    public function taglistAction() {
-        $tags = $this->tagRepository->findAll();
-        $this->view->assign('tags', $tags);
-    }
 }

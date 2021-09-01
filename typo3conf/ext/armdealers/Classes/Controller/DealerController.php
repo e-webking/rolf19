@@ -1,6 +1,10 @@
 <?php
 namespace ARM\Armdealers\Controller;
 
+if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('armip2location')) {
+    require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('armip2location').'Classes/Library/Ip2LocationApi.php');
+}
+
 /***
  *
  * This file is part of the "ARM Dealers" Extension for TYPO3 CMS.
@@ -13,6 +17,7 @@ namespace ARM\Armdealers\Controller;
  ***/
 use \TYPO3\CMS\Core\Utility\GeneralUtility;
 use \TYPO3\CMS\Extbase\Utility\LocalizationUtility;
+use \TYPO3\CMS\Core\Database\ConnectionPool;
 
 /**
  * DealerController
@@ -23,17 +28,17 @@ class DealerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      * dealerRepository
      *
      * @var \ARM\Armdealers\Domain\Repository\DealerRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
-    protected $dealerRepository = null;
+    protected $dealerRepository;
     
     /**
      * zipcodeRepository
      *
      * @var \ARM\Armdealers\Domain\Repository\ZipcodeRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
-    protected $zipcodeRepository = null;
+    protected $zipcodeRepository;
     
 
     /**
@@ -43,24 +48,68 @@ class DealerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      */
     public function listAction()
     {
+        $slat = $this->settings['lat'];
+        $slng = $this->settings['lng'];
+        
         if ($this->settings['single'] && isset($this->settings['dealer'])) {
             $dealer = $this->dealerRepository->findByUid($this->settings['dealer']);
             $jsDealers = 'var dealers=[';
-            $jsDealers .= "{uid:".$dealer->getUid().",lat:".$dealer->getLat().",lng:".$dealer->getLng().",dvinfo:'del".$dealer->getUid()."'}";
+            $jsDealers .= "{uid:".$dealer->getUid().",lat:".$dealer->getLat().",lng:".$dealer->getLng().",dvinfo:'del".$dealer->getUid()."',title:'".$dealer->getTitle()."'}";
             $jsDealers .= "];";
             $this->view->assign('dealer', $dealer);
             
         } else {
-            $dealers = $this->dealerRepository->findAll();
+            
+            if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('armip2location')) {
+                 
+                $usrIp = GeneralUtility::getIndpEnv('REMOTE_ADDR');
+                $settingsIp = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'Armip2location');
+                $apiKey = $settingsIp['apiKey'];
+                $mode = $settingsIp['mode'];
+                $useLocal = $settingsIp['useLocal'];
+                
+                if ($useLocal == 1) {
+                    
+                    $locObj = new \ARM\Armip2location\Library\Ip2LocationApi();
+                    if ($cnCode = $locObj->getFromLocalDb($usrIp)) {
+                        if ($cnCode == 'AT') {
+                            $dealers = $this->dealerRepository->findByIso2cn('AT');
+                            $slat = $this->settings['alat'];
+                            $slng = $this->settings['alng'];
+                        } else {
+                            $dealers = $this->dealerRepository->getNotIso2cn('AT');
+                        }
+                    } else {
+                        $dealers = $this->dealerRepository->getNotIso2cn('AT');
+                    }
+                } else {
+                    $apiObj = new \ARM\Armip2location\Library\Ip2LocationApi($apiKey, $mode, TRUE);
+                    $apiObj->query($usrIp);
 
+                    if ($apiObj->countryCode == 'AT') {
+                        $dealers = $this->dealerRepository->findByIso2cn('AT');
+                        $slat = $this->settings['alat'];
+                        $slng = $this->settings['alng'];
+                    } else {
+                        $dealers = $this->dealerRepository->getNotIso2cn('AT');
+                    }
+                }     
+            } else {
+                $dealers = $this->dealerRepository->getNotIso2cn('AT');
+            }
+            
             $jsDealers = 'var dealers=[';
             foreach ($dealers as $dealer) {
-                $jsDealers .= "{uid:".$dealer->getUid().",lat:".$dealer->getLat().",lng:".$dealer->getLng().",dvinfo:'del".$dealer->getUid()."'},";
+                if ($dealer instanceof \ARM\Armdealers\Domain\Model\Dealer) {
+                    $jsDealers .= "{uid:".$dealer->getUid().",lat:".$dealer->getLat().",lng:".$dealer->getLng().",dvinfo:'del".$dealer->getUid()."',title:'".$dealer->getTitle()."'},";
+                }
             }
             $jsDealers = substr($jsDealers, 0, -1);
             $jsDealers .= "];";
             $this->view->assign('dealers', $dealers);
         }
+        $this->view->assign('slat', $slat);
+        $this->view->assign('slng', $slng);
         $this->view->assign('jsDealers', $jsDealers);        
     }
     
@@ -71,24 +120,74 @@ class DealerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      */
     public function maplinkAction()
     {
+        $slat = $this->settings['lat'];
+        $slng = $this->settings['lng'];
+                            
         if ($this->settings['single'] && isset($this->settings['dealer'])) {
+            
             $dealer = $this->dealerRepository->findByUid($this->settings['dealer']);
             $jsDealers = 'var dealers=[';
-            $jsDealers .= "{uid:".$dealer->getUid().",lat:".$dealer->getLat().",lng:".$dealer->getLng().",url:'".$dealer->getPgurl()."'}";
+            $jsDealers .= "{uid:".$dealer->getUid().",lat:".$dealer->getLat().",lng:".$dealer->getLng().",url:'".$dealer->getPgurl()."',title:'".$dealer->getTitle()."'}";
             $jsDealers .= "];";
+            
             $this->view->assign('dealer', $dealer);
             
         } else {
-            $dealers = $this->dealerRepository->findAll();
+            
+            if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('armip2location')) {
+                 
+                $usrIp = GeneralUtility::getIndpEnv('REMOTE_ADDR');
+                $settingsIp = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'Armip2location');
+                $apiKey = $settingsIp['apiKey'];
+                $mode = $settingsIp['mode'];
+                $useLocal = $settingsIp['useLocal'];
+                
+                if ($useLocal == 1) {
+                    
+                    $locObj = new \ARM\Armip2location\Library\Ip2LocationApi();
+                    
+                    if ($cnCode = $locObj->getFromLocalDb($usrIp)) {
+                        
+                        if ($cnCode == 'AT') {
+                            $dealers = $this->dealerRepository->findByIso2cn('AT');
+                            $slat = $this->settings['alat'];
+                            $slng = $this->settings['alng'];
+                        } else {
+                            $dealers = $this->dealerRepository->getNotIso2cn('AT');
+                        }
+                        
+                    } else {
+                        $dealers = $this->dealerRepository->getNotIso2cn('AT');
+                    }
+                } else {
+                    $apiObj = new \ARM\Armip2location\Library\Ip2LocationApi($apiKey, $mode, TRUE);
+                    $apiObj->query($usrIp);
+
+                    if ($apiObj->countryCode == 'AT') {
+                        $dealers = $this->dealerRepository->findByIso2cn('AT');
+                        $slat = $this->settings['alat'];
+                        $slng = $this->settings['alng'];
+                    } else {
+                        $dealers = $this->dealerRepository->getNotIso2cn('AT');
+                    }
+                }
+            } else {
+                $dealers = $this->dealerRepository->getNotIso2cn('AT');
+            }
 
             $jsDealers = 'var dealers=[';
+            
             foreach ($dealers as $dealer) {
-                $jsDealers .= "{uid:".$dealer->getUid().",lat:".$dealer->getLat().",lng:".$dealer->getLng().",url:'".$dealer->getPgurl()."'},";
+                $jsDealers .= "{uid:".$dealer->getUid().",lat:".$dealer->getLat().",lng:".$dealer->getLng().",url:'".$dealer->getPgurl()."',title:'".$dealer->getTitle()."'},";
             }
+            
             $jsDealers = substr($jsDealers, 0, -1);
             $jsDealers .= "];";
+
             $this->view->assign('dealers', $dealers);
         }
+        $this->view->assign('slat', $slat);
+        $this->view->assign('slng', $slng);
         $this->view->assign('jsDealers', $jsDealers);        
     }
 
@@ -99,6 +198,28 @@ class DealerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      */
     public function formAction()
     {
+        if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('armip2location')) {
+                 
+            $usrIp = GeneralUtility::getIndpEnv('REMOTE_ADDR');
+            $settingsIp = $this->configurationManager->getConfiguration(\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS, 'Armip2location');
+            $apiKey = $settingsIp['apiKey'];
+            $mode = $settingsIp['mode'];
+            $useLocal = $settingsIp['useLocal'];
+                
+            if ($useLocal == 1) {
+                $locObj = new \ARM\Armip2location\Library\Ip2LocationApi();
+                if ($cnCode = $locObj->getFromLocalDb($usrIp)) {
+                    $ip2loc = ($cnCode == 'CH')?'CHE':'AUT';
+                } else {
+                    $ip2loc = 'AUT';
+                }
+            } else {
+                $apiObj = new \ARM\Armip2location\Library\Ip2LocationApi($apiKey, $mode, TRUE);
+                $apiObj->query($usrIp);
+                $ip2loc = ($apiObj->countryCode == 'CH')?'CHE':'AUT';
+            }
+            $this->view->assign('ip2loc',$ip2loc);
+        }
         if ($this->request->hasArgument('vorname')) {
             $vorname = $this->request->getArgument('vorname');
             $this->view->assign('vorname', $vorname);
@@ -227,6 +348,7 @@ class DealerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 
                 $objMail->setFrom(array($senderMail => $senderName))
                 ->setTo(array($email => $name))
+                ->setReplyTo(array($cc['email'] => $cc['name']))
                 ->setSubject($subject)
                 ->setBody($mailbody, 'text/html');
 
@@ -274,5 +396,57 @@ class DealerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     public function taglistAction() {
         $tags = $this->tagRepository->findAll();
         $this->view->assign('tags', $tags);
+    }
+    
+    /**
+     * 
+     * @param \Psr\Http\Message\ServerRequestInterface $request
+     * @param \Psr\Http\Message\ResponseInterface $response
+     */
+    public function dlrmsgAction(\Psr\Http\Message\ServerRequestInterface $request,
+        \Psr\Http\Message\ResponseInterface $response) {
+        
+        $params = $request->getParsedBody();
+        $zip = $params['arguments']['zip'];
+        
+        try {
+            $foreign = 'tx_armdealers_domain_model_dealer';
+            $local = 'tx_armdealers_domain_model_zipcode';
+
+            $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($foreign);
+            $queryBuilder->getRestrictions()->removeAll();
+
+            $expr = $queryBuilder->expr();
+            $andCond = $queryBuilder->expr()->andx();
+            $andCond->add($expr->eq('foreign.deleted', 0));
+            $andCond->add($expr->eq('foreign.hidden', 0));
+            $andCond->add($expr->eq('local.deleted', 0));
+            $andCond->add($expr->eq('local.hidden', 0));
+            $andCond->add($expr->eq('local.zipcode',  $zip));
+
+            $qbReady = $queryBuilder->select('foreign.dispmsg')
+                         ->from($foreign, 'foreign')
+                         ->innerJoin('foreign', $local, 'local', $expr->eq('foreign.uid','local.dealer'))
+                         ->andWhere($andCond);
+
+            $rows = $qbReady->execute()->fetchAll();
+
+            if (count($rows) > 0) {
+                $arr['msg'] = $rows[0]['dispmsg'];
+            }  
+            
+            $arr['status'] = 'OK';
+            
+        } catch (\Exception $e) {
+            $arr['status'] = 'ERR';
+            $arr['error'] = $e->getMessage();
+        }
+        
+        $json = \ARM\Armdealers\Utility\JsonUtility::array2Json($arr);
+
+        $response->getBody()->write($json);
+        $response->withHeader('Content-Type', 'application/json;charset=utf-8');
+        
+        return $response;
     }
 }

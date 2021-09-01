@@ -1,0 +1,20 @@
+<html xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+<f:section name="content">
+    <h2>Import data from CSV file</h2>
+    <f:form action="import">
+        <div class="row">
+            <div class="col-5">CSV file location</div>
+            <div class="col-7"><f:form.textfield name="filepath" placeholder="fileadmin/user_upload/sample.csv" /></div>
+        </div>
+        <div class="row">
+            <div class="col-5">Field Separator</div>
+            <div class="col-7"><f:form.select name="separator" options="{',':'Comma','\t':'TAB'}" /></div>
+        </div>
+        <div class="row">
+            <div class="col-5"></div>
+            <div class="col-7"><f:form.submit name="btn" value="Import" /></div>
+        </div>
+    </f:form>
+</f:section>

@@ -11,10 +11,10 @@
 
     <f:format.raw>{jsDealers}</f:format.raw>
     var map;
-    var clat = {settings.lat};
-    var clng = {settings.lng};
+    var clat = {slat};
+    var clng = {slng};
     var czoom = {settings.zoom};
-    var image = "{f:uri.resource(path:'Icons/maplogo2.png')}";
+    var image = "{f:uri.resource(path:'Icons/logomap.png')}";
     var MPCENTER = {lat:clat, lng: clng};
 
 
@@ -24,22 +24,44 @@
           zoom: czoom,
         });
         
+        /*var icon = {
+            url: image,
+            scaledSize: new google.maps.Size(75, 100),
+            origin: new google.maps.Point(0,0),
+            anchor: new google.maps.Point(35, 50)
+        };*/
 
         for (var i = 0; i < dealers.length; i++) {
-            var data = dealers[i];            
+            var data = dealers[i];
             var markers = new google.maps.Marker({
                 position: {lat: data.lat, lng: data.lng},
                 map: map,
-                icon: image
+                icon: image,
+                title: data.title
              });
-             
+            
              (function (markers, data) {
+                addInfoWindow(markers, data.title);
                 google.maps.event.addListener(markers, "click", function (e) {
                     $('.mapcontact').hide();
                     document.getElementById(data.dvinfo).style.display="block";
                 });
             })(markers, data);
         }
+    }
+    
+    function addInfoWindow(marker, message) {
+
+        var infoWindow = new google.maps.InfoWindow({
+            content: message
+        });
+
+        google.maps.event.addListener(marker, 'mouseover', function () {
+            infoWindow.open(map, marker);
+        });
+        google.maps.event.addListener(marker, "mouseout", function () {
+            infoWindow.close();
+        });
     }
     
 </script>

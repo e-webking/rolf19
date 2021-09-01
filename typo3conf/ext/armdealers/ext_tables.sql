@@ -15,10 +15,12 @@ CREATE TABLE tx_armdealers_domain_model_dealer (
     lat double(9,6) DEFAULT '0.00' NOT NULL,
     lng double(9,6) DEFAULT '0.00' NOT NULL,
     zipcodes int(11) unsigned DEFAULT '0' NOT NULL,
-    dealerpg int(11) unsigned DEFAULT '0' NOT NULL,
+    dealerpg int(11) DEFAULT '0',
     pgurl varchar(250) DEFAULT '' NOT NULL,
     contactpid int(11) unsigned DEFAULT '0' NOT NULL,
     country varchar(50) DEFAULT '' NOT NULL,
+    iso2cn char(2) DEFAULT '' NOT NULL,
+    dispmsg varchar(250) DEFAULT '' NOT NULL,
 
     tstamp int(11) unsigned DEFAULT '0' NOT NULL,
     crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -45,7 +47,7 @@ CREATE TABLE tx_armdealers_domain_model_zipcode (
     zipcode smallint(4) DEFAULT '0' NOT NULL,
     city varchar(250) DEFAULT '' NOT NULL,
     canton char(2) DEFAULT '' NOT NULL,
-    country char(3) DEFAULT 'CHE' NOT NULL,
+    country varchar(50) DEFAULT 'CHE' NOT NULL,
 
     tstamp int(11) unsigned DEFAULT '0' NOT NULL,
     crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -60,3 +62,32 @@ CREATE TABLE tx_armdealers_domain_model_zipcode (
 
 );
 
+#
+# Table structure for table 'tx_armdealers_domain_model_rawdata'
+#
+CREATE TABLE tx_armdealers_domain_model_rawdata (
+
+    uid int(11) NOT NULL auto_increment,
+    pid int(11) DEFAULT '0' NOT NULL,
+    deleted smallint(5) unsigned DEFAULT '0' NOT NULL,
+
+    dealertitel varchar(150) DEFAULT '' NOT NULL,
+    adresse varchar(150) DEFAULT '' NOT NULL,
+    postleitzahl varchar(10) DEFAULT '' NOT NULL,
+    ort varchar(75) DEFAULT '' NOT NULL,
+    iso2cn char(2) DEFAULT '' NOT NULL,
+    land varchar(50) DEFAULT '' NOT NULL,
+    telefon varchar(50) DEFAULT '' NOT NULL,
+    email varchar(75) DEFAULT '' NOT NULL,
+    lat double(9,6) DEFAULT '0.00' NOT NULL,
+    lng double(9,6) DEFAULT '0.00' NOT NULL,
+    formmsg varchar(250) DEFAULT '' NOT NULL,
+    land2 varchar(50) DEFAULT '' NOT NULL,
+    plz varchar(10) DEFAULT '' NOT NULL,
+    ville varchar(75) DEFAULT '' NOT NULL,
+    kanton varchar(150) DEFAULT '' NOT NULL,
+    processed smallint(5) unsigned DEFAULT '0' NOT NULL,
+
+    PRIMARY KEY (uid),
+    KEY parent (pid),
+);

@@ -1,120 +1,98 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer',
-        'label' => 'title',
-        'tstamp' => 'tstamp',
-        'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
+        'title' => 'Raw Dealer Data',
+        'label' => 'dealertitel',
         'delete' => 'deleted',
         'default_sortby' => 'uid DESC',
-        'enablecolumns' => [
-            'disabled' => 'hidden',
-            'starttime' => 'starttime',
-            'endtime' => 'endtime',
-        ],
-        'searchFields' => 'title,street,zip,city,phone,email,lat,lng,zipcodes,dealerpg,pgurl,contactpid,',
+        'searchFields' => 'dealertitel,adresse,postleitzahl,ort,iso2cn,land,telefon,email,lat,lng,formmsg,land2,plz,ville,kanton,processed',
         'iconfile' => 'EXT:armdealers/Resources/Public/Icons/tx_armdealers_domain_model_dealer.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'hidden, title, street, zip, city, country, phone, email, lat, lng, dealerpg, pgurl, contactpid, zipcodes',
+        'showRecordFieldList' => 'dealertitel,adresse,postleitzahl,ort,iso2cn,land,telefon,email,lat,lng,formmsg,land2,plz,ville,kanton,processed',
     ],
     'types' => [
-        '1' => ['showitem' => 'hidden, title, street, zip, city, country, phone, email, lat, lng, dealerpg, pgurl, contactpid, zipcodes, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'dealertitel,adresse,postleitzahl,ort,iso2cn,land,telefon,email,lat,lng,formmsg,land2,plz,ville,kanton,processed'],
     ],
     'columns' => [
-        'hidden' => [
+        'processed' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
+            'label' => 'Processed',
             'config' => [
                 'type' => 'check',
                 'items' => [
                     '1' => [
-                        '0' => 'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.enabled'
+                        '0' => 'Done'
                     ]
                 ],
             ],
         ],
-        'starttime' => [
+        'dealertitel' => [
             'exclude' => true,
-            'behaviour' => [
-                'allowLanguageSynchronization' => true
-            ],
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
-            'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'size' => 13,
-                'eval' => 'datetime',
-                'default' => 0,
-            ],
-        ],
-        'endtime' => [
-            'exclude' => true,
-            'behaviour' => [
-                'allowLanguageSynchronization' => true
-            ],
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
-            'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'size' => 13,
-                'eval' => 'datetime',
-                'default' => 0,
-                'range' => [
-                    'upper' => mktime(0, 0, 0, 1, 1, 2038)
-                ],
-            ],
-        ],
-
-        'title' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.title',
+            'label' => 'Dealer Titel',
             'config' => [
                 'type' => 'input',
                 'size' => 20,
                 'eval' => 'trim'
             ],
         ],
-        'city' => [
+        'ort' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.city',
+            'label' => 'Ort',
             'config' => [
                 'type' => 'input',
                 'size' => 15,
                 'eval' => 'trim'
             ],
         ],
-        'street' => [
+        'formmsg' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.street',
+            'label' => 'Form Message',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim'
             ]
         ],
-        'zip' => [
+        'adresse' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.zip',
+            'label' => 'Adresse',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
+            ]
+        ],
+        'postleitzahl' => [
+            'exclude' => true,
+            'label' => 'Postleitzahl',
             'config' => [
                 'type' => 'input',
                 'size' => 10,
                 'eval' => 'trim'
             ],
         ],
-        'country'=> [
+        'iso2cn'=> [
             'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.country',
+            'label' => 'ISO 2 CN',
+            'config' => [
+                'type' => 'input',
+                'size' => 5,
+                'eval' => 'trim'
+            ],
+        ],
+        'land'=> [
+            'exclude' => true,
+            'label' => 'Land',
             'config' => [
                 'type' => 'input',
                 'size' => 10,
                 'eval' => 'trim'
             ],
         ],
-        'phone' => [
+        'telefon' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.phone',
+            'label' => 'Telefon',
             'config' => [
                'type' => 'input',
                 'size' => 10,
@@ -123,7 +101,7 @@ return [
         ],
         'email' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.email',
+            'label' => 'Email',
             'config' => [
                 'type' => 'input',
                 'size' => 20,
@@ -132,69 +110,55 @@ return [
         ],
         'lat' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.lat',
+            'label' => 'Latitude',
             'config' => [
                 'type' => 'input',
                 'size' => 10,
-                'eval' => 'ARM\\Armdealers\\Evaluation\\FloatEvaluation'
             ],
         ],
         'lng' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.lng',
+            'label' => 'Longitude',
             'config' => [
                 'type' => 'input',
                 'size' => 10,
-                'eval' => 'ARM\\Armdealers\\Evaluation\\FloatEvaluation'
             ],
         ],
-        'dealerpg'=> [
+        'land2' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.dealerpg',
-            'config' => [
-                'type' => 'group',
-                'internal_type' => 'db',
-                'allowed' => 'pages',
-                'size' => 1
-            ],
-        ],
-        'pgurl' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.pgurl',
+            'label' => 'Land 2',
             'config' => [
                 'type' => 'input',
                 'size' => 20,
                 'eval' => 'trim'
             ],
         ],
-        'contactpid'=> [
+        'plz' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.contactpid',
+            'label' => 'PLZ',
             'config' => [
-                'type' => 'group',
-                'internal_type' => 'db',
-                'allowed' => 'pages',
-                'size' => 1
+                'type' => 'input',
+                'size' => 15,
+                'eval' => 'trim'
             ],
         ],
-        'zipcodes' => [
+        'ville' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_dealer.zipcodes',
+            'label' => 'Ville',
             'config' => [
-                'type' => 'inline',
-                'foreign_table' => 'tx_armdealers_domain_model_zipcode',
-                'foreign_field' => 'dealer',
-                'maxitems' => 9999,
-                'appearance' => [
-                    'collapseAll' => 1,
-                    'levelLinksPosition' => 'top',
-                    'showSynchronizationLink' => 1,
-                    'showPossibleLocalizationRecords' => 1,
-                    'showAllLocalizationLink' => 1
-                ],
+                'type' => 'input',
+                'size' => 20,
+                'eval' => 'trim'
             ],
-
         ],
-    
+        'kanton' => [
+            'exclude' => true,
+            'label' => 'Kanton',
+            'config' => [
+                'type' => 'input',
+                'size' => 15,
+                'eval' => 'trim'
+            ],
+        ],
     ],
 ];

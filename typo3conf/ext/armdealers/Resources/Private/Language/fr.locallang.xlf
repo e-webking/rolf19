@@ -5,19 +5,19 @@
 		<body>
 			<trans-unit id="tx_armdealers_domain_model_tpl.vorname">
 				<source>Vorname</source>
-                                <target>Vorname</target>
+                                <target>Prénom</target>
 			</trans-unit>
 			<trans-unit id="tx_armdealers_domain_model_tpl.name">
 				<source>Name</source>
-                                <target>Name</target>
+                                <target>Nom</target>
 			</trans-unit>
 			<trans-unit id="tx_armdealers_domain_model_tpl.zip">
 				<source>Postleitzahl</source>
-                                <target>Postleitzahl</target>
+                                <target>Code postal</target>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_domain_model_tpl.country">
 				<source>Land</source>
-                                <target>Country</target>
+                                <target>Pays</target>
 			</trans-unit>
 			<trans-unit id="tx_armdealers_domain_model_tpl.email">
 				<source>Email</source>
@@ -25,13 +25,16 @@
 			</trans-unit>
 			<trans-unit id="tx_armdealers_domain_model_tpl.message">
 				<source>Nachricht</source>
-                                <target>Nachricht</target>
+                                <target>Message</target>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_domain_model_tpl.send">
 				<source>Senden</source>
                                 <target>Envoyer</target>
 			</trans-unit>
-                        
+                        <trans-unit id="tx_armdealers_domain_model_tpl.mandatory">
+				<source>Pflichtfeld</source>
+                                <target>Champ obligatoire</target>
+			</trans-unit>
                         <trans-unit id="tx_armdealers_domain_model_tpl.contactfrm">
 				<source>Kontakt Formular</source>
                                 <target>Contact Form</target>
@@ -40,7 +43,10 @@
 				<source>Personal Details</source>
                                 <target>Personal Details</target>
 			</trans-unit>
-                        
+                        <trans-unit id="tx_armdealers_domain_model_tpl.dispmsg">
+                            <source>Ihre Nachticht an das ROLF BENZ HAUS in Ihrer Nähe</source>
+                            <target>Ihre Nachticht an das ROLF BENZ HAUS in Ihrer Nähe</target>
+                        </trans-unit>
                         
                         <trans-unit id="tx_armdealers_domain_model_err.vorname">
 				<source>Bitte füllen Sie das Vornamefeld aus</source>
@@ -61,6 +67,10 @@
                         <trans-unit id="tx_armdealers_domain_model_err.message">
 				<source>Bitte füllen Sie das Nachricht aus</source>
                                 <target>Bitte füllen Sie das Nachricht aus</target>
+			</trans-unit>
+                        
+                       <trans-unit id="tx_armdealers_map.contactpre">
+				<target>Un expert Rolf Benz à votre service</target>
 			</trans-unit>
 		</body>
 	</file>

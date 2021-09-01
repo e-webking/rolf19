@@ -18,6 +18,12 @@
                         <trans-unit id="tx_armdealers_domain_model_dealer.city">
 				<source>Ort</source>
 			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_dealer.dispmsg">
+				<source>Form message</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_dealer.iso2cn">
+				<source>Country (ISO 2 code)</source>
+			</trans-unit>
                         <trans-unit id="tx_armdealers_domain_model_dealer.country">
 				<source>Land</source>
 			</trans-unit>

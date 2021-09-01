@@ -2,9 +2,17 @@
 if (!defined('TYPO3_MODE')) {
     die ('Access denied.');
 }
+call_user_func(
+    function()
+    {
 
-if (!is_array($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY])) {
-    $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY] = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY]);
-}
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Rolf-Benz Template');
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'ARM.Armdflip',
+            'flip',
+            'PDF Flip Book'
+        );
+        
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('armdflip', 'Configuration/TypoScript', 'Rolf-Benz PDF Flipbook');        
+       
+    }
+);
