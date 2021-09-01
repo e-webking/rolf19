@@ -1,4 +1,4 @@
-.desktop-nav {float: left; font-weight: 300; margin-top: 50px; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif}
+.desktop-nav {float: left; font-weight: 300; margin-top: 25px; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif}
 .desktop-nav a {text-decoration: none; display: inline-block;}
 .desktop-nav ul {width: auto; margin: 0px; padding: 0px; float: right;}
 .desktop-nav li {list-style: none; margin: 0; display: block; position: relative; float: left; height: auto;}
@@ -68,4 +68,12 @@
     .siteHeader nav#mainNav {
         display: none;
     }
+}
+
+@media screen and (min-width: 1560px) {
+    .desktop-nav {margin-top: 35px}
+}
+
+@media screen and (min-width: 1920px) {
+    .desktop-nav {margin-top: 50px}
 }

@@ -1,0 +1,23 @@
+baseUrl = http://typo3.local/rolfbenz19/
+rootPID = 1
+searchPid = 15
+templatePath = typo3conf/ext/armtpl/
+logoFile = typo3conf/ext/armtpl/Resources/Public/Images/logo.svg
+kontaktPid = 2
+
+footerMenu = 9
+cmsFooterUid = 1
+
+facebook_url = 
+youtube_url =
+pinterest_url = 
+instagram_url = 
+
+show_facebook=1
+show_youtube=1
+show_pinterest=1
+show_instagram=1
+
+[globalString = ENV:HTTPS=on]
+baseUrl = https://www.rolf-benz.haus/
+[end]
