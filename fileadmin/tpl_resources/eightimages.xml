@@ -70,6 +70,15 @@
               </config>
             </TCEforms>
         </field_imgone>
+        <field_imgonetitle type="array">
+            <TCEforms type="array">
+              <label>Image 1 Title</label>
+              <config type="array">
+                <type>input</type>
+                <size>20</size>
+              </config>
+            </TCEforms>
+        </field_imgonetitle>
         <field_imgonecaption type="array">
             <TCEforms type="array">
               <label>Image 1 Caption</label>
@@ -120,6 +129,15 @@
               </config>
             </TCEforms>
         </field_imgtwo>
+        <field_imgtwotitle type="array">
+            <TCEforms type="array">
+              <label>Image 2 Title</label>
+              <config type="array">
+                <type>input</type>
+                <size>20</size>
+              </config>
+            </TCEforms>
+        </field_imgtwotitle>
         <field_imgtwocaption type="array">
             <TCEforms type="array">
               <label>Image 2 Caption</label>
@@ -153,7 +171,7 @@
             <softref>typolink</softref>
           </config>
         </TCEforms>
-      </field_linktwo>
+        </field_linktwo>
         <field_imgthree type="array">
             <TCEforms type="array">
               <label>Image 3</label>
@@ -171,6 +189,16 @@
               </config>
             </TCEforms>
         </field_imgthree>
+        <field_imgthreetitle type="array">
+            <TCEforms type="array">
+              <label>Image 3 Title</label>
+              <displayCond>FIELD:field_imgcnt:>:2</displayCond>
+              <config type="array">
+                <type>input</type>
+                <size>20</size>
+              </config>
+            </TCEforms>
+        </field_imgthreetitle>
         <field_imgthreecaption type="array">
             <TCEforms type="array">
               <label>Image 3 Caption</label>
@@ -206,7 +234,7 @@
             <softref>typolink</softref>
           </config>
         </TCEforms>
-      </field_linkthree>
+        </field_linkthree>
         <field_imgfour type="array">
             <TCEforms type="array">
               <label>Image 4</label>
@@ -224,6 +252,16 @@
               </config>
             </TCEforms>
         </field_imgfour>
+        <field_imgfourtitle type="array">
+            <TCEforms type="array">
+              <label>Image 4 Title</label>
+              <displayCond>FIELD:field_imgcnt:>:3</displayCond>
+              <config type="array">
+                <type>input</type>
+                <size>20</size>
+              </config>
+            </TCEforms>
+        </field_imgfourtitle>
         <field_imgfourcaption type="array">
             <TCEforms type="array">
               <label>Image 4 Caption</label>
@@ -277,6 +315,16 @@
               </config>
             </TCEforms>
         </field_imgfive>
+        <field_imgfivetitle type="array">
+            <TCEforms type="array">
+              <label>Image 5 Title</label>
+              <displayCond>FIELD:field_imgcnt:>:4</displayCond>
+              <config type="array">
+                <type>input</type>
+                <size>20</size>
+              </config>
+            </TCEforms>
+        </field_imgfivetitle>
         <field_imgfivecaption type="array">
             <TCEforms type="array">
               <label>Image 5 Caption</label>
@@ -330,6 +378,16 @@
               </config>
             </TCEforms>
         </field_imgsix>
+        <field_imgsixtitle type="array">
+            <TCEforms type="array">
+              <label>Image 6 Title</label>
+              <displayCond>FIELD:field_imgcnt:>:5</displayCond>
+              <config type="array">
+                <type>input</type>
+                <size>20</size>
+              </config>
+            </TCEforms>
+        </field_imgsixtitle>
         <field_imgsixcaption type="array">
             <TCEforms type="array">
               <label>Image 6 Caption</label>
@@ -383,6 +441,16 @@
               </config>
             </TCEforms>
         </field_imgseven>
+        <field_imgseventitle type="array">
+            <TCEforms type="array">
+              <label>Image 7 Title</label>
+              <displayCond>FIELD:field_imgcnt:>:6</displayCond>
+              <config type="array">
+                <type>input</type>
+                <size>20</size>
+              </config>
+            </TCEforms>
+        </field_imgseventitle>
         <field_imgsevencaption type="array">
             <TCEforms type="array">
               <label>Image 7 Caption</label>
@@ -436,6 +504,16 @@
               </config>
             </TCEforms>
         </field_imgeight>
+        <field_imgeighttitle type="array">
+            <TCEforms type="array">
+              <label>Image 8 Title</label>
+              <displayCond>FIELD:field_imgcnt:>:7</displayCond>
+              <config type="array">
+                <type>input</type>
+                <size>20</size>
+              </config>
+            </TCEforms>
+        </field_imgeighttitle>
         <field_imgeightcaption type="array">
             <TCEforms type="array">
               <label>Image 8 Caption</label>
