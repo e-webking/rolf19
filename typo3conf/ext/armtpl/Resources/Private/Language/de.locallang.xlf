@@ -25,12 +25,36 @@
                         <trans-unit id="finisher.EmailToReceiver.subject">
                             <target>Kontactform enquiry</target>
 			</trans-unit>
-                         <trans-unit id="finisher.EmailToSender.subject">
+                        <trans-unit id="finisher.EmailToSender.subject">
 				<target>Kontactform enquiry</target>
 			</trans-unit>
                         <trans-unit id="element.name.properties.label">
                             <target>Name</target>
                         </trans-unit>
+                        <trans-unit id="contactForm2.finisher.EmailToSender.subject">
+				<source>Thank you for your emailt</source>
+                                <target>Danke für Ihre Nachricht</target>
+			</trans-unit>
+                        <trans-unit id="contactForm2.finisher.EmailToReceiver.subject">
+				<source>Contact form filled</source>
+                                <target>Kontakt-Formular ausgefüllt</target>
+			</trans-unit>
+                        <trans-unit id="eroeffnungsevent.finisher.EmailToSender.subject">
+				<source>Danke für Ihre Nachricht</source>
+                                <target>Danke für Ihre Nachricht</target>
+			</trans-unit>
+                        <trans-unit id="eroeffnungsevent.finisher.EmailToReceiver.subject">
+				<source>Anmeldung zum Event</source>
+                                <target>Anmeldung zum Event</target>
+			</trans-unit>
+                        <trans-unit id="rolfBenzHausZuerich.finisher.EmailToSender.subject">
+				<source>Thank you for your emailt</source>
+                                <target>Danke für Ihre Nachricht</target>
+			</trans-unit>
+                        <trans-unit id="rolfBenzHausZuerich.finisher.EmailToReceiver.subject">
+				<source>Contact form filled</source>
+                                <target>Interessent meldet sich</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

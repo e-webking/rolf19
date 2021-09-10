@@ -19,10 +19,67 @@
 				<source>Submit</source>
 			</trans-unit>
                         <trans-unit id="finisher.EmailToReceiver.subject" resname="finisher.EmailToReceiver.subject">
-				<source>Contact form enquiry</source>
+				<source>Kontaktformular-Anfrage</source>
 			</trans-unit>
                         <trans-unit id="finisher.EmailToSender.subject" resname="finisher.EmailToSender.subject">
-				<source>Contact form enquiry</source>
+				<source>Kontaktformular-Anfrage</source>
+			</trans-unit>
+                        <trans-unit id="contactForm2.finisher.EmailToSender.subject">
+				<source>Danke für Ihre Nachricht</source>
+			</trans-unit>
+                        <trans-unit id="contactForm2.finisher.EmailToReceiver.subject">
+				<source>Kontakt-Formular ausgefüllt</source>
+			</trans-unit>
+                        <trans-unit id="eroeffnungsevent.finisher.EmailToSender.subject">
+				<source>Danke für Ihre Nachricht</source>
+			</trans-unit>
+                        <trans-unit id="eroeffnungsevent.finisher.EmailToReceiver.subject">
+				<source>Anmeldung zum Event</source>
+			</trans-unit>
+                        <trans-unit id="contactForm2.finisher.EmailToSender.subject">
+				<source>Danke für Ihre Nachricht</source>
+			</trans-unit>
+                        <trans-unit id="contactForm2.finisher.EmailToReceiver.subject">
+				<source>Interessent meldet sich</source>
+			</trans-unit>
+                        <trans-unit id="rolfBenzHausGeuensee.finisher.EmailToSender.subject">
+				<source>Danke für Ihre Nachricht</source>
+			</trans-unit>
+                        <trans-unit id="rolfBenzHausGeuensee.finisher.EmailToReceiver.subject">
+				<source>Ihre Nachricht an das Rolf Benz Haus</source>
+			</trans-unit>
+                        <trans-unit id="rolfBenzHausGraz.finisher.EmailToSender.subject">
+				<source>Danke für Ihre Nachricht</source>
+			</trans-unit>
+                        <trans-unit id="rolfBenzHausGraz.finisher.EmailToReceiver.subject">
+				<source>Ihre Nachricht an das Rolf Benz Haus</source>
+			</trans-unit>
+                        <trans-unit id="rolfBenzHausKlag.finisher.EmailToSender.subject">
+				<source>Danke für Ihre Nachricht</source>
+			</trans-unit>
+                        <trans-unit id="rolfBenzHausKlag.finisher.EmailToReceiver.subject">
+				<source>Ihre Nachricht an das Rolf Benz Haus</source>
+			</trans-unit>
+                        <trans-unit id="rolfBenzHausLuzern.finisher.EmailToSender.subject">
+				<source>Danke für Ihre Nachricht</source>
+			</trans-unit>
+                        <trans-unit id="rolfBenzHausLuzern.finisher.EmailToReceiver.subject">
+				<source>Ihre Nachricht an das Rolf Benz Haus</source>
+			</trans-unit>
+                        <trans-unit id="rolfBenzHausVevey.finisher.EmailToSender.subject">
+				<source>Danke für Ihre Nachricht</source>
+			</trans-unit>
+                        <trans-unit id="rolfBenzHausVevey.finisher.EmailToReceiver.subject">
+				<source>Ihre Nachricht an das Rolf Benz Haus</source>
+			</trans-unit>
+                        <trans-unit id="rolfBenzHausWien.finisher.EmailToSender.subject">
+				<source>Danke für Ihre Nachricht</source>
+			</trans-unit>
+                        <trans-unit id="rolfBenzHausWien.finisher.EmailToReceiver.subject">
+				<source>Ihre Nachricht an das Rolf Benz Haus</source>
+			</trans-unit>
+                        <trans-unit id="videoBeratung.finisher.EmailToReceiver.subject">
+				<source>Live Video Beratung</source>
 			</trans-unit>
 		</body>
 	</file>

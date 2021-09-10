@@ -206,6 +206,7 @@ ul.tx-indexedsearch-browsebox li {padding: 5px 10px 5px 0px; float: left;}
 .roundimg img {width: 100%;height: 100%;border-radius: 75px;}
 .testimonial .text {margin-bottom: 40px;}
 .ce-gallery .ce-row {display: flex; flex-wrap: wrap}
+.ce-gallery[data-ce-columns="1"] .ce-row .ce-column{-ms-flex: 0 0 100%;flex: 0 0 100%; max-width: 100%}
 .ce-gallery[data-ce-columns="2"] .ce-row .ce-column{-ms-flex: 0 0 100%;flex: 0 0 100%; max-width: 100%}
 .ce-gallery[data-ce-columns="3"] .ce-row .ce-column{-ms-flex: 0 0 100%;flex: 0 0 100%; max-width: 100%}
 .ce-gallery[data-ce-columns="4"] .ce-row .ce-column{-ms-flex: 0 0 100%;flex: 0 0 100%; max-width: 100%}

@@ -1,31 +1,32 @@
 
 renderingOptions:
   submitButtonLabel: Senden
-identifier: contactForm2
-label: 'Rolf Benz Haus Rapperswil'
+identifier: eroeffnungsevent
+label: Eröffnungsevent
 prototypeName: standard
 type: Form
 finishers:
   -
+    identifier: EmailToReceiver
     options:
-      subject: 'Contact form filled'
-      recipientAddress: rapperswil@rolf-benz.haus
-      recipientName: 'Rolf Benz Haus Rapperswil'
-      senderAddress: rolfbenzhaus@rolfbenz.haus
+      subject: 'Anmeldung zum Event'
+      recipientAddress: zuerich@rolf-benz.haus
+      recipientName: 'Rolf Benz Haus Zürich'
+      senderAddress: zuerich@rolfbenz.haus
       senderName: '{vorname} {name}'
       replyToAddress: '{email}'
       format: html
       attachUploads: false
       translation:
         language: de
-    identifier: EmailToReceiver
   -
+    identifier: EmailToSender
     options:
-      subject: 'Thank you for your mail'
+      subject: 'Danke für Ihre Nachricht'
       recipientAddress: '{email}'
       recipientName: '{vorname} {name}'
-      senderAddress: rapperswil@rolf-benz.haus
-      senderName: 'Rolf Benz Haus Rapperswil'
+      senderAddress: zuerich@rolf-benz.haus
+      senderName: 'Rolf Benz Haus Zürich'
       replyToAddress: ''
       carbonCopyAddress: ''
       blindCarbonCopyAddress: ''
@@ -34,10 +35,9 @@ finishers:
       templateName: '{@format}.html'
       templateRootPaths:
         20: 'EXT:armtpl/Resources/Private/Forms/Emails/Sender/'
-    identifier: EmailToSender
   -
     options:
-      pageUid: '73'
+      pageUid: '290'
       additionalParameters: ''
     identifier: Redirect
 renderables:
@@ -101,40 +101,6 @@ renderables:
             identifier: NotEmpty
       -
         defaultValue: ''
-        identifier: postcode
-        label: Postleitzahl
-        type: Text
-        properties:
-          fluidAdditionalAttributes:
-            placeholder: Postleitzahl
-            required: required
-          validationErrorMessages:
-            -
-              code: 1221560910
-              message: 'Bitte füllen Sie das Postleitzahlfeld aus'
-            -
-              code: 1221560718
-              message: 'Bitte füllen Sie das Postleitzahlfeld aus'
-            -
-              code: 1347992400
-              message: 'Bitte füllen Sie das Postleitzahlfeld aus'
-            -
-              code: 1347992453
-              message: 'Bitte füllen Sie das Postleitzahlfeld aus'
-        validators:
-          -
-            identifier: NotEmpty
-          -
-            identifier: Integer
-      -
-        defaultValue: ''
-        type: Text
-        identifier: text-1
-        label: 'Telefon Nr.'
-        properties:
-          elementDescription: 'Telefon Nr.'
-      -
-        defaultValue: ''
         identifier: email
         label: Email
         type: Text
@@ -168,20 +134,3 @@ renderables:
         properties:
           fluidAdditionalAttributes:
             placeholder: Nachricht
-            required: required
-          validationErrorMessages:
-            -
-              code: 1221560910
-              message: 'Bitte füllen Sie das Nachricht aus'
-            -
-              code: 1221560718
-              message: 'Bitte füllen Sie das Nachricht aus'
-            -
-              code: 1347992400
-              message: 'Bitte füllen Sie das Nachricht aus'
-            -
-              code: 1347992453
-              message: 'Bitte füllen Sie das Nachricht aus'
-        validators:
-          -
-            identifier: NotEmpty

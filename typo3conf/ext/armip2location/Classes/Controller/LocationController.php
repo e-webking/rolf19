@@ -59,7 +59,6 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
             $cn2code = $dbRec->getCn2iso();
             
            // echo 'Debug:'.$cn2code . 'set country: '.$setCountry;
-
             if ($cn2code == 'DE') {
                 header("location: /visit.html");
                 exit;
@@ -141,9 +140,11 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         //var_dump($apiObj);
         
         $apiObj->query($usrIp);
+        
         if ($apiObj->countryCode == 'DE') {
             header("location: /visit.html");
             exit;
         }
+        
     }
 }
