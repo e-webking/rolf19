@@ -1,3 +1,25 @@
+$(".flexislider").each(function(index, element){
+    
+    var $data = $(this).attr('data-uid');
+    var $speed = $(this).attr('data-speed');
+    var swiper = new Swiper(".swiper-" + $data, {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        effect: 'fade',
+        speed: 1500,
+        loop: true,
+        enabled: true,
+        autoplay: {
+            delay: $speed,
+            disableOnInteraction: true,
+            pauseOnMouseEnter: true,
+        },
+        keyboard: {
+            enabled: true,
+        }
+    });
+});
+
 var swiper = new Swiper('.swiper-container', {
         slidesPerView: 1,
         spaceBetween: 30,
@@ -96,4 +118,9 @@ $(document).ready(function(){
        $(this).hide(); 
        $('.arminfo').css("background-image", "url(" + nicon + ")");
     });
+    
+    $('.contact-form').submit(function(event){
+        $(this).find('.cta').addClass('disabled');
+       // $(this).find('.cta').attr('disabled', true);
+    })
 });

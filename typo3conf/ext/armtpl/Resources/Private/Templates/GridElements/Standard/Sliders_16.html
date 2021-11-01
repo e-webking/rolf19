@@ -1,0 +1,11 @@
+<div class="swiper-container flexislider swiper-{data.uid}" data-uid="{data.uid}" data-speed="{f:if(condition:data.flexform_field_speed, then:'{data.flexform_field_speed}', else:'2500')}">
+    <div class="swiper-wrapper">
+        <f:format.raw>{data.tx_gridelements_view_column_10}</f:format.raw>
+    </div>
+    <f:if condition="{data.flexform_field_nopage}">
+            <f:else>
+                <div class="swiper-button-next btn-next-{data.uid}"></div>
+                <div class="swiper-button-prev btn-prev-{data.uid}"></div>
+            </f:else>
+    </f:if>
+</div>    

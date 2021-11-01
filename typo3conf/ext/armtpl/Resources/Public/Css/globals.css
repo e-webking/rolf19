@@ -138,10 +138,11 @@ label {font-weight:normal;}
 .negate-above-gbl {margin-top: -60px;}
 .banner-media {position: relative;width: 100%;}
 .videoWrapper, .videoWrapper2 {width: 100%; overflow-x: hidden}
-.videoWrapper iframe {width: 100vw;height: 56.15vw; max-width: 100%; background: #000;}
+.videoWrapper iframe {width: 100vw;height: 56.10vw; max-width: 100%; background: #fff;}
 .videoWrapper2 iframe {width: 100vw;height: 51.25vw; max-width: 100%; background: #000;}
 
-.cta{background-color: #000; border: 0; display: inline-block; min-width: 200px;text-align: center; color: #fff;padding: 10px 20px; font-size: 18px; letter-spacing: 0.1em;}
+.cta{background-color: #000; border: 0; display: inline-block; min-width: 200px;text-align: center; color: #fff;padding: 10px 20px; font-size: 18px; letter-spacing: 0.1em; cursor: pointer}
+.cta.disabled {background-color: #666; color: #ccc}
 .ctawhite {display: table; min-width: 350px; height: 70px; margin: 0 auto; padding: 0 10px; line-height: 64px; vertical-align: middle; text-align: center; background: #fff; border: 2px solid #000; color: #000 !important; font-size: 16pt; font-weight: bold}
 .ctawhite:hover {background: #000; color: #fff !important; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
 .ld2020 .cta {background-color: #b0e2e3; color: #000; font-weight: 600; min-width: 260px; height: 42px; line-height: 40px; padding: 0;}
@@ -210,6 +211,7 @@ label {font-weight:normal;}
 .frame-type-menu_sitemap ul li {-ms-flex: 1 0 100%; flex: 1 0 100%;max-width: 100%; margin-top: 5px;}
 .hero-video {background: url(''); display: table;overflow: hidden;height: 150px;background-position: center !important;width: 100vw;}
 .banner-vid {top:0;padding-right: 10px; left: 50%;transform: translateX(-50%);position: fixed;z-index: -100;display: block;max-width: 100%;width: auto;height: auto;overflow: hidden;background-position: center !important;background-size: cover;background-repeat: no-repeat;}
+
 
 @media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
     .banner-vid {padding-right: 10px}
