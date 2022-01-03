@@ -14,7 +14,14 @@
             </f:if>
             <img src="uploads/tx_armtpl/{data.flexform_field_imagelarge}" alt="{data.flexform_field_imgalt}">
             <f:if condition="{data.flexform_field_caption}">
-                <figcaption class="image-caption">{data.flexform_field_caption}</figcaption>
+                <f:if condition="{data.flexform_field_force}">
+                    <f:then>
+                        <figcaption class="image-caption force">{data.flexform_field_caption}</figcaption>
+                    </f:then>
+                    <f:else>
+                        <figcaption class="image-caption">{data.flexform_field_caption}</figcaption>
+                    </f:else>
+                </f:if>
             </f:if>
           </picture>
         </f:link.typolink>
@@ -33,7 +40,14 @@
             </f:if>
             <img src="uploads/tx_armtpl/{data.flexform_field_imagelarge}" alt="{data.flexform_field_imgalt}">
             <f:if condition="{data.flexform_field_caption}">
-                <figcaption class="image-caption">{data.flexform_field_caption}</figcaption>
+                <f:if condition="{data.flexform_field_force}">
+                    <f:then>
+                        <figcaption class="image-caption force">{data.flexform_field_caption}</figcaption>
+                    </f:then>
+                    <f:else>
+                        <figcaption class="image-caption">{data.flexform_field_caption}</figcaption>
+                    </f:else>
+                </f:if>
             </f:if>
           </picture>
     </f:else>

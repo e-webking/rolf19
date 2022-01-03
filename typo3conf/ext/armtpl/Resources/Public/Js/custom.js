@@ -122,5 +122,18 @@ $(document).ready(function(){
     $('.contact-form').submit(function(event){
         $(this).find('.cta').addClass('disabled');
        // $(this).find('.cta').attr('disabled', true);
-    })
+    });
+    
+
+    $('.openinmodal').on('click', function(){
+        var eluid = $(this).attr('data-uid');
+        document.getElementById('img-'+eluid).src = $(this).attr("src");
+        $('#my-'+eluid).show();
+        document.getElementById('caption-'+eluid).innerHTML = this.alt;
+    });
+    
+    $('.modalclose').on ('click', function (){
+        var eluid = $(this).attr('data-uid');
+        $('#my-'+eluid).hide();
+    });
 });

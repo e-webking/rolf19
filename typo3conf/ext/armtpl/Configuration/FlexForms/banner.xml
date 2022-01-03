@@ -80,6 +80,14 @@
           </config>
         </TCEforms>
       </field_imgalt>
+      <field_force type="array">
+        <TCEforms type="array">
+          <label>Show Caption (force)</label>
+          <config type="array">
+            <type>check</type>
+          </config>
+        </TCEforms>
+      </field_force>
     </el>
   </ROOT>
 </T3DataStructure>

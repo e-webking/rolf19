@@ -1,7 +1,26 @@
 <div class="banner-media">
+    <f:if condition="{data.flexform_field_css}">
+        <f:then>
+            <f:render section="specific" arguments="{data:data}" />
+        </f:then>
+        <f:else>
+            <f:render section="default" arguments="{data:data}" />
+        </f:else>
+    </f:if>
+</div>
+
+<f:section name="default">
     <div class="videoWrapper">
         <f:if condition="{data.flexform_field_video}">
             <iframe src="https://player.vimeo.com/video/{data.flexform_field_video}?autoplay=1&loop=1&muted=1"  webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" frameborder="0"></iframe>
         </f:if>
     </div>
-</div>
+</f:section>
+
+<f:section name="specific">
+    <div class="{data.flexform_field_css}">
+        <f:if condition="{data.flexform_field_video}">
+            <iframe src="https://player.vimeo.com/video/{data.flexform_field_video}?autoplay=1&loop=1&muted=1"  webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" frameborder="0"></iframe>
+        </f:if>
+    </div>
+</f:section>

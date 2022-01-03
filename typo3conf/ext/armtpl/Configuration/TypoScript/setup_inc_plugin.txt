@@ -67,7 +67,6 @@ plugin.tx_seo {
     }
   }
 }
-
 lib.visit = USER_INT
 lib.visit {
     userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
@@ -83,4 +82,3 @@ lib.visit {
     view =< plugin.tx_armip2location.view
     settings =< plugin.tx_armip2location.settings
 }
-

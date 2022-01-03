@@ -1,297 +1,235 @@
+<f:section name="secimg">
+    <f:if condition="{modal}">
+        <f:then>
+            <img class="openinmodal" data-uid="{uid}" src="uploads/tx_armtpl/{fname}" alt="{caption}">
+        </f:then>
+        <f:else>
+            <img src="uploads/tx_armtpl/{fname}" alt="{caption}">
+        </f:else>
+    </f:if>
+</f:section>
+<f:section name="imageone">
+    <f:if condition="{data.flexform_field_imgone}">
+        <f:if condition="{data.flexform_field_linkone}">
+            <f:then>
+                <f:link.typolink parameter="{data.flexform_field_linkone}"><f:render section="secimg" arguments="{modal:data.flexform_field_modal,uid:data.uid,fname:data.flexform_field_imgone,caption:data.flexform_field_imgonecaption}" /></f:link.typolink>
+                <f:if condition="{data.flexform_field_showcap}">
+                    <div class="image-caption">{data.flexform_field_imgonetitle}</div>
+                    <div class="caption">{data.flexform_field_imgonecaption}</div>
+                </f:if>
+            </f:then>
+            <f:else>
+                <f:render section="secimg" arguments="{modal:data.flexform_field_modal,uid:data.uid,fname:data.flexform_field_imgone,caption:data.flexform_field_imgonecaption}" />
+                <f:if condition="{data.flexform_field_showcap}">
+                    <div class="image-caption">{data.flexform_field_imgonetitle}</div>
+                    <div class="caption">{data.flexform_field_imgonecaption}</div>
+                </f:if>
+            </f:else>
+        </f:if>                
+    </f:if>
+</f:section>
+
+<f:section name="imagetwo">
+    <f:if condition="{data.flexform_field_imgtwo}">
+        <f:if condition="{data.flexform_field_linktwo}">
+            <f:then>
+                <f:link.typolink parameter="{data.flexform_field_linktwo}"><f:render section="secimg" arguments="{modal:data.flexform_field_modal,uid:data.uid,fname:data.flexform_field_imgtwo,caption:data.flexform_field_imgtwocaption}" /></f:link.typolink>
+                <f:if condition="{data.flexform_field_showcap}">
+                    <div class="image-caption">{data.flexform_field_imgtwotitle}</div>
+                    <div class="caption">{data.flexform_field_imgtwocaption}</div>
+                </f:if>
+            </f:then>
+            <f:else>
+                <f:render section="secimg" arguments="{modal:data.flexform_field_modal,uid:data.uid,fname:data.flexform_field_imgtwo,caption:data.flexform_field_imgtwocaption}" />
+                <f:if condition="{data.flexform_field_showcap}">
+                    <div class="image-caption">{data.flexform_field_imgtwotitle}</div>
+                    <div class="caption">{data.flexform_field_imgtwocaption}</div>
+                </f:if>
+            </f:else>
+        </f:if>
+    </f:if>
+</f:section>
+
+<f:section name="imagethree">
+    <f:if condition="{data.flexform_field_imgthree}">
+        <f:if condition="{data.flexform_field_linkthree}">
+            <f:then>
+                <f:link.typolink parameter="{data.flexform_field_linkthree}"><f:render section="secimg" arguments="{modal:data.flexform_field_modal,uid:data.uid,fname:data.flexform_field_imgthree,caption:data.flexform_field_imgthreecaption}" /></f:link.typolink>
+                <f:if condition="{data.flexform_field_showcap}">
+                    <div class="image-caption">{data.flexform_field_imgthreetitle}</div>
+                    <div class="caption">{data.flexform_field_imgthreecaption}</div>
+                </f:if>
+            </f:then>
+            <f:else>
+                <f:render section="secimg" arguments="{modal:data.flexform_field_modal,uid:data.uid,fname:data.flexform_field_imgthree,caption:data.flexform_field_imgthreecaption}" />
+                <f:if condition="{data.flexform_field_showcap}">
+                    <div class="image-caption">{data.flexform_field_imgthreetitle}</div>
+                    <div class="caption">{data.flexform_field_imgthreecaption}</div>
+                </f:if>
+            </f:else>
+        </f:if>                
+    </f:if>
+</f:section>
+
+<f:section name="imagefour">
+    <f:if condition="{data.flexform_field_imgfour}">
+        <f:if condition="{data.flexform_field_linkfour}">
+            <f:then>
+                <f:link.typolink parameter="{data.flexform_field_linkfour}"><f:render section="secimg" arguments="{modal:data.flexform_field_modal,uid:data.uid,fname:data.flexform_field_imgfour,caption:data.flexform_field_imgfourcaption}" /></f:link.typolink>
+                <f:if condition="{data.flexform_field_showcap}">
+                    <div class="image-caption">{data.flexform_field_imgfourtitle}</div>
+                    <div class="caption">{data.flexform_field_imgfourcaption}</div>
+                </f:if>
+            </f:then>
+            <f:else>
+                <f:render section="secimg" arguments="{modal:data.flexform_field_modal,uid:data.uid,fname:data.flexform_field_imgfour,caption:data.flexform_field_imgfourcaption}" />
+                <f:if condition="{data.flexform_field_showcap}">
+                    <div class="image-caption">{data.flexform_field_imgfourtitle}</div>
+                    <div class="caption">{data.flexform_field_imgfourcaption}</div>
+                </f:if>
+            </f:else>
+        </f:if>
+    </f:if>
+</f:section>
+
+<f:section name="imagefive">
+    <f:if condition="{data.flexform_field_imgfive}">
+        <f:if condition="{data.flexform_field_linkfive}">
+            <f:then>
+                <f:link.typolink parameter="{data.flexform_field_linkfive}"><f:render section="secimg" arguments="{modal:data.flexform_field_modal,uid:data.uid,fname:data.flexform_field_imgfive,caption:data.flexform_field_imgfivecaption}" /></f:link.typolink>
+                <f:if condition="{data.flexform_field_showcap}">
+                    <div class="image-caption">{data.flexform_field_imgfivetitle}</div>
+                    <div class="caption">{data.flexform_field_imgfivecaption}</div>
+                </f:if>
+            </f:then>
+            <f:else>
+                <f:render section="secimg" arguments="{modal:data.flexform_field_modal,uid:data.uid,fname:data.flexform_field_imgfive,caption:data.flexform_field_imgfivecaption}" />
+                <f:if condition="{data.flexform_field_showcap}">
+                    <div class="image-caption">{data.flexform_field_imgfivetitle}</div>
+                    <div class="caption">{data.flexform_field_imgfivecaption}</div>
+                </f:if>
+            </f:else>
+        </f:if>
+    </f:if>
+</f:section>
+
+<f:section name="imagesix">
+    <f:if condition="{data.flexform_field_imgsix}">
+        <f:if condition="{data.flexform_field_linksix}">
+            <f:then>
+                <f:link.typolink parameter="{data.flexform_field_linksix}"><f:render section="secimg" arguments="{modal:data.flexform_field_modal,uid:data.uid,fname:data.flexform_field_imgsix,caption:data.flexform_field_imgsixcaption}" /></f:link.typolink>
+                <f:if condition="{data.flexform_field_showcap}">
+                    <div class="image-caption">{data.flexform_field_imgsixtitle}</div>
+                    <div class="caption">{data.flexform_field_imgsixcaption}</div>
+                </f:if>
+            </f:then>
+            <f:else>
+                <f:render section="secimg" arguments="{modal:data.flexform_field_modal,uid:data.uid,fname:data.flexform_field_imgsix,caption:data.flexform_field_imgsixcaption}" />
+                <f:if condition="{data.flexform_field_showcap}">
+                    <div class="image-caption">{data.flexform_field_imgsixtitle}</div>
+                    <div class="caption">{data.flexform_field_imgsixcaption}</div>
+                </f:if>
+            </f:else>
+        </f:if>                
+    </f:if>
+</f:section>
+
+<f:section name="imageseven">
+    <f:if condition="{data.flexform_field_imgseven}">
+        <f:if condition="{data.flexform_field_linkseven}">
+            <f:then>
+                <f:link.typolink parameter="{data.flexform_field_linkseven}"><f:render section="secimg" arguments="{modal:data.flexform_field_modal,uid:data.uid,fname:data.flexform_field_imgseven,caption:data.flexform_field_imgsevencaption}" /></f:link.typolink>
+                <f:if condition="{data.flexform_field_showcap}">
+                    <div class="image-caption">{data.flexform_field_imgseventitle}</div>
+                    <div class="caption">{data.flexform_field_imgsevencaption}</div>
+                </f:if>
+            </f:then>
+            <f:else>
+                <f:render section="secimg" arguments="{modal:data.flexform_field_modal,uid:data.uid,fname:data.flexform_field_imgseven,caption:data.flexform_field_imgsevencaption}" />
+                <f:if condition="{data.flexform_field_showcap}">
+                    <div class="image-caption">{data.flexform_field_imgseventitle}</div>
+                    <div class="caption">{data.flexform_field_imgsevencaption}</div>
+                </f:if>
+            </f:else>
+        </f:if>                
+    </f:if>
+</f:section>
+<f:section name="imageeight">
+    <f:if condition="{data.flexform_field_imgeight}">
+        <f:if condition="{data.flexform_field_linkeight}">
+            <f:then>
+                <f:link.typolink parameter="{data.flexform_field_linkeight}"><f:render section="secimg" arguments="{modal:data.flexform_field_modal,uid:data.uid,fname:data.flexform_field_imgeight,caption:data.flexform_field_imgeightcaption}" /></f:link.typolink>
+                <f:if condition="{data.flexform_field_showcap}">
+                    <div class="image-caption">{data.flexform_field_imgeighttitle}</div>
+                    <div class="caption">{data.flexform_field_imgeightcaption}</div>
+                </f:if>
+            </f:then>
+            <f:else>
+                <img class="openinmodal" data-uid="{data.uid}" src="uploads/tx_armtpl/{data.flexform_field_imgeight}" alt="{data.flexform_field_imgeightcaption}">
+                <f:if condition="{data.flexform_field_showcap}">
+                    <div class="image-caption">{data.flexform_field_imgeighttitle}</div>
+                    <div class="caption">{data.flexform_field_imgeightcaption}</div>
+                </f:if>
+            </f:else>
+        </f:if>
+    </f:if>
+</f:section>
 <div class="container">
 <f:if condition="{data.flexform_field_imgcnt}==2">
     <div class="eightimgcontainer">
         <div class="twoimages">
-            <f:if condition="{data.flexform_field_imgone}">
-                <f:if condition="{data.flexform_field_linkone}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkone}"><img src="uploads/tx_armtpl/{data.flexform_field_imgone}" alt="{data.flexform_field_imgonecaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgonetitle}</div>
-                            <div class="caption">{data.flexform_field_imgonecaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgone}" alt="{data.flexform_field_imgonecaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgonetitle}</div>
-                            <div class="caption">{data.flexform_field_imgonecaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>                
-            </f:if>
+            <f:render section="imageone" arguments="{_all}"/>
         </div>
         <div class="twoimages">
-            <f:if condition="{data.flexform_field_imgtwo}">
-                <f:if condition="{data.flexform_field_linktwo}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linktwo}"><img src="uploads/tx_armtpl/{data.flexform_field_imgtwo}" alt="{data.flexform_field_imgtwocaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgtwotitle}</div>
-                            <div class="caption">{data.flexform_field_imgtwocaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgtwo}" alt="{data.flexform_field_imgtwocaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgtwotitle}</div>
-                            <div class="caption">{data.flexform_field_imgtwocaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagetwo" arguments="{_all}"/>
         </div>
     </div>
 </f:if>
 <f:if condition="{data.flexform_field_imgcnt}==3">
     <div class="eightimgcontainer">
         <div class="threeimages">
-            <f:if condition="{data.flexform_field_imgone}">
-                <f:if condition="{data.flexform_field_linkone}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkone}"><img src="uploads/tx_armtpl/{data.flexform_field_imgone}" alt="{data.flexform_field_imgonecaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                           <div class="image-caption">{data.flexform_field_imgonetitle}</div>
-                            <div class="caption">{data.flexform_field_imgonecaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgone}" alt="{data.flexform_field_imgonecaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgonetitle}</div>
-                            <div class="caption">{data.flexform_field_imgonecaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imageone" arguments="{_all}"/>
         </div>
         <div class="threeimages">
-            <f:if condition="{data.flexform_field_imgtwo}">
-                <f:if condition="{data.flexform_field_linktwo}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linktwo}"><img src="uploads/tx_armtpl/{data.flexform_field_imgtwo}" alt="{data.flexform_field_imgtwocaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgtwotitle}</div>
-                            <div class="caption">{data.flexform_field_imgtwocaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgtwo}" alt="{data.flexform_field_imgtwocaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgtwotitle}</div>
-                            <div class="caption">{data.flexform_field_imgtwocaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagetwo" arguments="{_all}"/>
         </div>
         <div class="threeimages">
-            <f:if condition="{data.flexform_field_imgthree}">
-                <f:if condition="{data.flexform_field_linkthree}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkthree}"><img src="uploads/tx_armtpl/{data.flexform_field_imgthree}" alt="{data.flexform_field_imgthreecaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgthreetitle}</div>
-                            <div class="caption">{data.flexform_field_imgthreecaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgthree}" alt="{data.flexform_field_imgthreecaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgthreetitle}</div>
-                            <div class="caption">{data.flexform_field_imgthreecaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>                
-            </f:if>
+            <f:render section="imagethree" arguments="{_all}"/>
         </div>
     </div>
 </f:if>
 <f:if condition="{data.flexform_field_imgcnt}==4">
     <div class="eightimgcontainer">
         <div class="fourimages">
-            <f:if condition="{data.flexform_field_imgone}">
-                <f:if condition="{data.flexform_field_linkone}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkone}"><img src="uploads/tx_armtpl/{data.flexform_field_imgone}" alt="{data.flexform_field_imgonecaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgonetitle}</div>
-                            <div class="caption">{data.flexform_field_imgonecaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgone}" alt="{data.flexform_field_imgonecaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgonetitle}</div>
-                            <div class="caption">{data.flexform_field_imgonecaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imageone" arguments="{_all}"/>
         </div>
         <div class="fourimages">
-            <f:if condition="{data.flexform_field_imgtwo}">
-                <f:if condition="{data.flexform_field_linktwo}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linktwo}"><img src="uploads/tx_armtpl/{data.flexform_field_imgtwo}" alt="{data.flexform_field_imgtwocaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgtwotitle}</div>
-                            <div class="caption">{data.flexform_field_imgtwocaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgtwo}" alt="{data.flexform_field_imgtwocaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgtwotitle}</div>
-                            <div class="caption">{data.flexform_field_imgtwocaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagetwo" arguments="{_all}"/>
         </div>
         <div class="fourimages">
-            <f:if condition="{data.flexform_field_imgthree}">
-                <f:if condition="{data.flexform_field_linkthree}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkthree}"><img src="uploads/tx_armtpl/{data.flexform_field_imgthree}" alt="{data.flexform_field_imgthreecaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgthreetitle}</div>
-                            <div class="caption">{data.flexform_field_imgthreecaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgthree}" alt="{data.flexform_field_imgthreecaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgthreetitle}</div>
-                            <div class="caption">{data.flexform_field_imgthreecaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagethree" arguments="{_all}"/>
         </div>
         <div class="fourimages">
-            <f:if condition="{data.flexform_field_imgfour}">
-                <f:if condition="{data.flexform_field_linkfour}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkfour}"><img src="uploads/tx_armtpl/{data.flexform_field_imgfour}" alt="{data.flexform_field_imgfourcaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgfourtitle}</div>
-                            <div class="caption">{data.flexform_field_imgfourcaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgfour}" alt="{data.flexform_field_imgfourcaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgfourtitle}</div>
-                            <div class="caption">{data.flexform_field_imgfourcaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagefour" arguments="{_all}"/>
         </div>
     </div>
 </f:if>
 <f:if condition="{data.flexform_field_imgcnt}==5">
     <div class="eightimgcontainer">
         <div class="fiveimages">
-            <f:if condition="{data.flexform_field_imgone}">
-                <f:if condition="{data.flexform_field_linkone}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkone}"><img src="uploads/tx_armtpl/{data.flexform_field_imgone}" alt="{data.flexform_field_imgonecaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgonetitle}</div>
-                            <div class="caption">{data.flexform_field_imgonecaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgone}" alt="{data.flexform_field_imgonecaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgonetitle}</div>
-                            <div class="caption">{data.flexform_field_imgonecaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imageone" arguments="{_all}"/>
         </div>
         <div class="fiveimages">
-            <f:if condition="{data.flexform_field_imgtwo}">
-                <f:if condition="{data.flexform_field_linktwo}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linktwo}"><img src="uploads/tx_armtpl/{data.flexform_field_imgtwo}" alt="{data.flexform_field_imgtwocaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgtwotitle}</div>
-                            <div class="caption">{data.flexform_field_imgtwocaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgtwo}" alt="{data.flexform_field_imgtwocaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgtwotitle}</div>
-                            <div class="caption">{data.flexform_field_imgtwocaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagetwo" arguments="{_all}"/>
         </div>
         <div class="fiveimages">
-            <f:if condition="{data.flexform_field_imgthree}">
-                <f:if condition="{data.flexform_field_linkthree}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkthree}"><img src="uploads/tx_armtpl/{data.flexform_field_imgthree}" alt="{data.flexform_field_imgthreecaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgthreetitle}</div>
-                            <div class="caption">{data.flexform_field_imgthreecaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgthree}" alt="{data.flexform_field_imgthreecaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgthreetitle}</div>
-                            <div class="caption">{data.flexform_field_imgthreecaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagethree" arguments="{_all}"/>
         </div>
         <div class="fiveimages">
-            <f:if condition="{data.flexform_field_imgfour}">
-                <f:if condition="{data.flexform_field_linkfour}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkfour}"><img src="uploads/tx_armtpl/{data.flexform_field_imgfour}" alt="{data.flexform_field_imgfourcaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgfourtitle}</div>
-                            <div class="caption">{data.flexform_field_imgfourcaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgfour}" alt="{data.flexform_field_imgfourcaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgfourtitle}</div>
-                            <div class="caption">{data.flexform_field_imgfourcaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagefour" arguments="{_all}"/>
         </div>
         <div class="fiveimages">
-            <f:if condition="{data.flexform_field_imgfive}">
-                <f:if condition="{data.flexform_field_linkfive}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkfive}"><img src="uploads/tx_armtpl/{data.flexform_field_imgfive}" alt="{data.flexform_field_imgfivecaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgfivetitle}</div>
-                            <div class="caption">{data.flexform_field_imgfivecaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                         <img src="uploads/tx_armtpl/{data.flexform_field_imgfive}" alt="{data.flexform_field_imgfivecaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgfivetitle}</div>
-                            <div class="caption">{data.flexform_field_imgfivecaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagefive" arguments="{_all}"/>
         </div>
     </div>
 </f:if>
@@ -299,124 +237,22 @@
 <f:if condition="{data.flexform_field_imgcnt}==6">
     <div class="eightimgcontainer">
         <div class="siximages">
-            <f:if condition="{data.flexform_field_imgone}">
-               <f:if condition="{data.flexform_field_linkone}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkone}"><img src="uploads/tx_armtpl/{data.flexform_field_imgone}" alt="{data.flexform_field_imgonecaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgonetitle}</div>
-                            <div class="caption">{data.flexform_field_imgonecaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgone}" alt="{data.flexform_field_imgonecaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgonetitle}</div>
-                            <div class="caption">{data.flexform_field_imgonecaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imageone" arguments="{_all}"/>
         </div>
         <div class="siximages">
-            <f:if condition="{data.flexform_field_imgtwo}">
-               <f:if condition="{data.flexform_field_linktwo}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linktwo}"><img src="uploads/tx_armtpl/{data.flexform_field_imgtwo}" alt="{data.flexform_field_imgtwocaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgtwotitle}</div>
-                            <div class="caption">{data.flexform_field_imgtwocaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgtwo}" alt="{data.flexform_field_imgtwocaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgtwotitle}</div>
-                            <div class="caption">{data.flexform_field_imgtwocaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagetwo" arguments="{_all}"/>
         </div>
         <div class="siximages">
-            <f:if condition="{data.flexform_field_imgthree}">
-                <f:if condition="{data.flexform_field_linkthree}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkthree}"><img src="uploads/tx_armtpl/{data.flexform_field_imgthree}" alt="{data.flexform_field_imgthreecaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgthreetitle}</div>
-                            <div class="caption">{data.flexform_field_imgthreecaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgthree}" alt="{data.flexform_field_imgthreecaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgthreetitle}</div>
-                            <div class="caption">{data.flexform_field_imgthreecaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagethree" arguments="{_all}"/>
         </div>
         <div class="siximages">
-            <f:if condition="{data.flexform_field_imgfour}">
-                <f:if condition="{data.flexform_field_linkfour}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkfour}"><img src="uploads/tx_armtpl/{data.flexform_field_imgfour}" alt="{data.flexform_field_imgfourcaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgfourtitle}</div>
-                            <div class="caption">{data.flexform_field_imgfourcaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgfour}" alt="{data.flexform_field_imgfourcaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgfourtitle}</div>
-                            <div class="caption">{data.flexform_field_imgfourcaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagefour" arguments="{_all}"/>
         </div>
         <div class="siximages">
-            <f:if condition="{data.flexform_field_imgfive}">
-                <f:if condition="{data.flexform_field_linkfive}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkfive}"><img src="uploads/tx_armtpl/{data.flexform_field_imgfive}" alt="{data.flexform_field_imgfivecaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgfivetitle}</div>
-                            <div class="caption">{data.flexform_field_imgfivecaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                         <img src="uploads/tx_armtpl/{data.flexform_field_imgfive}" alt="{data.flexform_field_imgfivecaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgfivetitle}</div>
-                            <div class="caption">{data.flexform_field_imgfivecaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagefive" arguments="{_all}"/>
         </div>
         <div class="siximages">
-            <f:if condition="{data.flexform_field_imgsix}">
-                <f:if condition="{data.flexform_field_linksix}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linksix}"><img src="uploads/tx_armtpl/{data.flexform_field_imgsix}" alt="{data.flexform_field_imgsixcaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgsixtitle}</div>
-                            <div class="caption">{data.flexform_field_imgsixcaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgsix}" alt="{data.flexform_field_imgsixcaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgsixtitle}</div>
-                            <div class="caption">{data.flexform_field_imgsixcaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>                
-            </f:if>
+            <f:render section="imagesix" arguments="{_all}"/>
         </div>
     </div>
 </f:if>
@@ -424,144 +260,25 @@
 <f:if condition="{data.flexform_field_imgcnt}==7">
     <div class="eightimgcontainer">
         <div class="sevenimages">
-            <f:if condition="{data.flexform_field_imgone}">
-                <f:if condition="{data.flexform_field_linkone}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkone}"><img src="uploads/tx_armtpl/{data.flexform_field_imgone}" alt="{data.flexform_field_imgonecaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgonetitle}</div>
-                            <div class="caption">{data.flexform_field_imgonecaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgone}" alt="{data.flexform_field_imgonecaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgonetitle}</div>
-                            <div class="caption">{data.flexform_field_imgonecaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imageone" arguments="{_all}"/>
         </div>
         <div class="sevenimages">
-            <f:if condition="{data.flexform_field_imgtwo}">
-                <f:if condition="{data.flexform_field_linktwo}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linktwo}"><img src="uploads/tx_armtpl/{data.flexform_field_imgtwo}" alt="{data.flexform_field_imgtwocaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgtwotitle}</div>
-                            <div class="caption">{data.flexform_field_imgtwocaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgtwo}" alt="{data.flexform_field_imgtwocaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgtwotitle}</div>
-                            <div class="caption">{data.flexform_field_imgtwocaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagetwo" arguments="{_all}"/>
         </div>
         <div class="sevenimages">
-            <f:if condition="{data.flexform_field_imgthree}">
-                <f:if condition="{data.flexform_field_linkthree}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkthree}"><img src="uploads/tx_armtpl/{data.flexform_field_imgthree}" alt="{data.flexform_field_imgthreecaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgthreetitle}</div>
-                            <div class="caption">{data.flexform_field_imgthreecaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgthree}" alt="{data.flexform_field_imgthreecaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgthreetitle}</div>
-                            <div class="caption">{data.flexform_field_imgthreecaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagethree" arguments="{_all}"/>
         </div>
         <div class="sevenimages">
-            <f:if condition="{data.flexform_field_imgfour}">
-                <f:if condition="{data.flexform_field_linkfour}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkfour}"><img src="uploads/tx_armtpl/{data.flexform_field_imgfour}" alt="{data.flexform_field_imgfourcaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgfourtitle}</div>
-                            <div class="caption">{data.flexform_field_imgfourcaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgfour}" alt="{data.flexform_field_imgfourcaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgfourtitle}</div>
-                            <div class="caption">{data.flexform_field_imgfourcaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagefour" arguments="{_all}"/>
         </div>
         <div class="sevenimages">
-            <f:if condition="{data.flexform_field_imgfive}">
-                <f:if condition="{data.flexform_field_linkfive}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkfive}"><img src="uploads/tx_armtpl/{data.flexform_field_imgfive}" alt="{data.flexform_field_imgfivecaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgfivetitle}</div>
-                            <div class="caption">{data.flexform_field_imgfivecaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                         <img src="uploads/tx_armtpl/{data.flexform_field_imgfive}" alt="{data.flexform_field_imgfivecaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgfivetitle}</div>
-                            <div class="caption">{data.flexform_field_imgfivecaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagefive" arguments="{_all}"/>
         </div>
         <div class="sevenimages">
-            <f:if condition="{data.flexform_field_imgsix}">
-                <f:if condition="{data.flexform_field_linksix}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linksix}"><img src="uploads/tx_armtpl/{data.flexform_field_imgsix}" alt="{data.flexform_field_imgsixcaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgsixtitle}</div>
-                            <div class="caption">{data.flexform_field_imgsixcaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgsix}" alt="{data.flexform_field_imgsixcaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgsixtitle}</div>
-                            <div class="caption">{data.flexform_field_imgsixcaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagesix" arguments="{_all}"/>
         </div>
         <div class="sevenimages">
-            <f:if condition="{data.flexform_field_imgseven}">
-                <f:if condition="{data.flexform_field_linkseven}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkseven}"><img src="uploads/tx_armtpl/{data.flexform_field_imgseven}" alt="{data.flexform_field_imgsevencaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgseventitle}</div>
-                            <div class="caption">{data.flexform_field_imgsevencaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgseven}" alt="{data.flexform_field_imgsevencaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgseventitle}</div>
-                            <div class="caption">{data.flexform_field_imgsevencaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>                
-            </f:if>
+            <f:render section="imageseven" arguments="{_all}"/>
         </div>
     </div>
 </f:if>
@@ -569,165 +286,39 @@
 <f:if condition="{data.flexform_field_imgcnt}==8">
     <div class="eightimgcontainer">
         <div class="eightimages">
-             <f:if condition="{data.flexform_field_imgone}">
-                <f:if condition="{data.flexform_field_linkone}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkone}"><img src="uploads/tx_armtpl/{data.flexform_field_imgone}" alt="{data.flexform_field_imgonecaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgonetitle}</div>
-                            <div class="caption">{data.flexform_field_imgonecaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgone}" alt="{data.flexform_field_imgonecaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgonetitle}</div>
-                            <div class="caption">{data.flexform_field_imgonecaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>                
-            </f:if>
+            <f:render section="imageone" arguments="{_all}"/>
         </div>
         <div class="eightimages">
-            <f:if condition="{data.flexform_field_imgtwo}">
-                <f:if condition="{data.flexform_field_linktwo}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linktwo}"><img src="uploads/tx_armtpl/{data.flexform_field_imgtwo}" alt="{data.flexform_field_imgtwocaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgtwotitle}</div>
-                            <div class="caption">{data.flexform_field_imgtwocaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgtwo}" alt="{data.flexform_field_imgtwocaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgtwotitle}</div>
-                            <div class="caption">{data.flexform_field_imgtwocaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagetwo" arguments="{_all}"/>
         </div>
         <div class="eightimages">
-            <f:if condition="{data.flexform_field_imgthree}">
-                <f:if condition="{data.flexform_field_linkthree}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkthree}"><img src="uploads/tx_armtpl/{data.flexform_field_imgthree}" alt="{data.flexform_field_imgthreecaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgthreetitle}</div>
-                            <div class="caption">{data.flexform_field_imgthreecaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgthree}" alt="{data.flexform_field_imgthreecaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgthreetitle}</div>
-                            <div class="caption">{data.flexform_field_imgthreecaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagethree" arguments="{_all}"/>
         </div>
         <div class="eightimages">
-            <f:if condition="{data.flexform_field_imgfour}">
-                <f:if condition="{data.flexform_field_linkfour}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkfour}"><img src="uploads/tx_armtpl/{data.flexform_field_imgfour}" alt="{data.flexform_field_imgfourcaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgfourtitle}</div>
-                            <div class="caption">{data.flexform_field_imgfourcaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgfour}" alt="{data.flexform_field_imgfourcaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgfourtitle}</div>
-                            <div class="caption">{data.flexform_field_imgfourcaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagefour" arguments="{_all}"/>
         </div>
         <div class="eightimages">
-            <f:if condition="{data.flexform_field_imgfive}">
-                <f:if condition="{data.flexform_field_linkfive}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkfive}"><img src="uploads/tx_armtpl/{data.flexform_field_imgfive}" alt="{data.flexform_field_imgfivecaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgfivetitle}</div>
-                            <div class="caption">{data.flexform_field_imgfivecaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                         <img src="uploads/tx_armtpl/{data.flexform_field_imgfive}" alt="{data.flexform_field_imgfivecaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgfivetitle}</div>
-                            <div class="caption">{data.flexform_field_imgfivecaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagefive" arguments="{_all}"/>
         </div>
         <div class="eightimages">
-            <f:if condition="{data.flexform_field_imgsix}">
-                <f:if condition="{data.flexform_field_linksix}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linksix}"><img src="uploads/tx_armtpl/{data.flexform_field_imgsix}" alt="{data.flexform_field_imgsixcaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgsixtitle}</div>
-                            <div class="caption">{data.flexform_field_imgsixcaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgsix}" alt="{data.flexform_field_imgsixcaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgsixtitle}</div>
-                            <div class="caption">{data.flexform_field_imgsixcaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imagesix" arguments="{_all}"/>
         </div>
         <div class="eightimages">
-            <f:if condition="{data.flexform_field_imgseven}">
-                <f:if condition="{data.flexform_field_linkseven}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkseven}"><img src="uploads/tx_armtpl/{data.flexform_field_imgseven}" alt="{data.flexform_field_imgsevencaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgseventitle}</div>
-                            <div class="caption">{data.flexform_field_imgsevencaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgseven}" alt="{data.flexform_field_imgsevencaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgseventitle}</div>
-                            <div class="caption">{data.flexform_field_imgsevencaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imageseven" arguments="{_all}"/>
         </div>
         <div class="eightimages">
-            <f:if condition="{data.flexform_field_imgeight}">
-                <f:if condition="{data.flexform_field_linkeight}">
-                    <f:then>
-                        <f:link.typolink parameter="{data.flexform_field_linkeight}"><img src="uploads/tx_armtpl/{data.flexform_field_imgeight}" alt="{data.flexform_field_imgeightcaption}"></f:link.typolink>
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgeighttitle}</div>
-                            <div class="caption">{data.flexform_field_imgeightcaption}</div>
-                        </f:if>
-                    </f:then>
-                    <f:else>
-                        <img src="uploads/tx_armtpl/{data.flexform_field_imgeight}" alt="{data.flexform_field_imgeightcaption}">
-                        <f:if condition="{data.flexform_field_showcap}">
-                            <div class="image-caption">{data.flexform_field_imgeighttitle}</div>
-                            <div class="caption">{data.flexform_field_imgeightcaption}</div>
-                        </f:if>
-                    </f:else>
-                </f:if>
-            </f:if>
+            <f:render section="imageeight" arguments="{_all}"/>
         </div>
     </div>
 </f:if>
+</div>
+<div id="my-{data.uid}" class="modal modal-eight">
+  <!-- The Close Button -->
+  <span class="modalclose" data-uid="{data.uid}">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img-{data.uid}">
+
+  <!-- Modal Caption (Image Text) -->
+  <div class="modcaption" id="caption-{data.uid}"></div>
 </div>
