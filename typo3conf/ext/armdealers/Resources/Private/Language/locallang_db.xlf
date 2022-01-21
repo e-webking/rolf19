@@ -70,6 +70,59 @@
 				<source>Contact Page UID</source>
 			</trans-unit>
 
+                        <trans-unit id="tx_armdealers_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_category.title">
+				<source>Title</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_category.products">
+				<source>Products</source>
+			</trans-unit>
+                        
+                        <trans-unit id="tx_armdealers_domain_model_product">
+				<source>Product</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_product.title">
+				<source>Title</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_product.sku">
+				<source>SKU</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_product.category">
+				<source>Category</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_product.description">
+				<source>Description</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_product.coverphoto">
+				<source>Main image</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_product.preview">
+				<source>Second image</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_product.images">
+				<source>Additional images</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_product.pdf">
+				<source>File</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_product.video">
+				<source>Video</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_product.splprice">
+				<source>Special price</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_product.mtitle">
+				<source>SEO Title</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_product.mdescription">
+				<source>SEO Description</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_domain_model_product.dealers">
+				<source>Dealers</source>
+			</trans-unit>
+                        
 		</body>
 	</file>
 </xliff>

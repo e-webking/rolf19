@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2022-01-21T12:16:44Z" product-name="armdealers">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="category.description">
+				<source>category</source>
+			</trans-unit>
+			<trans-unit id="sku.description">
+				<source>sku</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="coverphoto.description">
+				<source>main photo</source>
+			</trans-unit>
+                        <trans-unit id="preview.description">
+				<source>second image</source>
+			</trans-unit>
+			<trans-unit id="images.description">
+				<source>additional images</source>
+			</trans-unit>
+			<trans-unit id="pdf.description">
+				<source>pdf file</source>
+			</trans-unit>
+                        <trans-unit id="video.description">
+				<source>video file</source>
+			</trans-unit>
+                        <trans-unit id="splprice.description">
+				<source>special price</source>
+			</trans-unit>
+                        <trans-unit id="mtitle.description">
+				<source>meta title</source>
+			</trans-unit>
+                        <trans-unit id="mdescription.description">
+				<source>meta description</source>
+			</trans-unit>
+                        <trans-unit id="delears.description">
+				<source>dealers</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

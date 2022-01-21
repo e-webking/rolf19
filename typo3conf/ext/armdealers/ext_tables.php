@@ -26,6 +26,11 @@ call_user_func(
          
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('armdealers', 'Configuration/TypoScript', 'Rolf-Benz Dealers');
 
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_armdealers_domain_model_category', 'EXT:armdealers/Resources/Private/Language/locallang_csh_tx_armdealers_domain_model_category.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_armdealers_domain_model_category');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_armdealers_domain_model_product', 'EXT:armdealers/Resources/Private/Language/locallang_csh_tx_armdealers_domain_model_product.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_armdealers_domain_model_product');
+        
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_armdealers_domain_model_dealer', 'EXT:armdealers/Resources/Private/Language/locallang_csh_tx_armdealers_domain_model_dealer.xlf');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_armdealers_domain_model_dealer');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_armdealers_domain_model_zipcode', 'EXT:armdealers/Resources/Private/Language/locallang_csh_tx_armdealers_domain_model_zipcode.xlf');
