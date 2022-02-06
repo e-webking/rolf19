@@ -48,7 +48,7 @@
                     <div class="col-sm-6 col-md-3">
                         <f:if condition="{productdealer.product.pdf}">
                             <f:then>
-                                <a href="{f:uri.image(image:productdealer.product.pdf)}">
+                                <a href="{productdealer.product.pdf.originalResource.publicUrl}">
                                     <div class="pbox">
                                         <i class="fa fa-4x fa-file-text-o"></i><br>
                                         Brosch&uuml;re
@@ -67,7 +67,7 @@
                     <div class="col-sm-6 col-md-3">
                         <f:if condition="{productdealer.product.techpdf}">
                             <f:then>
-                                <a href="{f:uri.image(image:productdealer.product.techpdf)}">
+                                <a href="{productdealer.product.techpdf.originalResource.publicUrl}">
                                     <div class="pbox">
                                         <i class="fa fa-4x fa-file-text-o"></i>
                                         <br>Technische Daten
@@ -85,7 +85,7 @@
                     <div class="col-sm-6 col-md-3">
                         <f:if condition="{productdealer.product.video}">
                             <f:then>
-                                <a href="{f:uri.image(image:productdealer.product.video)}">
+                                <a href="{productdealer.product.video.originalResource.publicUrl}">
                                     <div class="pbox">
                                         <i class="fa fa-4x fa-youtube-play"></i>
                                         <br>Video
@@ -101,7 +101,7 @@
                         </f:if>
                     </div>
                     <div class="col-sm-6 col-md-3">
-                        <f:link.page pageUid="{productdealer.dealer.dealerpg}">
+                        <f:link.page pageUid="{productdealer.dealer.contactpid}">
                             <div class="pbox">
                                 <i class="fa fa-4x fa-question-circle-o"></i>
                                 <br>Frage? - Kontakt
@@ -139,7 +139,7 @@
                     <div class="col-12">
                         <br>
                         <p>
-                            <f:link.page pageUid="{productdealer.dealer.dealerpg}" class="cta">Hier finden Sie {productdealer.dealer.title}</f:link.page>
+                            <f:link.page pageUid="{productdealer.dealer.contactpid}" class="cta">Hier finden Sie {productdealer.dealer.title}</f:link.page>
                         </p>
                     </div>
                 </div>
