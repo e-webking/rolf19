@@ -26,7 +26,7 @@ plugin.tx_armdealers {
         defaultName = Rolf-Benz
         formSubject = Kontakt formular
         thanku = 71
-        
+        productpage = 25
     }
 }
 

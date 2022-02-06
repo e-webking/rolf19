@@ -33,6 +33,12 @@ class Product extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
+     * 
+     * @var \ARM\Armdealers\Domain\Model\Category
+     */
+    protected $category = null;
+    
+    /**
      * title
      *
      * @var string
@@ -82,6 +88,13 @@ class Product extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $pdf = NULL;
     
     /**
+     * techpdf
+     *
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     */
+    protected $techpdf = NULL;
+    
+    /**
      * video
      *
      * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
@@ -110,7 +123,7 @@ class Product extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     
     /**
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\ARM\Armdealers\Domain\Model\Dealer>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\ARM\Armdealers\Domain\Model\Productdealer>
      */
     protected $dealers;
     
@@ -129,6 +142,25 @@ class Product extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected function initStorageObjects() {
            $this->dealers = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+    }
+    
+    /**
+     * Returns the category
+     *
+     * @return \ARM\Armdealers\Domain\Model\Category $category
+     */
+    public function getCategory() {
+       return $this->category;
+    }
+
+    /**
+     * Sets the category
+     *
+     * @param \ARM\Armdealers\Domain\Model\Category $category
+     * @return void
+     */
+    public function setCategory(\ARM\Armdealers\Domain\Model\Category $category) {
+       $this->category = $category;
     }
     
     /**
@@ -256,6 +288,25 @@ class Product extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
     
     /**
+     * Returns the techpdf
+     *
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $techpdf
+     */
+    public function getTechpdf() {
+            return $this->techpdf;
+    }
+
+    /**
+     * Sets the techpdf
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $techpdf
+     * @return void
+     */
+    public function setTechpdf(\TYPO3\CMS\Extbase\Domain\Model\FileReference $techpdf) {
+            $this->techpdf = $techpdf;
+    }
+    
+    /**
      * Returns the video
      *
      * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $video
@@ -315,27 +366,27 @@ class Product extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Adds a Dealer
      *
-     * @param \ARM\Armdealers\Domain\Model\Dealer $dealer
+     * @param \ARM\Armdealers\Domain\Model\Productdealer $dealer
      * @return void
      */
-    public function addDealer(\ARM\Armdealers\Domain\Model\Dealer $dealer) {
+    public function addDealer(\ARM\Armdealers\Domain\Model\Productdealer $dealer) {
            $this->dealers->attach($dealer);
     }
 
     /**
      * Removes a Dealer
      *
-     * @param \ARM\Armdealers\Domain\Model\Dealer $dealerToRemove The Dealer to be removed
+     * @param \ARM\Armdealers\Domain\Model\Productdealer $dealerToRemove The Dealer to be removed
      * @return void
      */
-    public function removeDealer(\ARM\Armdealers\Domain\Model\Dealer $dealerToRemove) {
+    public function removeDealer(\ARM\Armdealers\Domain\Model\Productdealer $dealerToRemove) {
        $this->dealers->detach($dealerToRemove);
     }
 
     /**
      * Returns the dealers
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\ARM\Armdealers\Domain\Model\Dealer> $dealers
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\ARM\Armdealers\Domain\Model\Productdealer> $dealers
      */
     public function getDealers() {
        return $this->dealers;
@@ -344,7 +395,7 @@ class Product extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the dealers
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\ARM\Armdealers\Domain\Model\Dealer> $dealers
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\ARM\Armdealers\Domain\Model\Productdealer> $dealers
      * @return void
      */
     public function setDealers(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $dealers) {

@@ -40,6 +40,42 @@ call_user_func(function () {
         ]
     );
     
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'ARM.Armdealers',
+        'category',
+        [
+            'Product' => 'category'
+        ],
+        // non-cacheable actions
+        [
+            'Product' => 'category'
+        ]
+    );
+    
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'ARM.Armdealers',
+        'pgroup',
+        [
+            'Product' => 'group'
+        ],
+        // non-cacheable actions
+        [
+            'Product' => 'group'
+        ]
+    );
+    
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'ARM.Armdealers',
+        'product',
+        [
+            'Product' => 'show'
+        ],
+        // non-cacheable actions
+        [
+            'Product' => 'show'
+        ]
+    );
+    
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals']['ARM\\Armdelaers\\Evaluation\\FloatEvaluation'] = '';
 });
 

@@ -23,13 +23,32 @@ call_user_func(
             'maplink',
             'Dealers Map (links)'
         );
+        
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'ARM.Armdealers',
+            'category',
+            'Product Categories'
+        );
          
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'ARM.Armdealers',
+            'pgroup',
+            'Product Group'
+        );
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'ARM.Armdealers',
+            'product',
+            'Product Detail'
+        );
+        
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('armdealers', 'Configuration/TypoScript', 'Rolf-Benz Dealers');
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_armdealers_domain_model_category', 'EXT:armdealers/Resources/Private/Language/locallang_csh_tx_armdealers_domain_model_category.xlf');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_armdealers_domain_model_category');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_armdealers_domain_model_product', 'EXT:armdealers/Resources/Private/Language/locallang_csh_tx_armdealers_domain_model_product.xlf');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_armdealers_domain_model_product');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_armdealers_domain_model_productdealer', 'EXT:armdealers/Resources/Private/Language/locallang_csh_tx_armdealers_domain_model_productdealer.xlf');
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_armdealers_domain_model_productdealer');
         
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_armdealers_domain_model_dealer', 'EXT:armdealers/Resources/Private/Language/locallang_csh_tx_armdealers_domain_model_dealer.xlf');
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_armdealers_domain_model_dealer');

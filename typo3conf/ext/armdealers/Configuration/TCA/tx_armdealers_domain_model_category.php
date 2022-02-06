@@ -16,14 +16,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'title,',
+        'searchFields' => 'title,image,pageuid',
         'iconfile' => 'EXT:armdealers/Resources/Public/Icons/tx_armdealers_domain_model_dealer.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'hidden, title, products',
+        'showRecordFieldList' => 'hidden, title, image, pageuid, products',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, products, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, image, pageuid, products, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -109,6 +109,23 @@ return [
                 'type' => 'input',
                 'size' => 20,
                 'eval' => 'trim'
+            ],
+        ],
+        'image' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_category.image',
+            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+                    'image',
+                    array('maxitems' => 1),
+                    $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+            )
+        ],
+        'pageuid' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_category.pageuid',
+            'config' => [
+                'type' => 'input',
+                'inputLink' => 'inputLink',
             ],
         ],
         'products' => [

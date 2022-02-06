@@ -14,6 +14,20 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $title = '';
 
     /**
+     * image
+     *
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     */
+    protected $image = NULL;
+    
+    /**
+     * 
+     * @var int
+     */
+    protected $pageuid = 0;
+
+
+    /**
      * products
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\ARM\Armdealers\Domain\Model\Product>
@@ -64,6 +78,45 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->title = $title;
     }
 
+    /**
+     * Returns the image
+     *
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     */
+    public function getImage() {
+        return $this->image;
+    }
+
+    /**
+     * Sets the image
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     * @return void
+     */
+    public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image) {
+        $this->image = $image;
+    }
+    
+    /**
+     * Returns the pageuid
+     *
+     * @return string $pageuid
+     */
+    public function getPageuid()
+    {
+        return $this->pageuid;
+    }
+
+    /**
+     * Sets the pageuid
+     *
+     * @param string $pageuid
+     * @return void
+     */
+    public function setPageuid($pageuid)
+    {
+        $this->pageuid = $pageuid;
+    }
     
     /**
      * Adds a Product

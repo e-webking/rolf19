@@ -9,6 +9,8 @@ CREATE TABLE tx_armdealers_domain_model_category (
 
     title varchar(150) DEFAULT '' NOT NULL,
     products int(11) unsigned DEFAULT '0' NOT NULL,
+    image int(11) unsigned DEFAULT '0' NOT NULL,
+    pageuid int(11) unsigned DEFAULT '0' NOT NULL,
 
     tstamp int(11) unsigned DEFAULT '0' NOT NULL,
     crdate int(11) unsigned DEFAULT '0' NOT NULL,
@@ -44,8 +46,8 @@ CREATE TABLE tx_armdealers_domain_model_product (
 	preview int(11) unsigned NOT NULL default '0',
         images int(11) unsigned NOT NULL default '0',
         pdf int(11) unsigned NOT NULL default '0',
+        techpdf int(11) unsigned NOT NULL default '0',
         video int(11) unsigned NOT NULL default '0',
-        splprice tinyint(4) unsigned DEFAULT '0' NOT NULL,
         mtitle varchar(255) DEFAULT '' NOT NULL,
         mdescription text,
         dealers int(11) unsigned NOT NULL default '0',
@@ -69,18 +71,32 @@ CREATE TABLE tx_armdealers_domain_model_product (
 
 );
 
+
+
 #
-# Table structure for table 'tx_armdealers_domain_model_product_dealer_mm'
+# Table structure for table 'tx_armdealers_domain_model_productdealer'
 #
 
-CREATE TABLE tx_armdealers_domain_model_product_dealer_mm (
+CREATE TABLE tx_armdealers_domain_model_productdealer (
+    
+    uid int(11) NOT NULL auto_increment,
+    pid int(11) DEFAULT '0' NOT NULL,
 
-    uid_local int(11) unsigned DEFAULT '0' NOT NULL, 
-    uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
+    product int(11) unsigned DEFAULT '0' NOT NULL, 
+    dealer int(11) unsigned DEFAULT '0' NOT NULL,
+    splprice tinyint(4) unsigned DEFAULT '0' NOT NULL,
     sorting int(11) unsigned DEFAULT '0' NOT NULL,
 
-    KEY uid_local (uid_local),
-    KEY uid_foreign (uid_foreign)
+    tstamp int(11) unsigned DEFAULT '0' NOT NULL,
+    crdate int(11) unsigned DEFAULT '0' NOT NULL,
+    cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
+    deleted smallint(5) unsigned DEFAULT '0' NOT NULL,
+    hidden smallint(5) unsigned DEFAULT '0' NOT NULL,
+    starttime int(11) unsigned DEFAULT '0' NOT NULL,
+    endtime int(11) unsigned DEFAULT '0' NOT NULL,
+
+    PRIMARY KEY (uid),
+    KEY parent (pid),
 );
 
 #

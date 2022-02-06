@@ -1,0 +1,149 @@
+<section class="banner gbl">
+    <div class="container">
+        <f:if condition="{productdealer.product.coverphoto}">
+            <picture class="slide-image">
+                <f:image image="{productdealer.product.coverphoto}" width="1920" height="570c" alt="{productdealer.product.title}" />
+            </picture>
+        </f:if>
+    </div>
+</section>
+<section class="gbl">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="product-detail-image">
+                    <f:if condition="{productdealer.product.preview}">
+                        <div class="product-detail-slider product-image-gallery" id="product-image-gallery" data-pswp-uid="{productdealer.uid}">
+                            <div class="item">
+                                <a class="product-gallery-item" href="{f:uri.image(image:productdealer.product.preview)}">
+                                    <f:image image="{productdealer.product.preview}" width="800" height="540c" alt="{productdealer.product.title}" />
+                                </a>
+                            </div>
+                            <f:for each="{productdealer.product.images}" as="aimg">
+                                <div class="item">
+                                    <a class="product-gallery-item" href="{f:uri.image(image:aimg)}">
+                                    <f:image image="{aimg}" width="800" height="540c" alt="{productdealer.product.title}" />
+                                    </a>
+                                </div>
+                            </f:for>
+                        </div>
+                    </f:if>
+                    
+                </div>
+                <div class="product-detail-thumbnails">
+                    <f:if condition="{productdealer.product.preview}">
+                        <div class="item">
+                            <f:image image="{productdealer.product.preview}" width="800" height="540c" alt="{productdealer.product.title}" />
+                        </div>
+                        <f:for each="{productdealer.product.images}" as="aimg">
+                            <div class="item">
+                                <f:image image="{aimg}" width="800" height="540c" alt="{productdealer.product.title}" />
+                            </div>
+                        </f:for>
+                    </f:if>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3">
+                        <f:if condition="{productdealer.product.pdf}">
+                            <f:then>
+                                <a href="{f:uri.image(image:productdealer.product.pdf)}">
+                                    <div class="pbox">
+                                        <i class="fa fa-4x fa-file-text-o"></i><br>
+                                        Brosch&uuml;re
+                                    </div>
+                                </a>
+                            </f:then>
+                            <f:else>
+                                <div class="pbox disabled">
+                                    <i class="fa fa-4x fa-file-text-o"></i><br>
+                                    Brosch&uuml;re
+                                </div>
+                            </f:else>
+                        </f:if>
+                        
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <f:if condition="{productdealer.product.techpdf}">
+                            <f:then>
+                                <a href="{f:uri.image(image:productdealer.product.techpdf)}">
+                                    <div class="pbox">
+                                        <i class="fa fa-4x fa-file-text-o"></i>
+                                        <br>Technische Daten
+                                    </div>
+                                </a>
+                            </f:then>
+                            <f:else>
+                                <div class="pbox disabled">
+                                    <i class="fa fa-4x fa-file-text-o"></i>
+                                    <br>Technische Daten
+                                </div>
+                            </f:else>
+                        </f:if>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <f:if condition="{productdealer.product.video}">
+                            <f:then>
+                                <a href="{f:uri.image(image:productdealer.product.video)}">
+                                    <div class="pbox">
+                                        <i class="fa fa-4x fa-youtube-play"></i>
+                                        <br>Video
+                                    </div>
+                                </a>
+                            </f:then>
+                            <f:else>
+                                <div class="pbox disabled">
+                                    <i class="fa fa-4x fa-youtube-play"></i><br>
+                                        Video
+                                </div>
+                            </f:else>
+                        </f:if>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <f:link.page pageUid="{productdealer.dealer.dealerpg}">
+                            <div class="pbox">
+                                <i class="fa fa-4x fa-question-circle-o"></i>
+                                <br>Frage? - Kontakt
+                            </div>
+                        </f:link.page>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 pt-2">
+                        <div class="introTxt pt-5">
+                            <h1>{productdealer.product.title}</h1>
+                            <p class="sku">{productdealer.product.sku}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p><f:format.raw>{productdealer.product.description}</f:format.raw></p>
+                    </div>
+                </div>
+                <f:if condition="{productdealer.splprice}">
+                    <div class="row">
+                        <div class="col-12">
+                            <img src="{f:uri.resource(path:'Icons/splprice.png')}" width="150" height="150" class="splprice" />
+                        </div>
+                    </div>
+                </f:if>
+                <div class="row">
+                    <div class="col-12">
+                        <br>
+                        <p><a href="javascript:history.go(-1)">Zur&uuml;ck zur &Uuml;bersicht {productdealer.product.category.title}</a></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <br>
+                        <p>
+                            <f:link.page pageUid="{productdealer.dealer.dealerpg}" class="cta">Hier finden Sie {productdealer.dealer.title}</f:link.page>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

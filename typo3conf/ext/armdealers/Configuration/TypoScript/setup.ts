@@ -30,6 +30,7 @@ plugin.tx_armdealers {
         defaultName = {$plugin.tx_armdealers.settings.defaultName}
         formSubject = {$plugin.tx_armdealers.settings.formSubject}
         thanku = {$plugin.tx_armdealers.settings.thanku}
+        productpage = {$plugin.tx_armdealers.settings.productpage}
     }
 }
 

@@ -1,0 +1,23 @@
+<f:if condition="{categories}">
+    <section class="gbl">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
+                    <div class="eightimgcontainer">
+                        <f:for each="{categories}" as="category">
+                            <div class="fourimages mb-5">
+                                <f:link.page pageUid="{category.pageuid}" additionalParams="{dealer: settings.dealer}">
+                                    <f:image image="{category.image}" treatIdAsReference="1" width="400" height="297c" />
+                                </f:link.page>
+                                <div class="image-caption">
+                                    <f:link.page pageUid="{category.pageuid}" additionalParams="{dealer: settings.dealer}">{category.title}</f:link.page>
+                                </div>
+                            </div>
+                        </f:for>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+                    
+</f:if>

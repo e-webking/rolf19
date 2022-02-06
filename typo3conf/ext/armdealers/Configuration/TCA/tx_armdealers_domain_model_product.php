@@ -2,7 +2,9 @@
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_product',
-        'label' => 'title',
+        'label' => 'sku',
+        'label_alt' => 'title',
+        'label_alt_force' => true,
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -19,10 +21,10 @@ return [
         'iconfile' => 'EXT:armdealers/Resources/Public/Icons/tx_armdealers_domain_model_dealer.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'hidden, title, sku, category, description, coverphoto, preview, images, pdf, video, splprice, mtitle, mdescription, dealers,',
+        'showRecordFieldList' => 'hidden, title, sku, category, description, coverphoto, preview, images, pdf, techpdf, video, mtitle, mdescription, dealers,',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, category, sku, title, description, coverphoto, preview, images, pdf, video, splprice, mtitle, mdescription, dealers, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, category, sku, title, description, coverphoto, preview, images, pdf, techpdf, video, mtitle, mdescription, dealers, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
          'sys_language_uid' => [
@@ -177,6 +179,15 @@ return [
                 'pdf'
             )
         ],
+        'techpdf' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_product.techpdf',
+            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+                'techpdf',
+                array('maxitems' => 1),
+                'pdf'
+            )
+        ],
         'video' => [
             'exclude' => true,
             'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_product.video',
@@ -185,18 +196,6 @@ return [
                 array('maxitems' => 1),
                 'mp4'
             )
-        ],
-        'splprice' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_product.splprice',
-            'config' => [
-                'type' => 'check',
-                'items' => [
-                    '1' => [
-                        '0' => 'Special price'
-                    ]
-                ],
-            ],
         ],
         'mtitle' => [
             'exclude' => true,
@@ -219,17 +218,19 @@ return [
         ],
         'dealers' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_product.zipcodes',
+            'label' => 'LLL:EXT:armdealers/Resources/Private/Language/locallang_db.xlf:tx_armdealers_domain_model_product.dealers',
             'config' => [
-                'type' => 'group',
-                'internal_type' => 'db',
-                'allowed' => 'tx_armdealers_domain_model_dealer',
-                'MM' => 'tx_armdealers_domain_model_product_dealer_mm',
-                'foreign_table' => 'tx_armdealers_domain_model_dealer',
-                'foreign_table_where' => 'ORDER BY tx_armdealers_domain_model_dealer.title',
-                'size' => 10,
-                'minitems' => 0,
-                'maxitems' => 99,
+                'type' => 'inline',
+                'foreign_table' => 'tx_armdealers_domain_model_productdealer',
+                'foreign_field' => 'product',
+                'maxitems' => 999,
+                'appearance' => [
+                    'collapseAll' => 1,
+                    'levelLinksPosition' => 'top',
+                    'showSynchronizationLink' => 1,
+                    'showPossibleLocalizationRecords' => 1,
+                    'showAllLocalizationLink' => 1
+                ],
             ],
 
         ],
