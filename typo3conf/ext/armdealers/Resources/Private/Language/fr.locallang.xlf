@@ -72,6 +72,82 @@
                        <trans-unit id="tx_armdealers_map.contactpre">
 				<target>Un expert Rolf Benz à votre service</target>
 			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.back">
+				<source>Zurück zur Übersicht</source>
+                                <target>Zurück zur Übersicht</target>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.in">
+				<source>im</source>
+                                <target>im</target>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.find">
+				<source>Hier finden Sie</source>
+                                <target>Hier finden Sie</target>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.frage">
+				<source>Frage? - Kontakt</source>
+                                <target>Frage? - Kontakt</target>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.video">
+				<source>Video</source>
+                                <target>Video</target>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.tech">
+				<source>Technische Daten</source>
+                                <target>Technische Daten</target>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.broch">
+				<source>Broschüre</source>
+                                <target>Broschüre</target>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.config">
+				<source>Konfigurator</source>
+                                <target>Configurateur</target>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.sptext">
+				<source>Dieses Produkt verkaufen wir ab unserer Ausstellung zu einem attraktiven Preis. Fragen Sie uns an.</source>
+                                <target>Dieses Produkt verkaufen wir ab unserer Ausstellung zu einem attraktiven Preis. Fragen Sie uns an.</target>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.displayinsr">
+				<source>Verfügbar im Ausstellungsraum?</source>
+                                <target>Verfügbar im Ausstellungsraum?</target>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.yes">
+				<source>Ja</source>
+                                <target>Yes</target>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.no">
+				<source>Nein</source>
+                                <target>No</target>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_dashboard.product">
+				<source>Produkte</source>
+                                <target>Produits</target>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_dashboard.title">
+				<source>Titel</source>
+                                <target>Titre</target>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_dashboard.submit">
+				<source>Senden</source>
+                                <target>Soumettre</target>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_dashboard.splprice">
+				<source>Sonderpreis</source>
+                                <target>Prix spécial</target>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_dashboard.inshowroom">
+				<source>Im Ausstellungsraum?</source>
+                                <target>Dans la salle d'exposition?</target>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_dashboard.dispshowroomstatus">
+				<source>Showroom-Status anzeigen?</source>
+                                <target>Afficher le statut de salle d'exposition?</target>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_dashboard.noprod">
+				<source>Kein Produkt gefunden!</source>
+                                <target>Aucun produit trouvé !</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

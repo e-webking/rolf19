@@ -1,0 +1,51 @@
+<section class="gbl">
+    <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
+                    <div class="introTxt">
+                        <h1 class="text-center">{dealer.title}: {f:translate(key:'tx_armdealers_dashboard.product')}</h1>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+<section class="gbl">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-lg-10 offset-lg-1">
+            <f:if condition="{products}">
+                <f:then>
+                    <f:form action="update" method="post" name="frmUpd">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>#</th>
+                                    <th></th>
+                                    <th>{f:translate(key:'tx_armdealers_dashboard.title')}</th>
+                                    <th>{f:translate(key:'tx_armdealers_dashboard.splprice')}</th>
+                                    <th>{f:translate(key:'tx_armdealers_dashboard.inshowroom')}</th>
+                                    <th>{f:translate(key:'tx_armdealers_dashboard.dispshowroomstatus')}</th>
+                                </tr>
+                                <f:for each="{products}" as="product" iteration="rows">
+                                    <tr>
+                                        <td>{rows.cycle}<f:form.hidden name="pduid[]" value="{product.product.uid}" /></td>
+                                        <td><f:image image="{product.product.preview}" treatIdAsReference="1" width="100" height="70c" /></td>
+                                        <td>{product.product.title} [{product.product.sku}]</td>
+                                        <td><f:form.radio name="splprice[{product.product.uid}]" value="0" checked="checked" /> {f:translate(key:'tx_armdealers_show.no')} &nbsp;&nbsp;&nbsp; <f:form.radio name="splprice[{product.product.uid}]" value="1" checked="{product.splprice} == 1" /> {f:translate(key:'tx_armdealers_show.yes')}</td>
+                                        <td><f:form.radio name="inshowroom[{product.product.uid}]" value="0" checked="checked" /> {f:translate(key:'tx_armdealers_show.no')} &nbsp;&nbsp;&nbsp; <f:form.radio name="inshowroom[{product.product.uid}]" value="1" checked="{product.inshowroom} == 1" /> {f:translate(key:'tx_armdealers_show.yes')}</td>
+                                        <td><f:form.radio name="dispshowroom[{product.product.uid}]" value="0" checked="checked" /> {f:translate(key:'tx_armdealers_show.no')} &nbsp;&nbsp;&nbsp; <f:form.radio name="dispshowroom[{product.product.uid}]" value="1" checked="{product.dispshowroom} == 1" /> {f:translate(key:'tx_armdealers_show.yes')}</td>
+                                    </tr>
+                                </f:for>
+                            </table>
+                        </div>
+                        <div class="text-center"><f:form.submit name="sBtn" value="{f:translate(key:'tx_armdealers_dashboard.submit')}" /></div>
+                    </f:form>
+                </f:then>
+                <f:else>
+                    {f:translate(key:'tx_armdealers_dashboard.noprod')}
+                </f:else>
+            </f:if>
+            </div>
+        </div>
+    </div>
+</section>

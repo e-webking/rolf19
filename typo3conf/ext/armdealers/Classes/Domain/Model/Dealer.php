@@ -40,7 +40,12 @@ class Dealer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected $iso2cn = '';
 
-
+    /**
+     * 
+     * @var int
+     */
+    protected $feuser = 0;
+    
     /**
      *
      * @var string
@@ -484,5 +489,26 @@ class Dealer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setZipcodes(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $zipcodes)
     {
         $this->zipcodes = $zipcodes;
+    }
+    
+    /**
+     * Returns the feuser
+     *
+     * @return int $feuser
+     */
+    public function getFeuser()
+    {
+        return $this->feuser;
+    }
+
+    /**
+     * Sets the feuser
+     *
+     * @param int $feuser
+     * @return void
+     */
+    public function setFeuser($feuser)
+    {
+        $this->feuser = (int)$feuser;
     }
 }

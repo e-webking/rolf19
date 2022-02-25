@@ -86,6 +86,8 @@ CREATE TABLE tx_armdealers_domain_model_productdealer (
     product int(11) unsigned DEFAULT '0' NOT NULL, 
     dealer int(11) unsigned DEFAULT '0' NOT NULL,
     splprice tinyint(4) unsigned DEFAULT '0' NOT NULL,
+    dispshowroom tinyint(4) unsigned DEFAULT '0' NOT NULL,
+    inshowroom tinyint(4) unsigned DEFAULT '0' NOT NULL,
     sorting int(11) unsigned DEFAULT '0' NOT NULL,
 
     tstamp int(11) unsigned DEFAULT '0' NOT NULL,
@@ -95,9 +97,13 @@ CREATE TABLE tx_armdealers_domain_model_productdealer (
     hidden smallint(5) unsigned DEFAULT '0' NOT NULL,
     starttime int(11) unsigned DEFAULT '0' NOT NULL,
     endtime int(11) unsigned DEFAULT '0' NOT NULL,
+    sys_language_uid int(11) DEFAULT '0' NOT NULL,
+    l10n_parent int(11) DEFAULT '0' NOT NULL,
+    l10n_diffsource mediumblob,
 
     PRIMARY KEY (uid),
     KEY parent (pid),
+    KEY language (l10n_parent,sys_language_uid)
 );
 
 #
@@ -123,6 +129,7 @@ CREATE TABLE tx_armdealers_domain_model_dealer (
     country varchar(50) DEFAULT '' NOT NULL,
     iso2cn char(2) DEFAULT '' NOT NULL,
     dispmsg varchar(250) DEFAULT '' NOT NULL,
+    feuser int(11) unsigned DEFAULT '0' NOT NULL,
 
     tstamp int(11) unsigned DEFAULT '0' NOT NULL,
     crdate int(11) unsigned DEFAULT '0' NOT NULL,

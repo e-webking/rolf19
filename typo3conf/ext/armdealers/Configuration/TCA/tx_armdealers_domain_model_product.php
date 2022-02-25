@@ -12,6 +12,7 @@ return [
         'default_sortby' => 'title',
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
+        'transOrigDiffSourceField' => 'l10n_diffsource',
         'enablecolumns' => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
@@ -35,10 +36,11 @@ return [
                         'renderType' => 'selectSingle',
                         'foreign_table' => 'sys_language',
                         'foreign_table_where' => 'ORDER BY sys_language.title',
-                        'items' => [
-                                ['LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages', -1],
-                                ['LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.default_value', 0]
-                        ],
+                        'items' => array(
+                                array('LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages', -1),
+                                array('LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.default_value', 0)
+                        ),
+                        'default' => 0,
                 ],
         ],
         'l10n_parent' => [
@@ -53,6 +55,7 @@ return [
                         ],
                         'foreign_table' => 'tx_armdealers_domain_model_product',
                         'foreign_table_where' => 'AND tx_armdealers_domain_model_product.pid=###CURRENT_PID### AND tx_armdealers_domain_model_product.sys_language_uid IN (-1,0)',
+                        'default' => 0,
                 ],
         ],
         'l10n_diffsource' => [

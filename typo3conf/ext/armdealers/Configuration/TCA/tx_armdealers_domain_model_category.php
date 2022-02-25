@@ -38,6 +38,7 @@ return [
                                 ['LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages', -1],
                                 ['LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.default_value', 0]
                         ],
+                        'default' => 0,
                 ],
         ],
         'l10n_parent' => [
@@ -52,6 +53,7 @@ return [
                         ],
                         'foreign_table' => 'tx_armdealers_domain_model_category',
                         'foreign_table_where' => 'AND tx_armdealers_domain_model_category.pid=###CURRENT_PID### AND tx_armdealers_domain_model_category.sys_language_uid IN (-1,0)',
+                        'default' => 0,
                 ],
         ],
         'l10n_diffsource' => [

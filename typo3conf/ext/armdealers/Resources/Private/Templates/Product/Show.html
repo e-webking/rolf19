@@ -45,66 +45,75 @@
             </div>
             <div class="col-sm-12 col-md-6">
                 <div class="row">
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-2 offset-md-1">
                         <f:if condition="{productdealer.product.pdf}">
                             <f:then>
-                                <a href="{productdealer.product.pdf.originalResource.publicUrl}">
+                                <a href="{productdealer.product.pdf.originalResource.publicUrl}" target="_blank">
                                     <div class="pbox">
                                         <i class="fa fa-4x fa-file-text-o"></i><br>
-                                        Brosch&uuml;re
+                                        {f:translate(key:'tx_armdealers_show.broch')}
                                     </div>
                                 </a>
                             </f:then>
                             <f:else>
                                 <div class="pbox disabled">
                                     <i class="fa fa-4x fa-file-text-o"></i><br>
-                                    Brosch&uuml;re
+                                    {f:translate(key:'tx_armdealers_show.broch')}
                                 </div>
                             </f:else>
                         </f:if>
                         
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-2">
                         <f:if condition="{productdealer.product.techpdf}">
                             <f:then>
-                                <a href="{productdealer.product.techpdf.originalResource.publicUrl}">
+                                <a href="{productdealer.product.techpdf.originalResource.publicUrl}" target="_blank">
                                     <div class="pbox">
                                         <i class="fa fa-4x fa-file-text-o"></i>
-                                        <br>Technische Daten
+                                        <br>{f:translate(key:'tx_armdealers_show.tech')}
                                     </div>
                                 </a>
                             </f:then>
                             <f:else>
                                 <div class="pbox disabled">
                                     <i class="fa fa-4x fa-file-text-o"></i>
-                                    <br>Technische Daten
+                                    <br>{f:translate(key:'tx_armdealers_show.tech')}
                                 </div>
                             </f:else>
                         </f:if>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-2">
                         <f:if condition="{productdealer.product.video}">
                             <f:then>
-                                <a href="{productdealer.product.video.originalResource.publicUrl}">
+                                <a href="{productdealer.product.video.originalResource.publicUrl}" target="_blank">
                                     <div class="pbox">
                                         <i class="fa fa-4x fa-youtube-play"></i>
-                                        <br>Video
+                                        <br>{f:translate(key:'tx_armdealers_show.video')}
                                     </div>
                                 </a>
                             </f:then>
                             <f:else>
                                 <div class="pbox disabled">
                                     <i class="fa fa-4x fa-youtube-play"></i><br>
-                                        Video
+                                    {f:translate(key:'tx_armdealers_show.video')}
                                 </div>
                             </f:else>
                         </f:if>
                     </div>
-                    <div class="col-sm-6 col-md-3">
-                        <f:link.page pageUid="{productdealer.dealer.contactpid}">
+                    <div class="col-sm-6 col-md-2">
+                        <f:link.page pageUid="{productdealer.dealer.contactpid}" target="_blank">
                             <div class="pbox">
                                 <i class="fa fa-4x fa-question-circle-o"></i>
-                                <br>Frage? - Kontakt
+                                <br>{f:translate(key:'tx_armdealers_show.frage')}
+                            </div>
+                        </f:link.page>
+                    </div>
+                    <div class="col-sm-6 col-md-2">
+                        <f:link.page pageUid="{settings.configurator}" target="_blank">
+                            <div class="pbox">
+                                <!-- img src="{f:uri.resource(path:'Icons/configurator.jpg')}" width="170" height="137c" / -->
+                                <i class="fa fa-4x fa-gears"></i>
+                                <br>{f:translate(key:'tx_armdealers_show.config')}
                             </div>
                         </f:link.page>
                     </div>
@@ -124,22 +133,34 @@
                 </div>
                 <f:if condition="{productdealer.splprice}">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-12 col-sm-7 col-md-8">
+                            {f:translate(key:'tx_armdealers_show.sptext')}
+                        </div>
+                        <div class="col-12 col-sm-5 col-md-4">
+                            <f:link.page pageUid="{productdealer.dealer.contactpid}" target="_blank">
                             <img src="{f:uri.resource(path:'Icons/splprice.png')}" width="150" height="150" class="splprice" />
+                            </f:link.page>
+                        </div>
+                    </div>
+                </f:if>
+                <f:if condition="{productdealer.dispshowroom}">
+                    <div class="row">
+                        <div class="col-12 col-sm-7 col-md-8">
+                            {f:translate(key:'tx_armdealers_show.displayinsr')}: <f:if condition="{productdealer.inshowroom}"><f:then>{f:translate(key:'tx_armdealers_show.yes')}</f:then><f:else>{f:translate(key:'tx_armdealers_show.no')}</f:else></f:if>
                         </div>
                     </div>
                 </f:if>
                 <div class="row">
                     <div class="col-12">
                         <br>
-                        <p><a href="javascript:history.go(-1)">Zur&uuml;ck zur &Uuml;bersicht {productdealer.product.category.title}</a></p>
+                        <p><a href="javascript:history.go(-1)">{f:translate(key:'tx_armdealers_show.back')} {productdealer.product.category.title}</a></p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
                         <br>
                         <p>
-                            <f:link.page pageUid="{productdealer.dealer.contactpid}" class="cta">Hier finden Sie {productdealer.dealer.title}</f:link.page>
+                            <f:link.page pageUid="{productdealer.dealer.contactpid}" class="cta">{f:translate(key:'tx_armdealers_show.find')} {productdealer.dealer.title}</f:link.page>
                         </p>
                     </div>
                 </div>

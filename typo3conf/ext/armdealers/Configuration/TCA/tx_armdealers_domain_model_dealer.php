@@ -17,10 +17,10 @@ return [
         'iconfile' => 'EXT:armdealers/Resources/Public/Icons/tx_armdealers_domain_model_dealer.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'hidden, title, street, zip, city, iso2cn, country, phone, email, lat, lng, dealerpg, pgurl, dispmsg, contactpid, zipcodes',
+        'showRecordFieldList' => 'hidden, title, street, zip, city, iso2cn, country, phone, email, lat, lng, dealerpg, pgurl, feuser, dispmsg, contactpid, zipcodes',
     ],
     'types' => [
-        '1' => ['showitem' => 'hidden, title, street, zip, city, iso2cn, country, phone, email, lat, lng, dealerpg, pgurl, dispmsg, contactpid, zipcodes, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'hidden, title, street, zip, city, iso2cn, country, phone, email, feuser, lat, lng, dealerpg, pgurl, dispmsg, contactpid, zipcodes, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'hidden' => [
@@ -192,6 +192,21 @@ return [
                 'size' => 10,
                 'eval' => 'int'
             ],
+        ],
+        'feuser' => [
+            'exclude' => true,
+            'label' => 'FE User',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'foreign_table' => 'fe_users',
+                'foreign_table_where' => 'AND fe_users.pid=###CURRENT_PID### ',
+                'minitems' => 0,
+                'maxitems' => 1,
+                'items' => [
+                        array('-- select --', 0)
+                ],
+             ]
         ],
         'zipcodes' => [
             'exclude' => true,

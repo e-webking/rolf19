@@ -76,6 +76,17 @@ call_user_func(function () {
         ]
     );
     
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'ARM.Armdealers',
+        'dashboard',
+        [
+            'Product' => 'dashboard, update'
+        ],
+        // non-cacheable actions
+        [
+            'Product' => 'dashboard, update'
+        ]
+    );
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tce']['formevals']['ARM\\Armdelaers\\Evaluation\\FloatEvaluation'] = '';
 });
 

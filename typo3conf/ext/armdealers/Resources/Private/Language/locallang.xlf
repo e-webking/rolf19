@@ -61,6 +61,63 @@
                         <trans-unit id="tx_armdealers_map.contact">
 				<source>Kontakt</source>
 			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.back">
+				<source>Zurück zur Übersicht</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.in">
+				<source>im</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.find">
+				<source>Hier finden Sie</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.frage">
+				<source>Frage? - Kontakt</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.video">
+				<source>Video</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.tech">
+				<source>Technische Daten</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.broch">
+				<source>Broschüre</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.sptext">
+				<source>Dieses Produkt verkaufen wir ab unserer Ausstellung zu einem attraktiven Preis. Fragen Sie uns an.</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.displayinsr">
+				<source>Verfügbar im Ausstellungsraum?</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.yes">
+				<source>Ja</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.no">
+				<source>Nein</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_show.config">
+				<source>Konfigurator</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_dashboard.product">
+				<source>Produkte</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_dashboard.title">
+				<source>Titel</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_dashboard.splprice">
+				<source>Sonderpreis</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_dashboard.inshowroom">
+				<source>Im Ausstellungsraum?</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_dashboard.dispshowroomstatus">
+				<source>Showroom-Status anzeigen?</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_dashboard.submit">
+				<source>Senden</source>
+			</trans-unit>
+                        <trans-unit id="tx_armdealers_dashboard.noprod">
+				<source>Kein Produkt gefunden!</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

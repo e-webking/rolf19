@@ -59,4 +59,22 @@ class DealerRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         
         return $query->execute()->getFirst();
     }
+    
+    /**
+     * 
+     * @param int $feuser
+     * @return \ARM\Armdealers\Domain\Model\Dealer
+     */
+    public function getByFeuser($feuser) {
+        $query = $this->createQuery();
+        $constraints = array();
+        $constraints[] = $query->equals('deleted', 0);
+        $constraints[] = $query->equals('feuser', $feuser);
+        
+        $query->matching(
+                $query->logicalAnd($constraints)
+        );
+        
+        return $query->execute()->getFirst();
+    }
 }

@@ -31,6 +31,7 @@ plugin.tx_armdealers {
         formSubject = {$plugin.tx_armdealers.settings.formSubject}
         thanku = {$plugin.tx_armdealers.settings.thanku}
         productpage = {$plugin.tx_armdealers.settings.productpage}
+        configurator = {$plugin.tx_armdealers.settings.configurator}
     }
 }
 

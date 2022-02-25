@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
                     <div class="introTxt">
-                        <h1 class="text-center">{cattitle} im {dealer.title}</h1>
+                        <h1 class="text-center">{cattitle} {f:translate(key:'tx_armdealers_show.in')} {dealer.title}</h1>
                         <p class="align-center"><f:format.raw><f:format.nl2br>{settings.text}</f:format.nl2br></f:format.raw></p>
                     </div>
                 </div>
@@ -14,12 +14,12 @@
     <section class="gbl">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
+                <div class="col-12 col-sm-12 col-lg-10 offset-lg-1">
                     <div class="eightimgcontainer">
                         <f:for each="{products}" as="product">
                             <div class="fiveimages mb-5">
                                 <f:link.page pageUid="{settings.productpage}" additionalParams="{dealer: dealer.uid, product:product.uid}">
-                                    <f:image image="{product.preview}" treatIdAsReference="1" width="400" height="297c" />
+                                    <f:image image="{product.preview}" treatIdAsReference="1" width="520" height="386c" />
                                 </f:link.page>
                                 <div class="image-caption">
                                     <f:link.page pageUid="{settings.productpage}" additionalParams="{dealer: dealer.uid, product:product.uid}">{product.title}</f:link.page>
@@ -32,3 +32,12 @@
         </div>
     </section>
 </f:if>
+<section class="gbl">
+    <div class="container">
+        <div class="row">
+                <div class="col-sm-12 text-center">
+                    <a href="javascript:history.go(-1)">{f:translate(key:'tx_armdealers_show.back')} {dealer.title}</a>
+                </div>
+        </div>
+    </div>
+</section>

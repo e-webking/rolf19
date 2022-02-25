@@ -51,6 +51,18 @@ class Productdealer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var bool
      */
     protected $splprice;
+    
+    /**
+     * 
+     * @var int
+     */
+    protected $dispshowroom;
+    
+    /**
+     * 
+     * @var int
+     */
+    protected $inshowroom;
 
     /**
      * Returns the sku
@@ -109,4 +121,41 @@ class Productdealer extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
        $this->dealer = $dealer;
     }
     
+    /**
+     * Returns the dispshowroom
+     *
+     * @return int $dispshowroom
+     */
+    public function getDispshowroom() {
+       return $this->dispshowroom;
+    }
+
+    /**
+     * Sets the dispshowroom
+     *
+     * @param int $dispshowroom
+     * @return void
+     */
+    public function setDispshowroom($dispshowroom) {
+        $this->dispshowroom = $dispshowroom;
+    }
+    
+    /**
+     * Returns the inshowroom
+     *
+     * @return int $inshowroom
+     */
+    public function getInshowroom() {
+        return $this->inshowroom;
+    }
+
+    /**
+     * Sets the inshowroom
+     *
+     * @param int $inshowroom
+     * @return void
+     */
+    public function setInshowroom($inshowroom) {
+        $this->inshowroom = $inshowroom;
+    }
 }

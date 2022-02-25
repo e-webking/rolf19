@@ -40,6 +40,11 @@ call_user_func(
             'product',
             'Product Detail'
         );
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'ARM.Armdealers',
+            'dashboard',
+            'Dealer Dashboard'
+        );
         
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('armdealers', 'Configuration/TypoScript', 'Rolf-Benz Dealers');
 

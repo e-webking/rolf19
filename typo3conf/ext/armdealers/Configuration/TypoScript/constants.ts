@@ -27,6 +27,7 @@ plugin.tx_armdealers {
         formSubject = Kontakt formular
         thanku = 71
         productpage = 25
+        configurator = 413
     }
 }
 

@@ -9,6 +9,9 @@ return [
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
         'delete' => 'deleted',
+        'languageField' => 'sys_language_uid',
+        'transOrigPointerField' => 'l10n_parent',
+        'transOrigDiffSourceField' => 'l10n_diffsource',
         'enablecolumns' => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
@@ -18,13 +21,48 @@ return [
         'iconfile' => 'EXT:armdealers/Resources/Public/Icons/tx_armdealers_domain_model_dealer.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'hidden, product, dealer, splprice,',
+        'showRecordFieldList' => 'hidden, product, dealer, splprice, dispshowroom, inshowroom,',
     ],
     'types' => [
-        '1' => ['showitem' => 'hidden, product, dealer, splprice, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, product, dealer, splprice, dispshowroom, inshowroom, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
-         
+        
+         'sys_language_uid' => [
+                'exclude' => 1,
+                'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.language',
+                'config' => [
+                        'type' => 'select',
+                        'renderType' => 'selectSingle',
+                        'foreign_table' => 'sys_language',
+                        'foreign_table_where' => 'ORDER BY sys_language.title',
+                        'items' => [
+                                ['LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages', -1],
+                                ['LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.default_value', 0]
+                        ],
+                        'default' => 0,
+                ],
+        ],
+        'l10n_parent' => [
+                'displayCond' => 'FIELD:sys_language_uid:>:0',
+                'exclude' => 1,
+                'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+                'config' => [
+                        'type' => 'select',
+                        'renderType' => 'selectSingle',
+                        'items' => [
+                                ['', 0],
+                        ],
+                        'foreign_table' => 'tx_armdealers_domain_model_productdealer',
+                        'foreign_table_where' => 'AND tx_armdealers_domain_model_productdealer.pid=###CURRENT_PID### AND tx_armdealers_domain_model_productdealer.sys_language_uid IN (-1,0)',
+                        'default' => 0,
+                ],
+        ],
+        'l10n_diffsource' => [
+                'config' => [
+                        'type' => 'passthrough',
+                ],
+        ],
         'hidden' => [
             'exclude' => true,
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
@@ -103,6 +141,32 @@ return [
             ],
 
         ],
-    
+        'dispshowroom' => [
+            'exclude' => true,
+            'label' => 'Display showroom status?',
+            'config' => [
+                'type' => 'check',
+                'items' => [
+                    '1' => [
+                        '0' => 'Show status'
+                    ]
+                ],
+            ],
+        ],
+        'inshowroom' => [
+            'exclude' => true,
+            'label' => 'Available in showroom?',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                        ['Nein', 0],
+                        ['Ja', 1],
+                ],
+                'minitems' => 0,
+                'maxitems' => 1,
+            ],
+
+        ],
     ],
 ];

@@ -67,7 +67,10 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     public function categoryAction()
     {
         $categories = $this->categoryRepository->findAll();
-        $this->view->assign('categories', $categories);    
+        $this->view->assign('categories', $categories);  
+        $dealer = $this->settings['dealer'];
+        $dealerObj = $this->dealerRepository->findByUid($dealer);
+        $this->view->assign('dealer', $dealerObj);
     }
     
     /**
@@ -173,4 +176,60 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         return $rec;
     }
     
+    /**
+     *  Dealer product list
+     */
+    public function dashboardAction() {
+        
+        $feuser = $GLOBALS["TSFE"]->fe_user->user['uid'];
+
+        if (intval($feuser) > 0) {
+            //get the dealer
+            $dealer = $this->dealerRepository->getByFeuser(intval($feuser));
+            if ($dealer instanceof \ARM\Armdealers\Domain\Model\Dealer) {
+                $dealerUid = $dealer->getUid();
+                $products = $this->pdealerRepository->findByDealer($dealerUid);
+                $this->view->assign('dealer', $dealer);
+                $this->view->assign('products', $products);
+            } else {
+                die ('Associated dealer cannot be located!');
+            }
+        } else {
+            die ('Authentication failure!');
+        }
+    }
+    
+    /**
+     * update dealer products
+     */
+    public function updateAction() {
+        if ($this->request->hasArgument("pduid")) {
+            $pdUidArr = $this->request->getArgument("pduid");
+            foreach($pdUidArr as $pduid) {
+                $pdObj = $this->pdealerRepository->findByUid($pduid);
+                $splPrice = $_POST['tx_armdealers_dashboard']['splprice']["$pduid"];
+                $inShowroom = $_POST['tx_armdealers_dashboard']['inshowroom']["$pduid"];
+                $dispShowroom = $_POST['tx_armdealers_dashboard']['dispshowroom']["$pduid"];
+                if ($splPrice == 1) {
+                    $pdObj->setSplprice(1);
+                } else {
+                    $pdObj->setSplprice(0);
+                }
+                if ($inShowroom == 1) {
+                    $pdObj->setInshowroom(1);
+                } else {
+                    $pdObj->setInshowroom(0);
+                }
+                if ($dispShowroom == 1) {
+                    $pdObj->setDispshowroom(1);
+                } else {
+                    $pdObj->setDispshowroom(0);
+                }
+                $this->pdealerRepository->update($pdObj);
+            }
+            $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\PersistenceManager')->persistAll();
+        }
+        
+        $this->redirect('dashboard');
+    }
 }
