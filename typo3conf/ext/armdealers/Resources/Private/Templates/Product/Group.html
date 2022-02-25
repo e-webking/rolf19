@@ -19,7 +19,9 @@
                         <f:for each="{products}" as="product">
                             <div class="fiveimages mb-5">
                                 <f:link.page pageUid="{settings.productpage}" additionalParams="{dealer: dealer.uid, product:product.uid}">
-                                    <f:image image="{product.preview}" treatIdAsReference="1" width="520" height="386c" />
+                                    <f:if condition="{product.preview}">
+                                        <f:image image="{product.preview}" treatIdAsReference="1" width="520" height="386c" />
+                                    </f:if>
                                 </f:link.page>
                                 <div class="image-caption">
                                     <f:link.page pageUid="{settings.productpage}" additionalParams="{dealer: dealer.uid, product:product.uid}">{product.title}</f:link.page>

@@ -109,8 +109,8 @@
                                 <target>Dieses Produkt verkaufen wir ab unserer Ausstellung zu einem attraktiven Preis. Fragen Sie uns an.</target>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_show.displayinsr">
-				<source>Verfügbar im Ausstellungsraum?</source>
-                                <target>Verfügbar im Ausstellungsraum?</target>
+				<source>Verfügbar im Ausstellungsraum</source>
+                                <target>Verfügbar im Ausstellungsraum</target>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_show.yes">
 				<source>Ja</source>

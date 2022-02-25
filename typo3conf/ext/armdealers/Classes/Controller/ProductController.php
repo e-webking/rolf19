@@ -169,6 +169,7 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
                     ->where(
                         $expr->eq('deleted', 0),
                         $expr->eq('hidden', 0),
+                        $expr->eq('inshowroom', 1),
                         $expr->eq('dealer', $dealer),
                         $expr->eq('product', $product)
                     )
@@ -203,33 +204,28 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      * update dealer products
      */
     public function updateAction() {
+        
         if ($this->request->hasArgument("pduid")) {
             $pdUidArr = $this->request->getArgument("pduid");
+            
+            $table = 'tx_armdealers_domain_model_productdealer';
+            $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
+            $queryBuilder->getRestrictions()->removeAll();
+        
             foreach($pdUidArr as $pduid) {
-                $pdObj = $this->pdealerRepository->findByUid($pduid);
-                $splPrice = $_POST['tx_armdealers_dashboard']['splprice']["$pduid"];
-                $inShowroom = $_POST['tx_armdealers_dashboard']['inshowroom']["$pduid"];
-                $dispShowroom = $_POST['tx_armdealers_dashboard']['dispshowroom']["$pduid"];
-                if ($splPrice == 1) {
-                    $pdObj->setSplprice(1);
-                } else {
-                    $pdObj->setSplprice(0);
-                }
-                if ($inShowroom == 1) {
-                    $pdObj->setInshowroom(1);
-                } else {
-                    $pdObj->setInshowroom(0);
-                }
-                if ($dispShowroom == 1) {
-                    $pdObj->setDispshowroom(1);
-                } else {
-                    $pdObj->setDispshowroom(0);
-                }
-                $this->pdealerRepository->update($pdObj);
+                
+                $splPrice = (int)$_POST['tx_armdealers_dashboard']['splprice']["$pduid"];
+                $inShowroom = (int)$_POST['tx_armdealers_dashboard']['inshowroom']["$pduid"];
+                $queryBuilder->update($table)
+                    ->where($queryBuilder->expr()->eq('uid', $pduid))
+                    ->set('splprice', $splPrice)
+                    ->set('inshowroom', $inShowroom)
+                    ->execute();
+              
             }
+            
             $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\PersistenceManager')->persistAll();
         }
-        
         $this->redirect('dashboard');
     }
 }

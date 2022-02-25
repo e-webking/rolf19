@@ -86,7 +86,7 @@
 				<source>Dieses Produkt verkaufen wir ab unserer Ausstellung zu einem attraktiven Preis. Fragen Sie uns an.</source>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_show.displayinsr">
-				<source>Verfügbar im Ausstellungsraum?</source>
+				<source>Verfügbar im Ausstellungsraum</source>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_show.yes">
 				<source>Ja</source>
@@ -104,7 +104,7 @@
 				<source>Titel</source>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_dashboard.splprice">
-				<source>Sonderpreis</source>
+				<source>In Ausstellung</source>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_dashboard.inshowroom">
 				<source>Im Ausstellungsraum?</source>

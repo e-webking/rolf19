@@ -86,7 +86,6 @@ CREATE TABLE tx_armdealers_domain_model_productdealer (
     product int(11) unsigned DEFAULT '0' NOT NULL, 
     dealer int(11) unsigned DEFAULT '0' NOT NULL,
     splprice tinyint(4) unsigned DEFAULT '0' NOT NULL,
-    dispshowroom tinyint(4) unsigned DEFAULT '0' NOT NULL,
     inshowroom tinyint(4) unsigned DEFAULT '0' NOT NULL,
     sorting int(11) unsigned DEFAULT '0' NOT NULL,
 
