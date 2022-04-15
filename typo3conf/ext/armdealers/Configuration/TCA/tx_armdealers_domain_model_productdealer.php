@@ -9,6 +9,7 @@ return [
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
         'delete' => 'deleted',
+        'sortby' => 'sorting',
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
@@ -21,10 +22,10 @@ return [
         'iconfile' => 'EXT:armdealers/Resources/Public/Icons/tx_armdealers_domain_model_dealer.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'hidden, product, dealer, splprice, dispshowroom, inshowroom,',
+        'showRecordFieldList' => 'hidden, product, dealer, splprice, inshowroom,',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, product, dealer, splprice, dispshowroom, inshowroom, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, product, dealer, splprice, inshowroom, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         
@@ -65,12 +66,15 @@ return [
         ],
         'hidden' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.visible',
             'config' => [
                 'type' => 'check',
+                'renderType' => 'checkboxToggle',
                 'items' => [
-                    '1' => [
-                        '0' => 'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.enabled'
+                    [
+                        0 => '',
+                        1 => '',
+                        'invertStateDisplay' => true
                     ]
                 ],
             ],

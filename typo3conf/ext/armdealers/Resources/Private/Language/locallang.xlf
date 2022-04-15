@@ -104,7 +104,7 @@
 				<source>Titel</source>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_dashboard.splprice">
-				<source>In Ausstellung</source>
+				<source>Im Abverkauf</source>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_dashboard.inshowroom">
 				<source>Im Ausstellungsraum?</source>
@@ -113,7 +113,7 @@
 				<source>Showroom-Status anzeigen?</source>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_dashboard.submit">
-				<source>Senden</source>
+				<source>Speichern</source>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_dashboard.noprod">
 				<source>Kein Produkt gefunden!</source>

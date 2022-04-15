@@ -63,12 +63,15 @@ return [
         ],
         'hidden' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.visible',
             'config' => [
                 'type' => 'check',
+                'renderType' => 'checkboxToggle',
                 'items' => [
-                    '1' => [
-                        '0' => 'LLL:EXT:lang/Resources/Private/Language/locallang_core.xlf:labels.enabled'
+                    [
+                        0 => '',
+                        1 => '',
+                        'invertStateDisplay' => true
                     ]
                 ],
             ],

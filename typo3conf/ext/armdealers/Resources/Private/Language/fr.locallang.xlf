@@ -129,11 +129,11 @@
                                 <target>Titre</target>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_dashboard.submit">
-				<source>Senden</source>
+				<source>Speichern</source>
                                 <target>Soumettre</target>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_dashboard.splprice">
-				<source>Sonderpreis</source>
+				<source>Im Abverkauf</source>
                                 <target>Prix spécial</target>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_dashboard.inshowroom">

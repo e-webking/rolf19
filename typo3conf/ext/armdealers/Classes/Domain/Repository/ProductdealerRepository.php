@@ -17,6 +17,14 @@ namespace ARM\Armdealers\Domain\Repository;
  */
 class ProductdealerRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
+    
+    /**
+     * defaultOrderings
+     *
+     * @var array
+     */
+    protected $defaultOrderings = array("sorting"=> \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING);
+    
     /**
      * 
      * @param int $dealer
