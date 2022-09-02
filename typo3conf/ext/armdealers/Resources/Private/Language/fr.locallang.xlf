@@ -82,23 +82,23 @@
 			</trans-unit>
                         <trans-unit id="tx_armdealers_show.find">
 				<source>Hier finden Sie</source>
-                                <target>Hier finden Sie</target>
+                                <target>Ici vous trouvez la</target>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_show.frage">
 				<source>Frage? - Kontakt</source>
-                                <target>Frage? - Kontakt</target>
+                                <target>Question? - Contact</target>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_show.video">
 				<source>Video</source>
-                                <target>Video</target>
+                                <target>Vidéo</target>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_show.tech">
 				<source>Technische Daten</source>
-                                <target>Technische Daten</target>
+                                <target>Caractéristiques techniques</target>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_show.broch">
 				<source>Broschüre</source>
-                                <target>Broschüre</target>
+                                <target>Brochure</target>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_show.config">
 				<source>Konfigurator</source>
@@ -106,11 +106,11 @@
 			</trans-unit>
                         <trans-unit id="tx_armdealers_show.sptext">
 				<source>Dieses Produkt verkaufen wir ab unserer Ausstellung zu einem attraktiven Preis. Fragen Sie uns an.</source>
-                                <target>Dieses Produkt verkaufen wir ab unserer Ausstellung zu einem attraktiven Preis. Fragen Sie uns an.</target>
+                                <target>Nous vendons ce produit de notre exposition à un prix attractif. N'hésitez pas à nous contacter.</target>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_show.displayinsr">
 				<source>Verfügbar im Ausstellungsraum</source>
-                                <target>Verfügbar im Ausstellungsraum</target>
+                                <target>Disponible dans notre exposition</target>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_show.yes">
 				<source>Ja</source>

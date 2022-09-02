@@ -105,7 +105,7 @@ class Product extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * 
      * @var bool
      */
-    protected $splprice;
+    protected $hasconfigurator;
 
     /**
      * mtitle
@@ -402,4 +402,22 @@ class Product extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
        $this->dealers = $dealers;
     }
     
+    /**
+     * Returns the hasconfigurator
+     *
+     * @return bool $hasconfigurator
+     */
+    public function getHasconfigurator() {
+            return $this->hasconfigurator;
+    }
+
+    /**
+     * Sets the hasconfigurator
+     *
+     * @param bool $hasconfigurator
+     * @return void
+     */
+    public function setHasconfigurator($hasconfigurator) {
+        $this->hasconfigurator = $hasconfigurator;
+    }
 }

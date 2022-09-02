@@ -23,10 +23,10 @@ return [
         'iconfile' => 'EXT:armdealers/Resources/Public/Icons/tx_armdealers_domain_model_dealer.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'hidden, title, sku, category, description, coverphoto, preview, images, pdf, techpdf, video, mtitle, mdescription, dealers,',
+        'showRecordFieldList' => 'hidden, title, sku, category, description, coverphoto, preview, images, pdf, techpdf, video, mtitle, mdescription, dealers, hasconfigurator',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, category, sku, title, description, coverphoto, preview, images, pdf, techpdf, video, mtitle, mdescription, dealers, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, category, sku, title, description, coverphoto, preview, images, pdf, techpdf, video, hasconfigurator, mtitle, mdescription, dealers, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
          'sys_language_uid' => [
@@ -194,6 +194,20 @@ return [
                 array('maxitems' => 1),
                 'pdf'
             )
+        ],
+        'hasconfigurator'=> [
+            'label' => 'Konfigurator verfügbar?',
+            'config' => [
+                'type' => 'check',
+                'renderType' => 'checkboxToggle',
+                'items' => [
+                    [
+                        0 => '',
+                        1 => '',
+                        'invertStateDisplay' => false
+                    ]
+                ],
+            ],
         ],
         'video' => [
             'exclude' => true,

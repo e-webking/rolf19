@@ -109,6 +109,7 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      * Product show action
      */
     public function showAction() {
+        
         $slickCss = GeneralUtility::getIndpEnv('TYPO3_SITE_PATH') . 'typo3conf/ext/armdealers/Resources/Public/Css/slick.css';
         $this->pageRenderer->addCssFile($slickCss);
         $slick = GeneralUtility::getIndpEnv('TYPO3_SITE_PATH') . 'typo3conf/ext/armdealers/Resources/Public/Js/slick.js';
@@ -119,13 +120,57 @@ class ProductController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         $product = filter_input(INPUT_GET, "product", FILTER_SANITIZE_SPECIAL_CHARS);
         
         if (($dealer > 0) && ($product > 0)) {
+            
             $productdealer = $this->pdealerRepository->getDealerProduct($dealer, $product);
-            $this->view->assign('productdealer', $productdealer);
-            $this->pageRenderer->setTitle($productdealer->getDealer()->getTitle().': '.$productdealer->getProduct()->getTitle());
-            $this->pageRenderer->setMetaTag('name','abstract', $productdealer->getProduct()->getMtitle(),[],true);
-            $this->pageRenderer->setMetaTag('name','description', $productdealer->getProduct()->getMdescription(),[],true);
+            
+            if ($productdealer instanceof \ARM\Armdealers\Domain\Model\Productdealer) {
+                
+                $this->view->assign('productdealer', $productdealer);
+                $this->pageRenderer->setTitle($productdealer->getDealer()->getTitle().': '.$productdealer->getProduct()->getTitle());
+                $this->pageRenderer->setMetaTag('name','abstract', $productdealer->getProduct()->getMtitle(),[],true);
+                $this->pageRenderer->setMetaTag('name','description', $productdealer->getProduct()->getMdescription(),[],true);
+            } else {
+                
+                $transProduct = $this->getProduct($product);
+                $productdealer = $this->pdealerRepository->getDealerProduct($dealer, $transProduct);
+                
+                if ($productdealer instanceof \ARM\Armdealers\Domain\Model\Productdealer) {
+                
+                    $this->view->assign('productdealer', $productdealer);
+                    $this->pageRenderer->setTitle($productdealer->getDealer()->getTitle().': '.$productdealer->getProduct()->getTitle());
+                    $this->pageRenderer->setMetaTag('name','abstract', $productdealer->getProduct()->getMtitle(),[],true);
+                    $this->pageRenderer->setMetaTag('name','description', $productdealer->getProduct()->getMdescription(),[],true);
+                }
+            }
+            
         } else {
             die('All information not available');
+        }
+    }
+    
+    protected function getProduct($uid) {
+        $table = 'tx_armdealers_domain_model_product';
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($table);
+        $queryBuilder->getRestrictions()->removeAll();
+        $expr = $queryBuilder->expr();
+        if ($GLOBALS['TSFE']->sys_language_uid == 0) {
+            $rec = $queryBuilder->select('l10n_parent')
+                    ->from($table)
+                    ->where(
+                        $expr->eq('deleted', 0),
+                        $expr->eq('uid', $uid)
+                    )
+                    ->execute()->fetchAll();
+             return $rec[0]['l10n_parent'];
+        } else {
+             $rec = $queryBuilder->select('uid')
+                    ->from($table)
+                    ->where(
+                        $expr->eq('deleted', 0),
+                        $expr->eq('l10n_parent', $uid)
+                    )
+                    ->execute()->fetchAll();
+            return $rec[0]['uid'];
         }
     }
 

@@ -9,12 +9,13 @@
 <div id="rolfmap"></div>
 <script type="text/javascript">
 
+
     <f:format.raw>{jsDealers}</f:format.raw>
     var map;
-    var clat = {slat};
-    var clng = {slng};
-    var czoom = {settings.zoom};
-    var image = "{f:uri.resource(path:'Icons/logomap.png')}";
+    var clat = <f:format.raw>{slat}</f:format.raw>;
+    var clng = <f:format.raw>{slng}</f:format.raw>;
+    var czoom = <f:format.raw>{settings.zoom}</f:format.raw>;
+    var image = "<f:format.raw>{settings.logomap}</f:format.raw>";
     var MPCENTER = {lat:clat, lng: clng};
 
 
@@ -30,6 +31,8 @@
             origin: new google.maps.Point(0,0),
             anchor: new google.maps.Point(35, 50)
         };*/
+
+        console.log(dealers);
 
         for (var i = 0; i < dealers.length; i++) {
             var data = dealers[i];

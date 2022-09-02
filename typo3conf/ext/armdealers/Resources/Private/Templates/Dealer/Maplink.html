@@ -1,12 +1,13 @@
 <div id="rolfmap"></div>
 <script type="text/javascript">
-
+    
     <f:format.raw>{jsDealers}</f:format.raw>
     var map;
     var clat = {slat};
     var clng = {slng};
     var czoom = {settings.zoom};
-    var image = "{f:uri.resource(path:'Icons/logomap.png')}";
+    var image = "{settings.logomap}";
+    <f:comment>This must be parsed</f:comment>
     var MPCENTER = {lat:clat, lng: clng};
 
 

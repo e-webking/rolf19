@@ -27,7 +27,8 @@ plugin.tx_armdealers {
         formSubject = Kontakt formular
         thanku = 71
         productpage = 25
-        configurator = 413
+        configurator = https://www.rolf-benz.com/de_CH/configurator
+        logomap = /typo3conf/ext/armdealers/Resources/Public/Icons/logomap.png
     }
 }
 

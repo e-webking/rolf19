@@ -109,13 +109,22 @@
                         </f:link.page>
                     </div>
                     <div class="col-sm-6 col-md-2">
-                        <f:link.page pageUid="{settings.configurator}" target="_blank">
-                            <div class="pbox">
-                                <!-- img src="{f:uri.resource(path:'Icons/configurator.jpg')}" width="170" height="137c" / -->
-                                <i class="fa fa-4x fa-gears"></i>
-                                <br>{f:translate(key:'tx_armdealers_show.config')}
-                            </div>
-                        </f:link.page>
+                        <f:if condition="{productdealer.product.hasconfigurator}">
+                            <f:then>
+                                <f:link.external uri="{settings.configurator}" target="_blank">
+                                    <div class="pbox">
+                                        <i class="fa fa-4x fa-gears"></i>
+                                        <br>{f:translate(key:'tx_armdealers_show.config')}
+                                    </div>
+                                </f:link.external>
+                            </f:then>
+                             <f:else>
+                                <div class="pbox disabled">
+                                   <i class="fa fa-4x fa-gears"></i>
+                                   <br>{f:translate(key:'tx_armdealers_show.config')}
+                                </div>
+                            </f:else>
+                        </f:if>
                     </div>
                 </div>
                 <div class="row">

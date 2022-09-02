@@ -32,6 +32,7 @@ plugin.tx_armdealers {
         thanku = {$plugin.tx_armdealers.settings.thanku}
         productpage = {$plugin.tx_armdealers.settings.productpage}
         configurator = {$plugin.tx_armdealers.settings.configurator}
+        logomap = {$plugin.tx_armdealers.settings.logomap}
     }
 }
 

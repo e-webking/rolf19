@@ -95,7 +95,7 @@
 				<source>Nein</source>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_show.config">
-				<source>Konfigurator</source>
+				<source>Rolf Benz Konfigurator</source>
 			</trans-unit>
                         <trans-unit id="tx_armdealers_dashboard.product">
 				<source>Produkte</source>
