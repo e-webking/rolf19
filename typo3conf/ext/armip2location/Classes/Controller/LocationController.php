@@ -125,10 +125,45 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         
         $ipNum = $this->convertIp2Numeric($ip);
         
-        //echo "<br>Converted IPNum: ". $ipNum;
+        if ($this->settings['debug'] == 1) {
+            echo "<br>Converted IPNum: ". $ipNum. " for $ip";
+        }
+        if ($this->settings['region']) {
+            
+            $results = $this->zuerichRapperswillRepository->getRecord($ipNum);
+            
+            $redirectRap = false;
+            $redirectZur = false;
+            if (count($results) > 0) {
+                foreach($results as $rec) {
+                    if ($rec instanceof \ARM\Armip2location\Domain\Model\Ipzuerichrapperswil) {
+                        $region = $rec->getRegion();
+                        if (in_array($region, $this->rapperswilRegion)) {
+                            $redirectRap = true;
+                            break;
+                        }
+                        if (in_array($region, $this->zurichRegion)) {
+                            $redirectZur = true;
+                            break;
+                        }
+                    }
+                }
+                if ($redirectZur) {
+                    $link = $this->uriBuilder->setTargetPageUid($this->settings['zuerich'])->build();
+                    $this->redirectToUri($link);
+                    die();
+                }
+                if ($redirectRap) {
+                    $link = $this->uriBuilder->setTargetPageUid($this->settings['rapperswil'])->build();
+                    $this->redirectToUri($link);
+                    die();
+                }
+            } 
+        }
         //Check DB
         $dbRec = $this->ipRepository->getRecord($ipNum);
         $setCountry = $this->settings['country'];
+        
         $link = $this->uriBuilder->setTargetPageUid($this->settings['page'])->build();
         
         if ($dbRec instanceof \ARM\Armip2location\Domain\Model\Ip && !is_null($dbRec)) {
@@ -159,8 +194,6 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
                     }
                 }
             }
-        } else {
-            echo "Strange: No record!";
         }
     }
     

@@ -14,5 +14,6 @@ plugin.tx_armip2location {
         apiKey = {$plugin.tx_armip2location.settings.apiKey}
         mode = {$plugin.tx_armip2location.settings.mode}
         useLocal = {$plugin.tx_armip2location.settings.useLocal}
+        debug = 0
     }
 }

@@ -27,8 +27,8 @@ class IpRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         
         $constraints = [];
 
-        $constraints[] = $query->greaterThanOrEqual('ipstart', $ip);
-        $constraints[] = $query->lessThanOrEqual('ipend', $ip);
+        $constraints[] = $query->lessThanOrEqual('ipstart', $ip);
+        $constraints[] = $query->greaterThanOrEqual('ipend', $ip);
         
         $query->matching(
             $query->logicalAnd($constraints)
