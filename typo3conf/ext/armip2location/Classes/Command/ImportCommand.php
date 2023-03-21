@@ -4,7 +4,7 @@ namespace ARM\Armip2location\Command;
 /***************************************************************
  *  Copyright notice
 *
-*  (c) 2021
+*  (c) 2023
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -69,14 +69,28 @@ class ImportCommand extends Command {
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         if ($input->getArgument('fileName')) {
+            
             $fileName = $input->getArgument('fileName');
             $path = Environment::getPublicPath() . '/fileadmin/armip2location/' . $fileName;
-
+            
             if (is_file($path) && file_exists($path)) {
+                $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($this->table);
+                $queryBuilder->delete($this->table)
+                        ->where(
+                            $queryBuilder->expr()->gt('uid', 0)
+                         )
+                        ->execute();
+                
+                /*$success = $this->file_get_contents_chunked($path,4096,function($chunk,&$handle,$iteration){
+                    die($chunk);
+                });
+                */
                 $fileLineArr = file($path);
+                
                 foreach($fileLineArr as $line) {
                     $this->processLine($line);
                 }
+                
             }
             
             return 0; //Command::SUCCESS (v10)
@@ -96,7 +110,9 @@ class ImportCommand extends Command {
         $ipend = str_replace('"', '', $colArr[1]);
         $iso2cn = str_replace('"', '', $colArr[2]);
         $country = str_replace('"', '', $colArr[3]);
-
+        $region = str_replace('"', '', $colArr[4]);
+        $city = str_replace('"', '', $colArr[5]);
+        
         $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($this->table);
         $queryBuilder->getRestrictions()->removeAll();
         $expr = $queryBuilder->expr();
@@ -116,8 +132,34 @@ class ImportCommand extends Command {
                         'ipend' => $ipend,
                         'cn2iso' => $iso2cn,
                         'country' => $country,
+                        'region' => $region,
+                        'city' => $city
                      ])
                      ->execute();
         //}
+    }
+    
+    protected function file_get_contents_chunked($file,$chunk_size,$callback)
+    {
+        try
+        {
+            $handle = fopen($file, "r");
+            $i = 0;
+            while (!feof($handle))
+            {
+                call_user_func_array($callback,array(fread($handle,$chunk_size),&$handle,$i));
+                $i++;
+            }
+
+            fclose($handle);
+
+        }
+        catch(Exception $e)
+        {
+             trigger_error("file_get_contents_chunked::" . $e->getMessage(),E_USER_NOTICE);
+             return false;
+        }
+
+        return true;
     }
 }

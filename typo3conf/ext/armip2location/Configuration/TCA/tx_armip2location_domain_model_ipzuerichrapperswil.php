@@ -1,7 +1,7 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'IP Data',
+        'title' => 'IP Data (Zuerich and Rapperswil)',
         'label' => 'ipstart',
         'label_alt' => 'ipend,cn2iso',
         'label_alt_force' => true,
@@ -15,10 +15,10 @@ return [
         'iconfile' => 'EXT:armip2location/Resources/Public/Icons/tx_armip2location.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'hidden, ipstart, ipend, cn2iso,country',
+        'showRecordFieldList' => 'hidden, ipstart, ipend, cn2iso,country, region, city',
     ],
     'types' => [
-        '1' => ['showitem' => 'hidden, ipstart, ipend, cn2iso, country'],
+        '1' => ['showitem' => 'hidden, ipstart, ipend, cn2iso, country, region, city'],
     ],
     'columns' => [
         'hidden' => [

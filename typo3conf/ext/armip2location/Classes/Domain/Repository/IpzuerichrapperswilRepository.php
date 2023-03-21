@@ -10,15 +10,15 @@ namespace ARM\Armip2location\Domain\Repository;
  ***/
 
 /**
- * The repository for Ip
+ * The repository for Ipzuerichrapperswil
  */
-class IpRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class IpzuerichrapperswilRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
     
     /**
      * 
      * @param int $ip
-     * @return \ARM\Armip2location\Domain\Model\Ip
+     * @return \array
      */
     public function getRecord($ip) {
         
@@ -34,6 +34,6 @@ class IpRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
             $query->logicalAnd($constraints)
         );
 
-        return $query->execute()->getFirst();
+        return $query->execute();
     }
 }

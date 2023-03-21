@@ -20,12 +20,30 @@ use \TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
     /**
+     * @var array
+     */
+    protected $zurichRegion = ['Aargau','Basel-Landschaft','Basel-Stadt','Bern','Schaffhausen','Solothurn','Valais','Zug','Zurich'];
+    
+    /**
+     * @var array
+     */
+    protected $rapperswilRegion = ['Appenzell Ausserrhoden','Appenzell Innerrhoden','Glarus','Graubunden','Nidwalden','Obwalden','Sankt Gallen','Schwyz','Thurgau','Ticino','Uri'];
+    
+    /**
      *
      * @var \ARM\Armip2location\Domain\Repository\IpRepository
      * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $ipRepository;
     
+    /**
+     * 
+     * @var \ARM\Armip2location\Domain\Repository\IpzuerichrapperswilRepository
+     * @TYPO3\CMS\Extbase\Annotation\Inject
+     */
+    protected $zuerichRapperswillRepository;
+
+
     /**
      * 
      */
@@ -40,6 +58,65 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         }
     }
     
+    
+    /**
+     * Redirect to Zuerich
+     */
+    public function toZuerichAction() {
+        
+        $usrIp = GeneralUtility::getIndpEnv('REMOTE_ADDR');
+        $ipNum = $this->convertIp2Numeric($usrIp);
+        
+        $results = $this->zuerichRapperswillRepository->getRecord($ipNum);
+        $redirect = false;
+        if (count($results) > 0) {
+            foreach($results as $rec) {
+                if ($rec instanceof \ARM\Armip2location\Domain\Model\Ipzuerichrapperswil) {
+                    $region = $rec->getRegion();
+                    if (in_array($region, $this->zurichRegion)) {
+                        $redirect = true;
+                        break;
+                    }
+                }
+            }
+        }
+        
+        if ($redirect) {
+            $link = $this->uriBuilder->setTargetPageUid($this->settings['page'])->build();
+            $this->redirectToUri($link);
+        }
+        die();
+    }
+    
+    /**
+     * Redirect to Rapperswil
+     */
+    public function toRapperswilAction() {
+        
+        $usrIp = GeneralUtility::getIndpEnv('REMOTE_ADDR');
+        $ipNum = $this->convertIp2Numeric($usrIp);
+        
+        $results = $this->zuerichRapperswillRepository->getRecord($ipNum);
+        $redirect = false;
+        if (count($results) > 0) {
+            foreach($results as $rec) {
+                if ($rec instanceof \ARM\Armip2location\Domain\Model\Ipzuerichrapperswil) {
+                    $region = $rec->getRegion();
+                    if (in_array($region, $this->rapperswilRegion)) {
+                        $redirect = true;
+                        break;
+                    }
+                }
+            }
+        }
+        
+        if ($redirect) {
+            $link = $this->uriBuilder->setTargetPageUid($this->settings['page'])->build();
+            $this->redirectToUri($link);
+        }
+        die();
+    }
+    
     /**
      * 
      * @param string $ip
@@ -48,7 +125,7 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         
         $ipNum = $this->convertIp2Numeric($ip);
         
-       // echo "<br>Converted IPNum: ". $ipNum;
+        //echo "<br>Converted IPNum: ". $ipNum;
         //Check DB
         $dbRec = $this->ipRepository->getRecord($ipNum);
         $setCountry = $this->settings['country'];
@@ -58,20 +135,28 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
             
             $cn2code = $dbRec->getCn2iso();
             
-           // echo 'Debug:'.$cn2code . 'set country: '.$setCountry;
-            if ($cn2code == 'DE') {
-                header("location: /visit.html");
-                exit;
-            }
-            if ($setCountry == 'AT') {
-                if ($cn2code != 'AT') {
-                    //redirect
-                    $this->redirectToUri($link);
-                }
-            } else {
-                if ($cn2code == 'AT') {
-                   //redirect
-                    $this->redirectToUri($link);
+            // echo 'Debug:'.$cn2code . 'set country: '.$setCountry;
+            // echo "Page to go: ".$link;
+            // exit;
+//            if ($cn2code == 'DE') {
+//                header("location: /visit.html");
+//                exit;
+//            }
+            if (isset($setCountry) && isset($cn2code)) {
+                if ($setCountry == 'AT') {
+                    if ($cn2code != 'AT') {
+                        //redirect
+                        if ($link != "/") {
+                            $this->redirectToUri($link);
+                        }
+                    }
+                } else {
+                    if ($cn2code == 'AT') {
+                        //redirect
+                        if ($link != "/") {
+                                $this->redirectToUri($link);
+                        }
+                    }
                 }
             }
         } else {
@@ -85,12 +170,14 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      * @return int
      */
     protected function convertIp2Numeric($ip) {
-        
+        //echo $ip;
         if ($ip == "") {
             return 0;
 	} else {
             $ips = explode(".", $ip);
-            return ($ips[3] + $ips[2] * 256 + $ips[1] * 256 * 256 + $ips[0] * 256 * 256 * 256);
+            //var_dump($ips);
+            
+            return ($ips[3] + ($ips[2] * 256) + ($ips[1] * 256 * 256) + ($ips[0] * 256 * 256 * 256));
 	}
     }
     
@@ -133,11 +220,12 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     public function visitComAction() {
         
         $usrIp = GeneralUtility::getIndpEnv('REMOTE_ADDR');
-        $apiKey = $this->settings['apiKey'];
+        $this->localDb($usrIp);
+        /*$apiKey = $this->settings['apiKey'];
         $mode = $this->settings['mode'];
         $link = $this->uriBuilder->setTargetPageUid($this->settings['page'])->build();
         $apiObj = new \ARM\Armip2location\Library\Ip2LocationApi($apiKey, $mode, TRUE);
-        //var_dump($apiObj);
+        var_dump($apiObj);
         
         $apiObj->query($usrIp);
         
@@ -145,6 +233,6 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
             header("location: /visit.html");
             exit;
         }
-        
+        */
     }
 }

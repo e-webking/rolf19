@@ -16,4 +16,28 @@ call_user_func(function () {
             'Location' => 'switcher, visitCom'
         ]
     );
+    
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'ARM.Armip2location',
+        'zuerich',
+        [
+            'Location' => 'toZuerich'
+        ],
+        // non-cacheable actions
+        [
+            'Location' => 'toZuerich'
+        ]
+    );
+    
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'ARM.Armip2location',
+        'rapperswil',
+        [
+            'Location' => 'toRapperswil'
+        ],
+        // non-cacheable actions
+        [
+            'Location' => 'toRapperswil'
+        ]
+    );
 });

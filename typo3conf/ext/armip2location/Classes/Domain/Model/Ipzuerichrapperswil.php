@@ -4,7 +4,7 @@ namespace ARM\Armip2location\Domain\Model;
 /**
  * IP
  */
-class Ip extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Ipzuerichrapperswil extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
     /**
      * country
