@@ -1,0 +1,7 @@
+tx_gridelements.setup {
+    17 {
+        title = Mood Board
+        description = Create mood boards with thumbnails
+        flexformDS = FILE:EXT:armtpl/Configuration/FlexForms/moodboard.xml
+    }
+}

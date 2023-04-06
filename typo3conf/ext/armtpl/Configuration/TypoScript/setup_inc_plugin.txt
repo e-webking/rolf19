@@ -82,3 +82,51 @@ lib.visit {
     view =< plugin.tx_armip2location.view
     settings =< plugin.tx_armip2location.settings
 }
+
+plugin.tx_felogin_pi1{
+  templateFile = {$templatePath}Resources/Private/Templates/felogin.html
+  errorMessage_stdWrap.wrap = <div class="error">|</div>
+  forgotErrorMessage_stdWrap.wrap = <div class="error">|</div>
+  changePasswordNotValidMessage_stdWrap.wrap = <div class="error">|</div>
+  changePasswordTooShortMessage_stdWrap.wrap = <div class="error">|</div>
+  changePasswordNotEqualMessage_stdWrap.wrap = <div class="error">|</div>
+  _LOCAL_LANG{
+    default{
+      ll_welcome_header = Login
+      ll_welcome_message = Benutzername und Passwort eingeben:
+      username = Benutzername:
+      password = Passwort:
+      ll_enter_your_data = Benutzername:
+      logout = eingeloggt
+      ll_error_header = Login fehlgeschlagen
+      ll_error_message (
+Während Ihrem Login ist ein Fehler passiert. Wahrscheinlich haben Sie Ihren Benutzernamen oder Ihr Passwort nicht korrekt eingegeben. Achten Sie auch auf die Gross- und Kleinschreibung.
+Cookies müssen vom Browser zugelassen sein.
+)
+      ll_forgot_header = Passwort vergessen?
+      ll_forgot_reset_message_error = Diese Email-Adresse ist bei uns nicht registriert
+      ll_forgot_reset_message = Bitte Benutzername oder E-Mail-Adresse eingeben. Anleitung zur Rücksetzung des Passwortes: Gehen Sie zu Ihrem E-Mail-Konto und befolgen Sie die Anleitung.
+      reset_password = Passwort zurücksetzen
+      ll_forgot_header_backToLogin = Zurück zum Login
+      ll_forgot_reset_message_emailSent = Eine Nachricht wurde an Ihre gespeicherte Email-Adresse gesandt und enthält den Link, um das Passwort zurückzusetzen. Falls Sie keine Nachricht erhalten haben, checken Sie den Spamordner. Andernfalls ist Ihre Mailadresse nicht gespeichert.
+      ll_forgot_validate_reset_password (
+Ihr neues Passwort
+
+%dDiese Email wurde gesandt, um das Passwort zurückzusetzen.
+
+Bitte klicken Sie auf den folgenden Link:
+%s
+
+Aus Sicherheitsgründen ist der Link nur gültig bis.
+Falls Sie den Link später benützen, ist er nicht mehr gültig. Danach müssen Sie das Vorgehen zur Passwortrücksetzung Schritt für Schritt wiederholen.
+)
+      ll_change_password_header = Passwort ändern
+      ll_change_password_message = Bitte neues Passwort eingeben. Das Passwort muss aus mindestens 6 Zeichen bestehen.
+      newpassword_label1 = Neues Passwort eingeben
+      newpassword_label2 = Neues Passwort wiederholen
+      change_password = Passwort ändern
+      ll_change_password_done_message = Ihr neues Passwort ist gespeichert. Sie können sich mit dem neuen Passwort einloggen.
+    }
+    
+   }
+}

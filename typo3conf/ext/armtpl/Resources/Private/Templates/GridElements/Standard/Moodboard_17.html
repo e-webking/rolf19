@@ -1,54 +1,201 @@
-<f:if condition="{data.header_link}">
-    <f:then>
-        <f:link.typolink parameter="{data.header_link}">
-            <picture class="slide-image">
-            <source media="(min-width: 1440px)" srcset="uploads/tx_armtpl/{data.flexform_field_imagelarge}">
-            <f:if condition="{data.flexform_field_imagedesk}">
-              <source media="(min-width: 1280px)" srcset="uploads/tx_armtpl/{data.flexform_field_imagedesk}">
+<div class="row">
+    <div class="col-12 col-lg-8">
+        <div class="mood-board board-02">
+            <div class="altezza"></div>
+            <a data-fancybox="" data-src="#{data.uid}-f001" href="javascript:;" 
+               class="campione campione-01 fill imgLiquid_bgSize imgLiquid_ready" 
+               style="background-image: url(&quot;/uploads/tx_armtpl/{data.flexform_field_img1}&quot;); background-size: cover; 
+               background-position: center center; background-repeat: no-repeat;">
+                <div class="altezza"></div><img src="uploads/tx_armtpl/{data.flexform_field_img1}" alt="Circle image" style="display: none">
+            </a>
+            <a data-fancybox="" data-src="#{data.uid}-f002" href="javascript:;" 
+               class="campione campione-02 fill imgLiquid_bgSize imgLiquid_ready" 
+               style="background-image: url(&quot;/uploads/tx_armtpl/{data.flexform_field_img2}&quot;); background-size: cover; 
+               background-position: center center; background-repeat: no-repeat;">
+                <div class="altezza"></div><img src="uploads/tx_armtpl/{data.flexform_field_img2}" alt="Top Rectangle in middle" style="display: none">
+            </a>
+            <a data-fancybox="" data-src="#{data.uid}-f003" href="javascript:;" 
+               class="campione campione-03 fill imgLiquid_bgSize imgLiquid_ready" 
+               style="background-image: url(&quot;/uploads/tx_armtpl/{data.flexform_field_img3}&quot;); background-size: cover; 
+               background-position: center center; background-repeat: no-repeat;">
+                <div class="altezza"></div><img src="uploads/tx_armtpl/{data.flexform_field_img3}" alt="Vertical rectangle in middle" style="display: none">
+            </a>
+            <a data-fancybox="" data-src="#{data.uid}-f004" href="javascript:;" 
+               class="campione campione-04 fill imgLiquid_bgSize imgLiquid_ready" 
+               style="background-image: url(&quot;/uploads/tx_armtpl/{data.flexform_field_img4}&quot;); background-size: cover; 
+               background-position: center center; background-repeat: no-repeat;">
+                <div class="altezza"></div><img src="uploads/tx_armtpl/{data.flexform_field_img4}" alt="Vertical narrow rectangle image" style="display: none">
+            </a>
+            <a data-fancybox="" data-src="#{data.uid}-f005" href="javascript:;" 
+               class="campione campione-05 fill imgLiquid_bgSize imgLiquid_ready" 
+               style="background-image: url(&quot;/uploads/tx_armtpl/{data.flexform_field_img5}&quot;); background-size: cover; 
+               background-position: center center; background-repeat: no-repeat;">
+                <div class="altezza"></div>
+            <img src="uploads/tx_armtpl/{data.flexform_field_img5}" alt="Dome shape on right" style="display: none">
+            </a>
+            <a data-fancybox="" data-src="#{data.uid}-f006" href="javascript:;" 
+               class="campione campione-06 fill imgLiquid_bgSize imgLiquid_ready" 
+               style="background-image: url(&quot;/uploads/tx_armtpl/{data.flexform_field_img6}&quot;); background-size: cover; 
+               background-position: center center; background-repeat: no-repeat;">
+                <div class="altezza"></div><img src="uploads/tx_armtpl/{data.flexform_field_img6}" alt="Rectangle on left" style="display: none">
+            </a>
+            <a data-fancybox="" data-src="#{data.uid}-f007" href="javascript:;" 
+               class="campione campione-07 fill imgLiquid_bgSize imgLiquid_ready" 
+               style="background-image: url(&quot;/uploads/tx_armtpl/{data.flexform_field_img7}&quot;); background-size: cover; 
+               background-position: center center; background-repeat: no-repeat;">
+                <div class="altezza"></div><img src="uploads/tx_armtpl/{data.flexform_field_img7}" alt="Bottom rectangle in middle" style="display: none">
+            </a>
+
+            <div id="{data.uid}-f001" class="overlay-popup overlay-finitura">
+                <div class="row align-items-center">
+                        <div class="col-12 col-md-6">
+                                <div class="immagine immagine-q">
+                                        <div class="altezza"></div>
+                                        <div class="wrap-img fill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/tx_armtpl/{data.flexform_field_img1}&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+                                                <img src="uploads/tx_armtpl/{data.flexform_field_img1}" style="display: none;">
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-12 col-md-6 mt-4 mt-md-0">
+                            <f:format.raw>{data.flexform_field_pop1}</f:format.raw>
+                        </div>
+                </div>
+            </div>
+            <div id="{data.uid}-f002" class="overlay-popup overlay-finitura">
+                <div class="row align-items-center">
+                        <div class="col-12 col-md-6">
+                                <div class="immagine immagine-q">
+                                        <div class="altezza"></div>
+                                        <div class="wrap-img fill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/tx_armtpl/{data.flexform_field_img2}&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+                                                <img src="uploads/tx_armtpl/{data.flexform_field_img2}" style="display: none;">
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-12 col-md-6 mt-4 mt-md-0">
+                            <f:format.raw>{data.flexform_field_pop2}</f:format.raw>
+                        </div>
+                </div>
+            </div>
+            <div id="{data.uid}-f003" class="overlay-popup overlay-finitura">
+                <div class="row align-items-center">
+                        <div class="col-12 col-md-6">
+                                <div class="immagine immagine-q">
+                                        <div class="altezza"></div>
+                                        <div class="wrap-img fill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/tx_armtpl/{data.flexform_field_img3}&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+                                                <img src="uploads/tx_armtpl/{data.flexform_field_img3}" style="display: none;">
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-12 col-md-6 mt-4 mt-md-0">
+                            <f:format.raw>{data.flexform_field_pop3}</f:format.raw>
+                        </div>
+                </div>
+            </div>
+            <div id="{data.uid}-f004" class="overlay-popup overlay-finitura">
+                <div class="row align-items-center">
+                        <div class="col-12 col-md-6">
+                                <div class="immagine immagine-q">
+                                        <div class="altezza"></div>
+                                        <div class="wrap-img fill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/tx_armtpl/{data.flexform_field_img4}&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+                                                <img src="uploads/tx_armtpl/{data.flexform_field_img4}" style="display: none;">
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-12 col-md-6 mt-4 mt-md-0">
+                            <f:format.raw>{data.flexform_field_pop4}</f:format.raw>
+                        </div>
+                </div>
+            </div>
+            <div id="{data.uid}-f005" class="overlay-popup overlay-finitura">
+                <div class="row align-items-center">
+                        <div class="col-12 col-md-6">
+                                <div class="immagine immagine-q">
+                                        <div class="altezza"></div>
+                                        <div class="wrap-img fill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/tx_armtpl/{data.flexform_field_img5}&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+                                                <img src="uploads/tx_armtpl/{data.flexform_field_img5}" style="display: none;">
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-12 col-md-6 mt-4 mt-md-0">
+                            <f:format.raw>{data.flexform_field_pop5}</f:format.raw>
+                        </div>
+                </div>
+            </div>
+            <div id="{data.uid}-f006" class="overlay-popup overlay-finitura">
+                <div class="row align-items-center">
+                        <div class="col-12 col-md-6">
+                                <div class="immagine immagine-q">
+                                        <div class="altezza"></div>
+                                        <div class="wrap-img fill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/tx_armtpl/{data.flexform_field_img6}&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+                                                <img src="uploads/tx_armtpl/{data.flexform_field_img6}" style="display: none;">
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-12 col-md-6 mt-4 mt-md-0">
+                            <f:format.raw>{data.flexform_field_pop6}</f:format.raw>
+                        </div>
+                </div>
+            </div>
+            <div id="{data.uid}-f007" class="overlay-popup overlay-finitura">
+                <div class="row align-items-center">
+                        <div class="col-12 col-md-6">
+                                <div class="immagine immagine-q">
+                                        <div class="altezza"></div>
+                                        <div class="wrap-img fill imgLiquid_bgSize imgLiquid_ready" style="background-image: url(&quot;/uploads/tx_armtpl/{data.flexform_field_img7}&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+                                                <img src="uploads/tx_armtpl/{data.flexform_field_img7}" style="display: none;">
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-12 col-md-6 mt-4 mt-md-0">
+                            <f:format.raw>{data.flexform_field_pop7}</f:format.raw>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-lg-4">
+        <h2>{data.flexform_field_title}</h2>
+        {data.flexform_field_desc}
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="mood-thumbs">
+            <f:if condition="{data.flexform_field_thumb1}">
+                <div class="mood-thumb-item">
+                    <f:link.typolink parameter="{data.flexform_field_link1}" class="mood-link">
+                        <img src="uploads/tx_armtpl/{data.flexform_field_thumb1}" alt="Thumbnail 1">
+                    </f:link.typolink>
+                </div>
             </f:if>
-            <f:if condition="{data.flexform_field_imagetab}">
-            <source media="(min-width: 768px)" srcset="uploads/tx_armtpl/{data.flexform_field_imagetab}">
+            <f:if condition="{data.flexform_field_thumb2}">
+                <div class="mood-thumb-item">
+                    <f:link.typolink parameter="{data.flexform_field_link2}" class="mood-link">
+                        <img src="uploads/tx_armtpl/{data.flexform_field_thumb2}" alt="Thumbnail 2">
+                    </f:link.typolink>
+                </div>
             </f:if>
-            <f:if condition="{data.flexform_field_imagemob}">
-              <source media="(max-width: 768px)" srcset="uploads/tx_armtpl/{data.flexform_field_imagemob}">
+            <f:if condition="{data.flexform_field_thumb3}">
+                <div class="mood-thumb-item">
+                    <f:link.typolink parameter="{data.flexform_field_link3}" class="mood-link">
+                        <img src="uploads/tx_armtpl/{data.flexform_field_thumb3}" alt="Thumbnail 3">
+                    </f:link.typolink>
+                </div>
             </f:if>
-            <img src="uploads/tx_armtpl/{data.flexform_field_imagelarge}" alt="{data.flexform_field_imgalt}">
-            <f:if condition="{data.flexform_field_caption}">
-                <f:if condition="{data.flexform_field_force}">
-                    <f:then>
-                        <figcaption class="image-caption force">{data.flexform_field_caption}</figcaption>
-                    </f:then>
-                    <f:else>
-                        <figcaption class="image-caption">{data.flexform_field_caption}</figcaption>
-                    </f:else>
-                </f:if>
+            <f:if condition="{data.flexform_field_thumb4}">
+                <div class="mood-thumb-item">
+                    <f:link.typolink parameter="{data.flexform_field_link4}" class="mood-link">
+                        <img src="uploads/tx_armtpl/{data.flexform_field_thumb4}" alt="Thumbnail 4">
+                    </f:link.typolink>
+                </div>
             </f:if>
-          </picture>
-        </f:link.typolink>
-    </f:then>
-    <f:else>
-        <picture class="slide-image">
-            <source media="(min-width: 1440px)" srcset="uploads/tx_armtpl/{data.flexform_field_imagelarge}">
-            <f:if condition="{data.flexform_field_imagedesk}">
-              <source media="(min-width: 1280px)" srcset="uploads/tx_armtpl/{data.flexform_field_imagedesk}">
+            <f:if condition="{data.flexform_field_thumb5}">
+                <div class="mood-thumb-item">
+                    <f:link.typolink parameter="{data.flexform_field_link5}" class="mood-link">
+                        <img src="uploads/tx_armtpl/{data.flexform_field_thumb5}" alt="Thumbnail 5">
+                    </f:link.typolink>
+                </div>
             </f:if>
-            <f:if condition="{data.flexform_field_imagetab}">
-            <source media="(min-width: 768px)" srcset="uploads/tx_armtpl/{data.flexform_field_imagetab}">
-            </f:if>
-            <f:if condition="{data.flexform_field_imagemob}">
-              <source media="(max-width: 768px)" srcset="uploads/tx_armtpl/{data.flexform_field_imagemob}">
-            </f:if>
-            <img src="uploads/tx_armtpl/{data.flexform_field_imagelarge}" alt="{data.flexform_field_imgalt}">
-            <f:if condition="{data.flexform_field_caption}">
-                <f:if condition="{data.flexform_field_force}">
-                    <f:then>
-                        <figcaption class="image-caption force">{data.flexform_field_caption}</figcaption>
-                    </f:then>
-                    <f:else>
-                        <figcaption class="image-caption">{data.flexform_field_caption}</figcaption>
-                    </f:else>
-                </f:if>
-            </f:if>
-          </picture>
-    </f:else>
-</f:if>
+        </div>
+    </div>
+</div>

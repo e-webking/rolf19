@@ -17,7 +17,8 @@ call_user_func(function () {
         );
     }
 });
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/TypoScript/TsConfig/pageTsConfig.txt">');
 
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/TypoScript/TsConfig/pageTsConfig.txt">');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/TypoScript/TsConfig/gridelements.txt">');
 
 $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['armtpl_preset'] = 'EXT:armtpl/Configuration/RTE/Default.yaml';
