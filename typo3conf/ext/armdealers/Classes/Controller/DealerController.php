@@ -302,8 +302,9 @@ class DealerController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
         } else {
             //get the dealer
             $zips = $this->zipcodeRepository->getByZipCountry($zip,$country);
-            $dealer = $zips[0]->getDealer();
-            
+            if ($zips[0] instanceof \ARM\Armdealers\Domain\Model\Zipcode) {
+                $dealer = $zips[0]->getDealer();
+            }
             if ($dealer instanceof \ARM\Armdealers\Domain\Model\Dealer) {
                 $this->sendEmail($dealer->getTitle(), $dealer->getEmail(), $data);
             }

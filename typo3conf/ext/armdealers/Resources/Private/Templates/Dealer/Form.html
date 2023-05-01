@@ -12,12 +12,6 @@
         <f:form.textfield name="name" class="form-control" value='{name}' placeholder="{f:translate(key:'tx_armdealers_domain_model_tpl.name')}" />
         </div>
     </div>
-    <div class="form-group row">
-        <label for="txtPostleitzahl" class="col-sm-3 col-form-label">{f:translate(key:'tx_armdealers_domain_model_tpl.zip')} *</label>
-        <div class="col-sm-9">
-        <f:form.textfield name="zip" class="form-control" value='{zip}' id="txtPostleitzahl" placeholder="{f:translate(key:'tx_armdealers_domain_model_tpl.zip')}" />
-        </div>
-    </div>
     <f:if condition="{ip2loc}">
         <f:then>
             <f:form.hidden name="country" value="{ip2loc}" />
