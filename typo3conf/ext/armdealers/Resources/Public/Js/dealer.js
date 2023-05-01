@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 $(document).ready(function(){
+    /*
+     * Auto population not required
+     * 
     $('#txtPostleitzahl').on('blur', function(){
         var value = $(this).val();
         if (value && value.length > 3) {
@@ -30,4 +33,6 @@ $(document).ready(function(){
             });
         }
     });
+     * 
+     */
 });
