@@ -15,5 +15,7 @@ plugin.tx_armip2location {
         apiKey = FUCTT7BAP7
         mode = WS1
         useLocal = 1
+        googleApiKey = AIzaSyAAn32ewraAtUyfg1EjuE4N9pJyy9FrtXY
+        googleSecret = eSrAWPPxPB6h7tllc4ol5VP4LZI=
     }
 }

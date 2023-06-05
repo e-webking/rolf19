@@ -15,5 +15,7 @@ plugin.tx_armip2location {
         mode = {$plugin.tx_armip2location.settings.mode}
         useLocal = {$plugin.tx_armip2location.settings.useLocal}
         debug = 0
+        googleApiKey = {$plugin.tx_armip2location.settings.googleApiKey}
+        googleSecret = {$plugin.tx_armip2location.settings.googleSecret}
     }
 }

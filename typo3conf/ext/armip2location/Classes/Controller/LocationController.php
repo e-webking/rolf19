@@ -50,6 +50,7 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     public function switcherAction() {
         
         $useLocal = $this->settings['useLocal'];
+        $this->view->assign('apiKey', $this->settings['googleApiKey']);
         $usrIp = GeneralUtility::getIndpEnv('REMOTE_ADDR');
         if ($useLocal == "1") {
             $this->localDb($usrIp);
@@ -66,7 +67,6 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
         
         $usrIp = GeneralUtility::getIndpEnv('REMOTE_ADDR');
         $ipNum = $this->convertIp2Numeric($usrIp);
-        
         $results = $this->zuerichRapperswillRepository->getRecord($ipNum);
         $redirect = false;
         if (count($results) > 0) {
@@ -129,15 +129,19 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
             echo "<br>Converted IPNum: ". $ipNum. " for $ip";
         }
         if ($this->settings['region']) {
-            
             $results = $this->zuerichRapperswillRepository->getRecord($ipNum);
-            
+            if ($this->settings['debug'] == 1) {
+                echo "<br> Count of results: ". count($results);
+            }
             $redirectRap = false;
             $redirectZur = false;
             if (count($results) > 0) {
                 foreach($results as $rec) {
                     if ($rec instanceof \ARM\Armip2location\Domain\Model\Ipzuerichrapperswil) {
                         $region = $rec->getRegion();
+                        if ($this->settings['debug'] == 1) {
+                            die ("<br>Region: ". $region);
+                        }
                         if (in_array($region, $this->rapperswilRegion)) {
                             $redirectRap = true;
                             break;
@@ -160,36 +164,39 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
                 }
             } 
         }
+        
         //Check DB
         $dbRec = $this->ipRepository->getRecord($ipNum);
         $setCountry = $this->settings['country'];
         
-        $link = $this->uriBuilder->setTargetPageUid($this->settings['page'])->build();
-        
-        if ($dbRec instanceof \ARM\Armip2location\Domain\Model\Ip && !is_null($dbRec)) {
-            
-            $cn2code = $dbRec->getCn2iso();
-            
-            // echo 'Debug:'.$cn2code . 'set country: '.$setCountry;
-            // echo "Page to go: ".$link;
-            // exit;
-//            if ($cn2code == 'DE') {
-//                header("location: /visit.html");
-//                exit;
-//            }
-            if (isset($setCountry) && isset($cn2code)) {
-                if ($setCountry == 'AT') {
-                    if ($cn2code != 'AT') {
-                        //redirect
-                        if ($link != "/") {
-                            $this->redirectToUri($link);
-                        }
-                    }
-                } else {
-                    if ($cn2code == 'AT') {
-                        //redirect
-                        if ($link != "/") {
+        if (intval($this->settings['page']) > 0 && isset($this->settings['page'])) {
+            $link = $this->uriBuilder->setTargetPageUid($this->settings['page'])->build();
+
+            if ($dbRec instanceof \ARM\Armip2location\Domain\Model\Ip && !is_null($dbRec)) {
+
+                $cn2code = $dbRec->getCn2iso();
+
+                // echo 'Debug:'.$cn2code . 'set country: '.$setCountry;
+                // echo "Page to go: ".$link;
+                // exit;
+    //            if ($cn2code == 'DE') {
+    //                header("location: /visit.html");
+    //                exit;
+    //            }
+                if (isset($setCountry) && isset($cn2code)) {
+                    if ($setCountry == 'AT') {
+                        if ($cn2code != 'AT') {
+                            //redirect
+                            if ($link != "/") {
                                 $this->redirectToUri($link);
+                            }
+                        }
+                    } else {
+                        if ($cn2code == 'AT') {
+                            //redirect
+                            if ($link != "/") {
+                                    $this->redirectToUri($link);
+                            }
                         }
                     }
                 }
@@ -267,5 +274,21 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
             exit;
         }
         */
+    }
+    
+    /**
+     * 
+     * @param \Psr\Http\Message\ServerRequestInterface $request
+     * @param \Psr\Http\Message\ResponseInterface $response
+     */
+    public function findDealerAction(\Psr\Http\Message\ServerRequestInterface $request,
+        \Psr\Http\Message\ResponseInterface $response) {
+        $params = $request->getParsedBody();
+        $zip = $_GET['arguments']['zip'];
+        echo $zip;
+        
+        //$response->withHeader('Content-Type', 'application/json;charset=utf-8');
+        
+        return $response;
     }
 }

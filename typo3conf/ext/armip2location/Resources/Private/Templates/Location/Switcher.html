@@ -1,0 +1,46 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAn32ewraAtUyfg1EjuE4N9pJyy9FrtXY&callback=initialize" defer></script>
+<script type="text/javascript">
+    let currentPosition;
+    function initialize() {
+        const geocoder = new google.maps.Geocoder();
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position){
+                currentPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                //console.log(currentPosition);
+                geocoder.geocode({ location: currentPosition}).then((response) => {
+                    if (response.results[0]) {
+                        var addressArr = response.results[0].address_components;
+                        for (var i = 0; i < addressArr.length; i++) {
+                            var addr = addressArr[i];
+                            if (addr.types[0] == 'postal_code') {
+                                console.log(addr.long_name + ' '+ addr.types[0]);
+                                callAjax(addr.long_name);
+                            }
+                        }
+                    } else {
+                        console.log("No results found");
+                    }
+                }).catch((e) => console.log("Geocoder failed due to: " + e));
+            });
+        } else {
+            console.log('No geo-location service');
+        }
+    }
+    function callAjax(zip) {
+        let xhr = new XMLHttpRequest();
+ 
+        // Making our connection 
+        var url = 'https://www.rolf-benz.haus/index.php?eID=armip2location&arguments[zip]='+zip;
+        xhr.open("GET", url, true);
+
+        // function execute after request is successful
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText);
+            }
+        }
+        // Sending our request
+        xhr.send();
+    }
+    window.initialize = initialize;
+</script>

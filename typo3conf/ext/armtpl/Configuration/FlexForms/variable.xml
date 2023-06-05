@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+  <meta type="array">
+    <langDisable>1</langDisable>
+  </meta>
+  <ROOT type="array">
+    <type>array</type>
+    <el type="array">
+        <field_title type="array">
+            <TCEforms type="array">
+              <label>Title</label>
+              <config type="array">
+                <type>input</type>
+                <size>30</size>
+                <eval>trim</eval>
+              </config>
+            </TCEforms>
+        </field_title>
+        <field_desc type="array">
+            <TCEforms type="array">
+              <label>Description</label>
+              <config type="array">
+                <type>text</type>
+                <rows>5</rows>
+                <cols>40</cols>
+                <eval>trim</eval>
+              </config>
+            </TCEforms>
+        </field_desc>
+      <field_img1 type="array">
+        <TCEforms type="array">
+          <label>Board Image #1 (circle on left)</label>
+          <config type="array">
+            <type>group</type>
+            <internal_type>file</internal_type>
+            <allowed>gif,png,jpg,jpeg</allowed>
+            <max_size>2000</max_size>
+            <uploadfolder>uploads/tx_armtpl</uploadfolder>
+            <show_thumbs>1</show_thumbs>
+            <size>1</size>
+            <maxitems>1</maxitems>
+            <minitems>0</minitems>
+          </config>
+        </TCEforms>
+      </field_img1>
+      <field_pop1 type="array">
+            <TCEforms type="array">
+              <label>Popup #1</label>
+              <config type="array">
+                <type>text</type>
+                <rows>5</rows>
+                <cols>40</cols>
+                <eval>trim</eval>
+                <enableRichtext>1</enableRichtext>
+              </config>
+            </TCEforms>
+      </field_pop1>
+      <field_img4 type="array">
+        <TCEforms type="array">
+          <label>Board Image #2 (top rectangle in middle)</label>
+          <config type="array">
+            <type>group</type>
+            <internal_type>file</internal_type>
+            <allowed>gif,png,jpg,jpeg</allowed>
+            <max_size>2000</max_size>
+            <uploadfolder>uploads/tx_armtpl</uploadfolder>
+            <show_thumbs>1</show_thumbs>
+            <size>1</size>
+            <maxitems>1</maxitems>
+            <minitems>0</minitems>
+          </config>
+        </TCEforms>
+      </field_img4>
+      <field_pop4 type="array">
+            <TCEforms type="array">
+              <label>Popup #2</label>
+              <config type="array">
+                <type>text</type>
+                <rows>5</rows>
+                <cols>40</cols>
+                <eval>trim</eval>
+                <enableRichtext>1</enableRichtext>
+              </config>
+            </TCEforms>
+      </field_pop4>
+      <field_img5 type="array">
+        <TCEforms type="array">
+          <label>Board Image #3 (vertical rectangle in middle)</label>
+          <config type="array">
+            <type>group</type>
+            <internal_type>file</internal_type>
+            <allowed>gif,png,jpg,jpeg</allowed>
+            <max_size>2000</max_size>
+            <uploadfolder>uploads/tx_armtpl</uploadfolder>
+            <show_thumbs>1</show_thumbs>
+            <size>1</size>
+            <maxitems>1</maxitems>
+            <minitems>0</minitems>
+          </config>
+        </TCEforms>
+      </field_img5>
+      <field_pop5 type="array">
+            <TCEforms type="array">
+              <label>Popup #3</label>
+              <config type="array">
+                <type>text</type>
+                <rows>5</rows>
+                <cols>40</cols>
+                <eval>trim</eval>
+                <enableRichtext>1</enableRichtext>
+              </config>
+            </TCEforms>
+      </field_pop5>
+      <field_img6 type="array">
+        <TCEforms type="array">
+          <label>Board Image #4 (narrow vertical rectangle in middle)</label>
+          <config type="array">
+            <type>group</type>
+            <internal_type>file</internal_type>
+            <allowed>gif,png,jpg,jpeg</allowed>
+            <max_size>2000</max_size>
+            <uploadfolder>uploads/tx_armtpl</uploadfolder>
+            <show_thumbs>1</show_thumbs>
+            <size>1</size>
+            <maxitems>1</maxitems>
+            <minitems>0</minitems>
+          </config>
+        </TCEforms>
+      </field_img6>
+      <field_pop6 type="array">
+            <TCEforms type="array">
+              <label>Popup #4</label>
+              <config type="array">
+                <type>text</type>
+                <rows>5</rows>
+                <cols>40</cols>
+                <eval>trim</eval>
+                <enableRichtext>1</enableRichtext>
+              </config>
+            </TCEforms>
+      </field_pop6>
+      <field_img7 type="array">
+        <TCEforms type="array">
+          <label>Board Image #5 (dome shape on right)</label>
+          <config type="array">
+            <type>group</type>
+            <internal_type>file</internal_type>
+            <allowed>gif,png,jpg,jpeg</allowed>
+            <max_size>2000</max_size>
+            <uploadfolder>uploads/tx_armtpl</uploadfolder>
+            <show_thumbs>1</show_thumbs>
+            <size>1</size>
+            <maxitems>1</maxitems>
+            <minitems>0</minitems>
+          </config>
+        </TCEforms>
+      </field_img7>
+      <field_pop7 type="array">
+            <TCEforms type="array">
+              <label>Popup #5</label>
+              <config type="array">
+                <type>text</type>
+                <rows>5</rows>
+                <cols>40</cols>
+                <eval>trim</eval>
+                <enableRichtext>1</enableRichtext>
+              </config>
+            </TCEforms>
+      </field_pop7>
+      <field_img3 type="array">
+        <TCEforms type="array">
+          <label>Board Image #6 (rectangle in left)</label>
+          <config type="array">
+            <type>group</type>
+            <internal_type>file</internal_type>
+            <allowed>gif,png,jpg,jpeg</allowed>
+            <max_size>2000</max_size>
+            <uploadfolder>uploads/tx_armtpl</uploadfolder>
+            <show_thumbs>1</show_thumbs>
+            <size>1</size>
+            <maxitems>1</maxitems>
+            <minitems>0</minitems>
+          </config>
+        </TCEforms>
+      </field_img3>
+      <field_pop3 type="array">
+            <TCEforms type="array">
+              <label>Popup #6</label>
+              <config type="array">
+                <type>text</type>
+                <rows>5</rows>
+                <cols>40</cols>
+                <eval>trim</eval>
+                <enableRichtext>1</enableRichtext>
+              </config>
+            </TCEforms>
+      </field_pop3>
+      <field_img2 type="array">
+        <TCEforms type="array">
+          <label>Board Image #7 (bottom rectangle in middle)</label>
+          <config type="array">
+            <type>group</type>
+            <internal_type>file</internal_type>
+            <allowed>gif,png,jpg,jpeg</allowed>
+            <max_size>2000</max_size>
+            <uploadfolder>uploads/tx_armtpl</uploadfolder>
+            <show_thumbs>1</show_thumbs>
+            <size>1</size>
+            <maxitems>1</maxitems>
+            <minitems>0</minitems>
+          </config>
+        </TCEforms>
+      </field_img2>
+      <field_pop2 type="array">
+            <TCEforms type="array">
+              <label>Popup #7</label>
+              <config type="array">
+                <type>text</type>
+                <rows>5</rows>
+                <cols>40</cols>
+                <eval>trim</eval>
+                <enableRichtext>1</enableRichtext>
+              </config>
+            </TCEforms>
+      </field_pop2>
+      <field_thumb1 type="array">
+        <TCEforms type="array">
+          <label>Thumbnail #1</label>
+          <config type="array">
+            <type>group</type>
+            <internal_type>file</internal_type>
+            <allowed>gif,png,jpg,jpeg</allowed>
+            <max_size>1000</max_size>
+            <uploadfolder>uploads/tx_armtpl</uploadfolder>
+            <show_thumbs>1</show_thumbs>
+            <size>1</size>
+            <maxitems>1</maxitems>
+            <minitems>0</minitems>
+          </config>
+        </TCEforms>
+      </field_thumb1>
+      <field_link1 type="array">
+            <TCEforms type="array">
+              <label>Link #1</label>
+              <config type="array">
+                <type>input</type>
+                <renderType>inputLink</renderType>
+                <size>30</size>
+                <eval>trim</eval>
+                <softref>typolink</softref>
+              </config>
+            </TCEforms>
+      </field_link1>
+      <field_thumb2 type="array">
+        <TCEforms type="array">
+          <label>Thumbnail #2</label>
+          <config type="array">
+            <type>group</type>
+            <internal_type>file</internal_type>
+            <allowed>gif,png,jpg,jpeg</allowed>
+            <max_size>1000</max_size>
+            <uploadfolder>uploads/tx_armtpl</uploadfolder>
+            <show_thumbs>1</show_thumbs>
+            <size>1</size>
+            <maxitems>1</maxitems>
+            <minitems>0</minitems>
+          </config>
+        </TCEforms>
+      </field_thumb2>
+      <field_link2 type="array">
+            <TCEforms type="array">
+              <label>Link #2</label>
+              <config type="array">
+                <type>input</type>
+                <renderType>inputLink</renderType>
+                <size>30</size>
+                <eval>trim</eval>
+                <softref>typolink</softref>
+              </config>
+            </TCEforms>
+      </field_link2>
+      <field_thumb3 type="array">
+        <TCEforms type="array">
+          <label>Thumbnail #3</label>
+          <config type="array">
+            <type>group</type>
+            <internal_type>file</internal_type>
+            <allowed>gif,png,jpg,jpeg</allowed>
+            <max_size>1000</max_size>
+            <uploadfolder>uploads/tx_armtpl</uploadfolder>
+            <show_thumbs>1</show_thumbs>
+            <size>1</size>
+            <maxitems>1</maxitems>
+            <minitems>0</minitems>
+          </config>
+        </TCEforms>
+      </field_thumb3>
+      <field_link3 type="array">
+            <TCEforms type="array">
+              <label>Link #3</label>
+              <config type="array">
+                <type>input</type>
+                <renderType>inputLink</renderType>
+                <size>30</size>
+                <eval>trim</eval>
+                <softref>typolink</softref>
+              </config>
+            </TCEforms>
+      </field_link3>
+      <field_thumb4 type="array">
+        <TCEforms type="array">
+          <label>Thumbnail #4</label>
+          <config type="array">
+            <type>group</type>
+            <internal_type>file</internal_type>
+            <allowed>gif,png,jpg,jpeg</allowed>
+            <max_size>1000</max_size>
+            <uploadfolder>uploads/tx_armtpl</uploadfolder>
+            <show_thumbs>1</show_thumbs>
+            <size>1</size>
+            <maxitems>1</maxitems>
+            <minitems>0</minitems>
+          </config>
+        </TCEforms>
+      </field_thumb4>
+      <field_link4 type="array">
+            <TCEforms type="array">
+              <label>Link #4</label>
+              <config type="array">
+                <type>input</type>
+                <renderType>inputLink</renderType>
+                <size>30</size>
+                <eval>trim</eval>
+                <softref>typolink</softref>
+              </config>
+            </TCEforms>
+      </field_link4>
+      <field_thumb5 type="array">
+        <TCEforms type="array">
+          <label>Thumbnail #5</label>
+          <config type="array">
+            <type>group</type>
+            <internal_type>file</internal_type>
+            <allowed>gif,png,jpg,jpeg</allowed>
+            <max_size>1000</max_size>
+            <uploadfolder>uploads/tx_armtpl</uploadfolder>
+            <show_thumbs>1</show_thumbs>
+            <size>1</size>
+            <maxitems>1</maxitems>
+            <minitems>0</minitems>
+          </config>
+        </TCEforms>
+      </field_thumb5>
+      <field_link5 type="array">
+            <TCEforms type="array">
+              <label>Link #5</label>
+              <config type="array">
+                <type>input</type>
+                <renderType>inputLink</renderType>
+                <size>30</size>
+                <eval>trim</eval>
+                <softref>typolink</softref>
+              </config>
+            </TCEforms>
+      </field_link5>
+    </el>
+  </ROOT>
+</T3DataStructure>
