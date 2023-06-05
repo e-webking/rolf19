@@ -50,7 +50,6 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     public function switcherAction() {
         
         $useLocal = $this->settings['useLocal'];
-        $this->view->assign('apiKey', $this->settings['googleApiKey']);
         $usrIp = GeneralUtility::getIndpEnv('REMOTE_ADDR');
         if ($useLocal == "1") {
             $this->localDb($usrIp);

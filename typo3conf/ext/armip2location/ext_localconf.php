@@ -42,4 +42,4 @@ call_user_func(function () {
     );
 });
 
-$GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['armip2location'] = \ARM\Armip2location\Controller\LocationController::class . '::findDealerAction';
+//$GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['armip2location'] = \ARM\Armip2location\Controller\LocationController::class . '::findDealerAction';
